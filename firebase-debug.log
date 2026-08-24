@@ -1,0 +1,80 @@
+[debug] [2026-06-23T11:35:52.886Z] ----------------------------------------------------------------------
+[debug] [2026-06-23T11:35:52.931Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\josia\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js login:ci
+[debug] [2026-06-23T11:35:52.937Z] CLI Version:   14.15.1
+[debug] [2026-06-23T11:35:52.937Z] Platform:      win32
+[debug] [2026-06-23T11:35:52.938Z] Node Version:  v24.16.0
+[debug] [2026-06-23T11:35:52.940Z] Time:          Tue Jun 23 2026 13:35:52 GMT+0200 (South Africa Standard Time)
+[debug] [2026-06-23T11:35:52.941Z] ----------------------------------------------------------------------
+[debug] 
+[warn] !  Authenticating with a `login:ci` token is deprecated and will be removed in a future major version of `firebase-tools`. Instead, use a service account key with `GOOGLE_APPLICATION_CREDENTIALS`: https://cloud.google.com/docs/authentication/getting-started 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=1044049220&redirect_uri=http%3A%2F%2Flocalhost%3A9005
+[info] 
+[info] Waiting for authentication...
+[debug] [2026-06-23T11:39:49.971Z] >>> [apiv2][query] POST https://accounts.google.com/o/oauth2/token [none]
+[debug] [2026-06-23T11:39:49.979Z] >>> [apiv2][body] POST https://accounts.google.com/o/oauth2/token [omitted]
+[debug] [2026-06-23T11:39:52.412Z] >>> [apiv2][query] POST https://accounts.google.com/o/oauth2/token [none]
+[debug] [2026-06-23T11:39:52.412Z] >>> [apiv2][body] POST https://accounts.google.com/o/oauth2/token [omitted]
+[debug] [2026-06-23T11:40:13.460Z] <<< [apiv2][status] POST https://accounts.google.com/o/oauth2/token 200
+[debug] [2026-06-23T11:40:13.461Z] <<< [apiv2][body] POST https://accounts.google.com/o/oauth2/token [omitted]
+[info] 
+[info] +  Success! Use this token to login on a CI server:
+
+1//09a33Gcdujjv_CgYIARAAGAkSNwF-L9IrxvgkwFMfeOCZfPjvifYUW3IRnM4YfwFMiPXBfRJ6kvykJa1XABzz0txj2rL3suOtBBg
+
+Example: firebase deploy --token "$FIREBASE_TOKEN"
+ 
+[debug] [2026-06-23T11:40:14.158Z] <<< [apiv2][status] POST https://accounts.google.com/o/oauth2/token 200
+[debug] [2026-06-23T11:40:14.184Z] <<< [apiv2][body] POST https://accounts.google.com/o/oauth2/token [omitted]
+[debug] [2026-06-23T11:40:23.579Z] Error: Timed out.
+    at Timeout._onTimeout (C:\Users\josia\AppData\Roaming\npm\node_modules\firebase-tools\lib\utils.js:273:49)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-06-23T11:42:10.329Z] ----------------------------------------------------------------------
+[debug] [2026-06-23T11:42:10.340Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\josia\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --token //09a33Gcdujjv_CgYIARAAGAkSNwF-L9IrxvgkwFMfeOCZfPjvifYUW3IRnM4YfwFMiPXBfRJ6kvykJa1XABzz0txj2rL3suOtBBg
+[debug] [2026-06-23T11:42:10.340Z] CLI Version:   14.15.1
+[debug] [2026-06-23T11:42:10.341Z] Platform:      win32
+[debug] [2026-06-23T11:42:10.341Z] Node Version:  v24.16.0
+[debug] [2026-06-23T11:42:10.342Z] Time:          Tue Jun 23 2026 13:42:10 GMT+0200 (South Africa Standard Time)
+[debug] [2026-06-23T11:42:10.342Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-06-23T11:42:11.282Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-06-23T11:42:11.285Z] > authorizing via --token option
+[warn] !  Authenticating with `--token` is deprecated and will be removed in a future major version of `firebase-tools`. Instead, use a service account key with `GOOGLE_APPLICATION_CREDENTIALS`: https://cloud.google.com/docs/authentication/getting-started 
+[debug] [2026-06-23T11:42:11.289Z] [iam] checking project predesignsclothing for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get"]
+[debug] [2026-06-23T11:42:11.294Z] No OAuth tokens found
+[debug] [2026-06-23T11:42:11.297Z] No OAuth tokens found
+[debug] [2026-06-23T11:42:11.297Z] > refreshing access token with scopes: []
+[debug] [2026-06-23T11:42:11.305Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-06-23T11:42:11.305Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-06-23T11:42:35.720Z] *** [apiv2] error from fetch(https://www.googleapis.com/oauth2/v3/token, {"headers":{},"method":"POST","body":{"_overheadLength":545,"_valueLength":211,"_valuesToMeasure":[],"writable":false,"readable":true,"dataSize":0,"maxDataSize":2097152,"pauseStreams":true,"_released":true,"_streams":[],"_currentStream":null,"_insideLoop":false,"_pendingNext":false,"_boundary":"--------------------------91b981a3687fbb646a5e6e82","_events":{},"_eventsCount":1}}): FetchError: request to https://www.googleapis.com/oauth2/v3/token failed, reason: Client network socket disconnected before secure TLS connection was established
+[error] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2026-06-23T11:42:35.778Z] [iam] error while checking permissions, command may fail: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[info] 
+[info] === Deploying to 'predesignsclothing'...
+[info] 
+[info] i  deploying firestore 
+[info] i  firestore: reading indexes from firestore.indexes.json... 
+[info] i  cloud.firestore: checking firestore.rules for compilation errors... 
+[debug] [2026-06-23T11:42:35.794Z] No OAuth tokens found
+[debug] [2026-06-23T11:42:35.796Z] No OAuth tokens found
+[debug] [2026-06-23T11:42:35.797Z] > refreshing access token with scopes: []
+[debug] [2026-06-23T11:42:35.799Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-06-23T11:42:35.799Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-06-23T11:42:58.213Z] *** [apiv2] error from fetch(https://www.googleapis.com/oauth2/v3/token, {"headers":{},"method":"POST","body":{"_overheadLength":545,"_valueLength":211,"_valuesToMeasure":[],"writable":false,"readable":true,"dataSize":0,"maxDataSize":2097152,"pauseStreams":true,"_released":true,"_streams":[],"_currentStream":null,"_insideLoop":false,"_pendingNext":false,"_boundary":"--------------------------6237a8ed90403a1e25d1fb96","_events":{},"_eventsCount":1}}): FetchError: request to https://www.googleapis.com/oauth2/v3/token failed, reason: Client network socket disconnected before secure TLS connection was established
+[error] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2026-06-23T11:43:03.243Z] Error: Timed out.
+    at Timeout._onTimeout (C:\Users\josia\AppData\Roaming\npm\node_modules\firebase-tools\lib\utils.js:273:49)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+[error] 
+[error] Error: An unexpected error has occurred.

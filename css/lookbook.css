@@ -1,0 +1,191 @@
+/* Lookbook Modal Styles */
+.lookbook-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    animation: fadeIn 0.3s ease-out forwards;
+    overflow-y: auto;
+    padding: 2rem;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.lookbook-modal .modal-content {
+    background: white;
+    border-radius: 8px;
+    max-width: 1000px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.lookbook-modal .modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.lookbook-modal .modal-close:hover {
+    color: #000;
+}
+
+/* Lookbook Content */
+.lookbook-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.lookbook-header h2 {
+    font-size: 2.2rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.lookbook-description {
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+}
+
+/* Image Gallery */
+.lookbook-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.lookbook-gallery-item {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.lookbook-gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.lookbook-gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s;
+}
+
+/* Featured Items */
+.featured-items {
+    margin: 3rem 0;
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
+}
+
+.featured-items h4 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.featured-item {
+    text-align: center;
+    padding: 1rem;
+    border-radius: 8px;
+    background: #f9f9f9;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.featured-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.featured-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+}
+
+.featured-item h5 {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    color: #333;
+}
+
+.featured-item .price {
+    color: #6A0DAD;
+    font-weight: 600;
+    margin: 0.5rem 0 0;
+}
+
+/* Lookbook Actions */
+.lookbook-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #eee;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .lookbook-modal .modal-content {
+        width: 95%;
+        padding: 1.5rem;
+    }
+    
+    .lookbook-gallery {
+        grid-template-columns: 1fr;
+    }
+    
+    .featured-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .featured-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .lookbook-actions {
+        flex-direction: column;
+    }
+    
+    .lookbook-actions .btn {
+        width: 100%;
+    }
+}
