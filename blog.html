@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.snipcart.com https://accounts.google.com https://apis.google.com https://www.gstatic.com https://giscus.app; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://cdn.snipcart.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://*.firebaseio.com https://*.googleapis.com https://formspree.io https://cdn.snipcart.com https://giscus.app; frame-src https://accounts.google.com https://giscus.app; form-action 'self' https://formspree.io;">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Predesigns Clothing Blog - Fashion insights, trends, and behind-the-scenes stories from Hammanskraal's premier luxury streetwear brand.">
+    <meta name="keywords"
+        content="Predesigns blog, fashion blog, streetwear blog, luxury fashion, African fashion, custom clothing blog">
+    <meta name="author" content="Predesigns Clothing">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://predesignsclothing.rf.gd/blog.html">
+    <meta property="og:title" content="Predesigns Blog - Fashion Insights & Behind the Scenes">
+    <meta property="og:description"
+        content="Explore fashion insights, trends, and behind-the-scenes stories from Predesigns Clothing. Luxury streetwear and custom tailoring from Hammanskraal.">
+    <meta property="og:image" content="images/blog1.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://predesignsclothing.rf.gd/blog.html">
+    <meta property="twitter:title" content="Predesigns Blog - Fashion Insights & Behind the Scenes">
+    <meta property="twitter:description"
+        content="Read the latest fashion tips, style guides, and brand news from Predesigns Clothing.">
+    <meta property="twitter:image" content="images/blog1.jpg">
+
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+    <!-- Preload critical fonts -->
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+    <!-- Load non-critical CSS asynchronously -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        media="print" onload="this.media='all'">
+
+    <!-- Fallback for browsers that don't support preload -->
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap"
+            rel="stylesheet">
+    </noscript>
+
+    <!-- Main CSS -->
+    <link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="css/responsive.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="css/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="css/lazy-load.css" media="print" onload="this.media='all'">
+
+    <!-- Fallback for browsers that don't support preload -->
+    <noscript>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/responsive.css">
+        <link rel="stylesheet" href="css/blog.css">
+        <link rel="stylesheet" href="css/lazy-load.css">
+    </noscript>
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="spinner"></div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                            data-src="images/logo.jpg" alt="Predesigns Clothing Logo" loading="lazy" width="150"
+                            height="50">
+                    </a>
+                </div>
+
+                <div class="nav-menu">
+                    <ul class="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="index.html#lookbook">Lookbook</a></li>
+                        <li><a href="blog.html" class="active">Blog</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-actions">
+                    <div class="auth-container">
+                        <div class="auth-buttons">
+                            <button class="btn btn-secondary" onclick="openLoginModal()">
+                                <i class="fas fa-sign-in-alt"></i> Login
+                            </button>
+                            <button class="btn btn-primary" onclick="openRegisterModal()">
+                                <i class="fas fa-user-plus"></i> Sign Up
+                            </button>
+                        </div>
+                    </div>
+                    <div class="cart-container">
+                        <a href="shop.html" class="cart-icon" onclick="handleCartClick(); return false;">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                    </div>
+                    <div class="mobile-menu-toggle">
+                        <span></span><span></span><span></span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-content">
+            <ul class="mobile-nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="index.html#lookbook">Lookbook</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+
+            <div class="mobile-auth-buttons">
+                <button class="btn btn-secondary"
+                    onclick="if(window.uiManager) { uiManager.closeMobileMenu(); openLoginModal(); }">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </button>
+                <button class="btn btn-primary"
+                    onclick="if(window.uiManager) { uiManager.closeMobileMenu(); openRegisterModal(); }">
+                    <i class="fas fa-user-plus"></i> Sign Up
+                </button>
+            </div>
+
+            <div class="mobile-contact-info">
+                <p><i class="fas fa-phone"></i> WhatsApp: 069 431 3721</p>
+                <p><i class="fas fa-envelope"></i> purpleray23@gmail.com</p>
+                <div class="mobile-social-links">
+                    <a href="https://instagram.com/predesignsclothing" target="_blank"><i
+                            class="fab fa-instagram"></i></a>
+                    <!-- Additional social links hidden until real URLs are provided -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-menu-backdrop"></div>
+
+    <!-- Blog Hero Section -->
+    <section class="blog-hero">
+        <div class="container">
+            <div class="blog-hero-content">
+                <h1 class="blog-hero-title">Predesigns Blog</h1>
+                <p class="blog-hero-subtitle">Fashion Insights & Behind the Scenes</p>
+                <p class="blog-hero-description">Explore the world of fashion through our lens. From trend analysis to
+                    behind-the-scenes stories, we share our passion for style and craftsmanship.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Posts Section -->
+    <section class="blog-posts" id="blog-posts">
+        <div class="container">
+            <div class="blog-filters">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All Posts</button>
+                    <button class="filter-btn" data-filter="fashion">Fashion</button>
+                    <button class="filter-btn" data-filter="streetwear">Streetwear</button>
+                    <button class="filter-btn" data-filter="tailoring">Tailoring</button>
+                    <button class="filter-btn" data-filter="lifestyle">Lifestyle</button>
+                </div>
+            </div>
+
+            <div class="blog-grid">
+                <!-- Blog Post 1 -->
+                <article class="blog-post" data-category="fashion">
+                    <div class="blog-image">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                            data-src="images/orange%202%20piece%20city.jpg"
+                            alt="The Evolution of African Streetwear Blog" loading="lazy">
+                        <div class="blog-overlay">
+                            <span class="blog-category">Fashion</span>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">October 15, 2025</span>
+                            <span class="blog-reading-time">5 min read</span>
+                        </div>
+                        <h3 class="blog-title">The Evolution of African Streetwear</h3>
+                        <p class="blog-excerpt">How traditional patterns are influencing modern street fashion across
+                            the
+                            continent, and why this movement is here to stay. From Ankara prints to Kente cloth, African
+                            designers are redefining global fashion standards.</p>
+                        <a href="blog-post.html?id=1" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 2 -->
+                <article class="blog-post" data-category="tailoring">
+                    <div class="blog-image">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                            data-src="images/Red%202%20Piece%20Tracksuit.jpg" alt="The Art of Perfect Fit Blog"
+                            loading="lazy">
+                        <div class="blog-overlay">
+                            <span class="blog-category">Tailoring</span>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">October 10, 2025</span>
+                            <span class="blog-reading-time">4 min read</span>
+                        </div>
+                        <h3 class="blog-title">The Art of Perfect Fit</h3>
+                        <p class="blog-excerpt">Why custom tailoring is worth the investment and how we achieve
+                            perfection. Discover the secrets behind creating garments that not only fit but enhance your
+                            natural silhouette.</p>
+                        <a href="art-of-perfect-fit.html" class="read-more">Read More <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 3 -->
+                <article class="blog-post" data-category="lifestyle">
+                    <div class="blog-image">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                            data-src="images/Blue Female Cargo Skirt.jpg" alt="Sustainable Fashion Choices Blog"
+                            loading="lazy">
+                        <div class="blog-overlay">
+                            <span class="blog-category">Lifestyle</span>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">March 5, 2026</span>
+                            <span class="blog-reading-time">4 min read</span>
+                        </div>
+                        <h3 class="blog-title">Sustainable Fashion Choices</h3>
+                        <p class="blog-excerpt">How choosing quality over quantity benefits both style and the planet. Explore the intersection of streetwear culture and sustainability.</p>
+                        <a href="sustainable-fashion-choices.html" class="read-more">Read More <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="blog-cta">
+                <button class="btn btn-primary" id="load-more-posts">Load More Posts</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter" id="subscribe">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Stay Updated</h2>
+                <p>Subscribe to our newsletter for exclusive fashion insights, new collection announcements, and special
+                    offers.</p>
+                <form action="https://formspree.io/f/xanlepek" method="POST" id="newsletter-form">
+                    <div class="newsletter-form">
+                        <input type="email" name="email" id="newsletter-email" placeholder="Enter your email" required>
+                        <button type="submit">Subscribe</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                            data-src="images/footer-logo.png" alt="Predesigns Clothing Footer Logo"
+                            class="lazy-loading" loading="lazy" width="200" height="50">
+                    </div>
+                    <p>Quality tailor-made clothing from scratch with local love and taste. Est. 2019 by Josias Tlou.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://instagram.com/predesignsclothing" target="_blank"><i
+                                class="fab fa-instagram"></i></a>
+                        <!-- Real social URLs hidden until provided -->
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="index.html#collections">Collections</a></li>
+                        <li><a href="index.html#lookbook">Lookbook</a></li>
+                        <li><a href="blog.html" class="active">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Shop Categories</h3>
+                    <ul>
+                        <li><a href="shop.html#streetwear">Streetwear</a></li>
+                        <li><a href="shop.html#traditional">Traditional Wear</a></li>
+                        <li><a href="shop.html#suits">Custom Suits</a></li>
+                        <li><a href="shop.html#dresses">Dresses & Gowns</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> Hammanskraal, Pretoria</li>
+                        <li><i class="fas fa-phone"></i> 069 431 3721</li>
+                        <li><i class="fas fa-envelope"></i> purpleray23@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <p>&copy; <span id="year"></span> Predesigns Clothing. All rights reserved.</p>
+                    <div class="footer-legal-links">
+                        <a href="privacy-policy.html">Privacy Policy</a>
+                        <a href="terms-of-service.html">Terms of Service</a>
+                        <a href="shipping-returns.html">Shipping & Returns</a>
+                        <a href="size-guide.html">Size Guide</a>
+                    </div>
+                </div>
+                <div class="trust-badges">
+                    <div class="trust-badge">
+                        <i class="fas fa-lock"></i>
+                        <span>Secure Checkout</span>
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-credit-card"></i>
+                        <span>Visa • Mastercard • PayPal</span>
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-shipping-fast"></i>
+                        <span>Fast Delivery</span>
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>30-Day Guarantee</span>
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-flag"></i>
+                        <span>Proudly South African</span>
+                    </div>
+                </div>
+                <div class="parent-company">
+                    <span>A</span>
+                    <a href="https://purpleraygroup.vercel.app" target="_blank" rel="noopener noreferrer">
+                        <img src="images/PRG LOGO.png" alt="Purple Ray Group" width="80">
+                    </a>
+                    <span>Brand</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+
+    <!-- Core Utilities & Managers -->
+    <script src="js/env.js"></script>
+    <script src="js/config.js" defer></script>
+    <script src="js/firebase-config.js" defer></script>
+    <script src="js/auth.js" defer></script>
+    <script src="js/utils.js" defer></script>
+    <script src="js/lazy-load.js" defer></script>
+    <script src="js/ui-manager.js" defer></script>
+    <script src="js/product-manager.js" defer></script>
+    <script src="js/form-manager.js" defer></script>
+
+    <!-- Page Logic -->
+    <script src="js/main.js" defer></script>
+    <script src="js/blog.js" defer></script>
+
+    <!-- App Initializer -->
+    <script src="js/app-init.js" defer></script>
+
+    <!-- External Libraries -->
+    <script async src="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const yearEl = document.getElementById('year');
+            if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+            // Handle Cart Clicks
+            window.handleCartClick = function () {
+                if (window.Snipcart) {
+                    window.Snipcart.api.theme.cart.open();
+                } else {
+                    window.location.href = 'shop.html';
+                }
+            };
+        });
+    </script>
+</body>
+
+</html>

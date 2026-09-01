@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Streetwear built for fit — factory price, tailor quality, Hammanskraal roots. Custom tailoring, urban fashion, made-to-measure.">
+    <meta name="keywords"
+        content="urban tailoring, custom fit streetwear, made to measure clothing, Hammanskraal fashion, Pretoria clothing brand, custom tailoring South Africa">
+    <meta name="author" content="Predesigns Clothing">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://predesigns-clothing.vercel.app/">
+    <meta property="og:title" content="Predesigns Clothing - Urban Tailoring & Custom Fit">
+    <meta property="og:description"
+        content="Streetwear built for fit — factory price, tailor quality, Hammanskraal roots. Custom tailoring, urban fashion, made-to-measure.">
+    <meta property="og:image" content="images/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://predesigns-clothing.vercel.app/">
+    <meta property="twitter:title" content="Predesigns Clothing - Urban Tailoring & Custom Fit">
+    <meta property="twitter:description" content="Streetwear built for fit — factory price, tailor quality, Hammanskraal roots.">
+    <meta property="twitter:image" content="images/twitter-image.jpg">
+
+    <title>Predesigns Clothing - Urban Tailoring & Custom Fit</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+    <!-- Preload critical fonts -->
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+    <!-- Load non-critical CSS asynchronously -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        media="print" onload="this.media='all'">
+
+    <!-- Fallback for browsers that don't support preload -->
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap"
+            rel="stylesheet">
+    </noscript>
+
+    <!-- Main CSS -->
+    <link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="css/responsive.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="css/lazy-load.css" media="print" onload="this.media='all'">
+
+    <!-- Fallback for browsers that don't support preload -->
+    <noscript>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/responsive.css">
+        <link rel="stylesheet" href="css/lazy-load.css">
+    </noscript>
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="spinner"></div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                            data-src="images/logo.jpg" alt="Predesigns Clothing Logo" loading="lazy" width="150"
+                            height="50">
+                    </a>
+                </div>
+
+                <div class="nav-menu">
+                    <ul class="nav-links">
+                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="#collections">Collections</a></li>
+                        <li><a href="#lookbook">Lookbook</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-actions">
+                    <div class="auth-container" id="authContainer">
+                        <div class="auth-buttons">
+                            <a href="login.html" class="btn btn-secondary" id="loginBtn">
+                                <i class="fas fa-sign-in-alt"></i>
+                                Login
+                            </a>
+                            <a href="register.html" class="btn btn-primary" id="registerBtn">
+                                <i class="fas fa-user-plus"></i>
+                                Sign Up
+                            </a>
+                        </div>
+                        <div class="auth-buttons" id="userMenu" style="display:none;">
+                            <span class="user-greeting" id="userGreeting"></span>
+                            <a href="#" class="btn btn-secondary" onclick="handleLogout()" id="logoutBtn">
+                                <i class="fas fa-sign-out-alt"></i>
+                                Logout
+                            </a>
+                        </div>
+                    </div>
+                    <div class="cart-container">
+                        <a href="#" class="cart-icon" onclick="handleCartClick(); return false;">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                    </div>
+                    <div class="mobile-menu-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-header">
+            <button class="mobile-menu-close" aria-label="Close mobile menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="mobile-menu-content">
+            <ul class="mobile-nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="#collections">Collections</a></li>
+                <li><a href="#lookbook">Lookbook</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-contact-info">
+                <p><i class="fas fa-phone"></i> WhatsApp: 069 431 3721</p>
+                <p><i class="fas fa-envelope"></i> purpleray23@gmail.com</p>
+                <div class="mobile-social-links">
+                    <a href="https://instagram.com/predesignsclothing" target="_blank"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="container">
+                <div class="hero-text">
+                    <h1 class="hero-title">Predesigns Clothing</h1>
+                    <p class="hero-subtitle">Streetwear Built for Fit</p>
+                    <p class="hero-description">Factory price. Tailor quality. Street ready.
+                        Made to order in Hammanskraal, Pretoria — every piece crafted to your exact fit and specifications.</p>
+                    <div class="hero-cta">
+                        <a href="#collections" class="btn btn-primary">Shop Collections</a>
+                        <button class="btn btn-secondary" onclick="openCustomOrderForm()">Custom Order</button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                        data-src="images/Thuli.jpg" alt="Predesigns Clothing Model" class="lazy-loading" loading="lazy"
+                        width="600" height="800">
+                </div>
+            </div>
+        </div>
+        <div class="hero-decoration">
+            <div class="decoration-circle"></div>
+            <div class="decoration-line"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                        data-src="images/designer.jpg" alt="Josias Tlou, Founder of Predesigns Clothing"
+                        class="lazy-loading" loading="lazy" width="600" height="400">
+                </div>
+                <div class="about-text">
+                    <h2 class="section-title">About Us</h2>
+                    <h3 class="about-subtitle">Crafted with Passion, Designed with Purpose</h3>
+                    <p class="about-description">Founded in 2019 by Josias Tlou, Predesigns Clothing is more than just a fashion brand — it's a movement. Based in Hammanskraal, North of Pretoria, we specialise in urban tailoring — streetwear engineered for fit, not just fashion. Every piece is made from scratch with meticulous attention to detail and infused with local love and taste.</p>
+                    <p class="about-description">Our expertise extends beyond streetwear to include custom-tailored
+                        traditional clothing, sophisticated suits, elegant dresses, and stunning gowns. Every piece is
+                        made from scratch with meticulous attention to detail and infused with local love and taste.</p>
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <i class="fas fa-tailor"></i>
+                            <h4>Custom Tailoring</h4>
+                            <p>Every piece made to your exact measurements</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-truck"></i>
+                            <h4>Local Delivery</h4>
+                            <p>R60 local, R120 outside Hammanskraal</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-walking"></i>
+                            <h4>Walk-in Service</h4>
+                            <p>Visit us for alterations and consultations</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collections Section -->
+    <section class="collections" id="collections">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Collections</h2>
+                <p class="section-subtitle">Streetwear built for fit — factory price, tailor quality, made to order in Hammanskraal</p>
+            </div>
+
+            <div class="collections-grid">
+                <div class="collection-item">
+                    <div class="collection-image">
+                                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                                                data-src="images/Denim 2 Piece.jpg" alt="Urban Tailoring Collection" class="lazy-loading"
+                                                loading="lazy" width="800" height="1000">
+                                            <div class="collection-overlay">
+                                                <a href="shop.html?collection=streetwear" class="collection-link">View Collection</a>
+                                            </div>
+                                        </div>
+                                        <div class="collection-info">
+                                            <h3>Urban Tailoring</h3>
+                                            <p>Factory price. Tailor quality. Street ready.</p>
+                                        </div>
+                                    </div>
+
+                <div class="collection-item">
+                    <div class="collection-image">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                            data-src="images/irene-ankara-1761591220952.png" alt="Traditional Wear Collection"
+                            class="lazy-loading" loading="lazy" width="800" height="1000">
+                        <div class="collection-overlay">
+                            <a href="shop.html?collection=traditional" class="collection-link">View Collection</a>
+                        </div>
+                    </div>
+                    <div class="collection-info">
+                        <h3>Traditional Wear</h3>
+                        <p>Celebrating heritage with modern flair</p>
+                    </div>
+                </div>
+
+                <div class="collection-item">
+                    <div class="collection-image">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                            data-src="images/Green Jumpsuit.jpg" alt="Custom Suits Collection" class="lazy-loading"
+                            loading="lazy" width="800" height="1000">
+                        <div class="collection-overlay">
+                            <a href="shop.html?collection=suits" class="collection-link">View Collection</a>
+                        </div>
+                    </div>
+                    <div class="collection-info">
+                        <h3>Custom Suits</h3>
+                        <p>Perfect fit, impeccable style</p>
+                    </div>
+                </div>
+
+                <div class="collection-item">
+                    <div class="collection-image">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                            data-src="images/Blue Short Ankara.jpg" alt="Dresses and Gowns Collection"
+                            class="lazy-loading" loading="lazy" width="800" height="1000">
+                        <div class="collection-overlay">
+                            <a href="shop.html?collection=dresses" class="collection-link">View Collection</a>
+                        </div>
+                    </div>
+                    <div class="collection-info">
+                        <h3>Dresses & Gowns</h3>
+                        <p>Elegance redefined</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lookbook Section -->
+    <section class="lookbook" id="lookbook">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Lookbook</h2>
+                <p class="section-subtitle">Style inspiration and fashion stories</p>
+            </div>
+
+            <div class="lookbook-grid">
+                <div class="lookbook-item">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                        data-src="images/ThuliFrontView.jpg" alt="Urban Elegance Lookbook" class="lazy-loading"
+                        loading="lazy" width="800" height="1000">
+                    <div class="lookbook-overlay">
+                        <div class="lookbook-content">
+                            <h3>Urban Elegance</h3>
+                            <p>Streetwear meets sophistication</p>
+                            <a href="lookbook.html#urban" class="view-lookbook">View Story</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lookbook-item">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                        data-src="images/crop%20top%20&%20blue%20cargo3.png" alt="Traditional Fusion Lookbook"
+                        class="lazy-loading" loading="lazy" width="800" height="1000">
+                    <div class="lookbook-overlay">
+                        <div class="lookbook-content">
+                            <h3>Traditional Fusion</h3>
+                            <p>Heritage in modern context</p>
+                            <a href="lookbook.html#traditional" class="view-lookbook">View Story</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lookbook-item">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                        data-src="images/LarryLime.jpg" alt="Evening Glamour Lookbook" class="lazy-loading"
+                        loading="lazy" width="800" height="1000">
+                    <div class="lookbook-overlay">
+                        <div class="lookbook-content">
+                            <h3>Evening Glamour</h3>
+                            <p>Red carpet ready</p>
+                            <a href="lookbook.html#evening" class="view-lookbook">View Story</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lookbook-item">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                        data-src="images/pvrpimage.jpg" alt="Business Chic Lookbook" class="lazy-loading" loading="lazy"
+                        width="800" height="1000">
+                    <div class="lookbook-overlay">
+                        <div class="lookbook-content">
+                            <h3>Business Chic</h3>
+                            <p>Power dressing redefined</p>
+                            <a href="lookbook.html#business" class="view-lookbook">View Story</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Services</h2>
+                <p class="section-subtitle">Comprehensive fashion solutions for every need</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <h3>Custom Clothing</h3>
+                    <p>From concept to creation, we bring your vision to life with precision tailoring and premium
+                        materials.</p>
+                    <ul class="service-list">
+                        <li>Streetwear & casual wear</li>
+                        <li>Traditional attire</li>
+                        <li>Wedding & formal wear</li>
+                        <li>Corporate uniforms</li>
+                    </ul>
+                </div>
+
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h3>Alterations</h3>
+                    <p>Perfect fit guaranteed. Walk-in service available for all your alteration needs.</p>
+                    <ul class="service-list">
+                        <li>Hemming & resizing</li>
+                        <li>Style modifications</li>
+                        <li>Repair & restoration</li>
+                        <li>Quick fixes (24-48 hours)</li>
+                    </ul>
+                </div>
+
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Delivery Options</h3>
+                    <p>Convenient delivery to your doorstep with flexible pricing.</p>
+                    <ul class="service-list">
+                        <li>Local delivery: R60 (Hammanskraal & surrounding)</li>
+                        <li>Regional delivery: R120 (outside hometown)</li>
+                        <li>Collection available at studio</li>
+                        <li>Express delivery options</li>
+                    </ul>
+                </div>
+
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-calendar"></i>
+                    </div>
+                    <h3>Consultation</h3>
+                    <p>Personalized fashion advice and design consultation.</p>
+                    <ul class="service-list">
+                        <li>Style consultation</li>
+                        <li>Measurement sessions</li>
+                        <li>Material selection</li>
+                        <li>Design development</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog" id="blog">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Predesigns Blog</h2>
+                <p class="section-subtitle">Fashion insights, trends, and behind-the-scenes stories</p>
+            </div>
+
+            <div class="blog-grid">
+                <article class="blog-post">
+                    <div class="blog-image">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                            data-src="images/orange%202%20piece%20city.jpg"
+                            alt="The Evolution of African Streetwear Blog" class="lazy-loading" loading="lazy"
+                            width="800" height="1000">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">March 15, 2025</span>
+                            <span class="blog-category">Streetwear</span>
+                        </div>
+                        <h3 class="blog-title">The Evolution of African Streetwear</h3>
+                        <p class="blog-excerpt">How traditional patterns are influencing modern street fashion across
+                            the continent...</p>
+                        <a href="blog-post.html?id=1" class="read-more">Read More</a>
+                    </div>
+                </article>
+
+                <article class="blog-post">
+                    <div class="blog-image">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                            data-src="images/Red%202%20Piece%20Tracksuit.jpg" alt="The Art of Perfect Fit Blog"
+                            class="lazy-loading" loading="lazy" width="800" height="1000">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">March 10, 2025</span>
+                            <span class="blog-category">Tailoring</span>
+                        </div>
+                        <h3 class="blog-title">The Art of Perfect Fit</h3>
+                        <p class="blog-excerpt">Why custom tailoring is worth the investment and how we achieve
+                            perfection...</p>
+                        <a href="art-of-perfect-fit.html" class="read-more">Read More</a>
+                    </div>
+                </article>
+
+                <article class="blog-post">
+                    <div class="blog-image">
+                        <img src="images/Blue Female Cargo Skirt.jpg" alt="Sustainable Fashion Choices Blog"
+                            loading="lazy">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">March 5, 2025</span>
+                            <span class="blog-category">Lifestyle</span>
+                        </div>
+                        <h3 class="blog-title">Sustainable Fashion Choices</h3>
+                        <p class="blog-excerpt">How choosing quality over quantity benefits both style and the planet...
+                        </p>
+                        <a href="blog-post.html?id=3" class="read-more">Read More</a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="blog-cta">
+                <a href="blog.html" class="btn btn-primary">View All Posts</a>
+                <a href="blog.html#subscribe" class="btn btn-secondary">Subscribe</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Ready to create something amazing? Let's start the conversation</p>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Location</h3>
+                            <p>Hammanskraal, North of Pretoria</p>
+                            <p>Walk-in service available</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>WhatsApp</h3>
+                            <p>069 431 3721</p>
+                            <p>Quick responses guaranteed</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>purpleray23@gmail.com</p>
+                            <p>For detailed inquiries</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fab fa-instagram"></i>
+                        <div>
+                            <h3>Instagram</h3>
+                            <p>@predesignsclothing</p>
+                            <p>Follow for updates</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form action="https://formspree.io/f/xanlepek" method="POST">
+                        <div class="form-group">
+                            <input type="text" name="name" required>
+                            <label>Full Name *</label>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" name="email" required>
+                            <label>Email Address *</label>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="tel" name="phone" required>
+                            <label>Phone Number *</label>
+                        </div>
+
+                        <div class="form-group">
+                            <select name="service-type" required>
+                                <option value="" disabled selected>Select Service</option>
+                                <option value="streetwear">Urban Tailoring</option>
+                                <option value="traditional">Traditional Wear</option>
+                                <option value="suits">Custom Suits</option>
+                                <option value="dresses">Dresses & Gowns</option>
+                                <option value="alterations">Alterations</option>
+                                <option value="consultation">Style Consultation</option>
+                            </select>
+                            <label>Service Type *</label>
+                        </div>
+
+                        <div class="form-group">
+                            <textarea name="message" rows="5" required></textarea>
+                            <label>Tell us about your project *</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Submit Request</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Stay Updated</h2>
+                <p>Subscribe to our newsletter for exclusive offers, new collections, and fashion insights.</p>
+                <form action="https://formspree.io/f/xanlepek" method="POST">
+                    <div class="newsletter-form">
+                        <input type="email" name="email" placeholder="Enter your email" required>
+                        <button type="submit">Subscribe</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                            data-src="images/footer-logo.png" alt="Predesigns Clothing Footer Logo" class="lazy-loading"
+                            loading="lazy" width="200" height="50">
+                    </div>
+                    <p>Quality tailor-made clothing from scratch with local love and taste. Est. 2019 by Josias Tlou.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://instagram.com/predesignsclothing" target="_blank"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="#collections">Collections</a></li>
+                        <li><a href="#lookbook">Lookbook</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Shop Categories</h3>
+                    <ul>
+                        <li><a href="shop.html#streetwear">Streetwear</a></li>
+                        <li><a href="shop.html#traditional">Traditional Wear</a></li>
+                        <li><a href="shop.html#suits">Custom Suits</a></li>
+                        <li><a href="shop.html#dresses">Dresses & Gowns</a></li>
+                        <li><a href="shop.html#sale">Sale Items</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> Hammanskraal, Pretoria</li>
+                        <li><i class="fas fa-phone"></i> 069 431 3721</li>
+                        <li><i class="fas fa-envelope"></i> purpleray23@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <p>&copy; 2025 Predesigns Clothing. All rights reserved.</p>
+                    <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem;">
+                        Predesigns Clothing · Division of Purple Ray Group (Pty) Ltd<br>
+                        CIPC Reg No: 2026/693010/07 · SARS Tax Ref: 9462540239
+                    </p>
+                    <div class="footer-legal-links">
+                        <a href="privacy-policy.html">Privacy Policy</a>
+                        <a href="terms-of-service.html">Terms of Service</a>
+                        <a href="shipping-returns.html">Shipping & Returns</a>
+                        <a href="size-guide.html">Size Guide</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+
+    <!-- 1. Environment Configuration (required for payment system) -->
+    <script src="js/config.js" defer></script>
+    <script src="js/firebase-config.js" defer></script>
+
+    <!-- 2. Core Utilities and Helpers -->
+    <script src="js/utils.js" defer></script>
+    <script src="js/lazy-load.js" defer></script>
+    <script src="js/ui-manager.js" defer></script>
+    <script src="js/product-manager.js" defer></script>
+    <script src="js/form-manager.js" defer></script>
+
+
+    <!-- 3. Payment and Snipcart Configuration -->
+    <script src="snipcart-config.js" defer></script>
+
+    <!-- 4. Main Application Logic -->
+    <script src="js/main.js" defer></script>
+
+    <!-- 5. Application Initializer (coordinates everything) -->
+    <script src="js/app-init.js" defer></script>
+
+    <!-- 6. External Libraries -->
+    <script async src="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.js"></script>
+
+    <script>
+            // Inline critical initialization code
+            document.addEventListener('DOMContentLoaded', function () {
+                // Handle lookbook story links
+                document.querySelectorAll('.view-lookbook').forEach(link => {
+                    link.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const href = this.getAttribute('href');
+                        window.location.href = href;
+                    });
+                });
+
+                // Auth state: show logged-in user menu or login/register buttons
+                const token = localStorage.getItem('pd_auth_token');
+                const userStr = localStorage.getItem('pd_user');
+                const loginBtn = document.getElementById('loginBtn');
+                const registerBtn = document.getElementById('registerBtn');
+                const userMenu = document.getElementById('userMenu');
+                const userGreeting = document.getElementById('userGreeting');
+
+                if (token && userStr) {
+                    try {
+                        const user = JSON.parse(userStr);
+                        if (loginBtn) loginBtn.style.display = 'none';
+                        if (registerBtn) registerBtn.style.display = 'none';
+                        if (userMenu) {
+                            userMenu.style.display = 'flex';
+                            if (userGreeting) userGreeting.textContent = 'Hi, ' + user.name.split(' ')[0];
+                        }
+                    } catch(e) {}
+                }
+            });
+
+            function handleLogout() {
+                localStorage.removeItem('pd_auth_token');
+                localStorage.removeItem('pd_user');
+                window.location.reload();
+            }
+        </script>
+</body>
+
+</html>

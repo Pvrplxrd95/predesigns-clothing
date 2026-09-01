@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.snipcart.com https://accounts.google.com https://apis.google.com https://www.gstatic.com https://giscus.app; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://cdn.snipcart.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://*.firebaseio.com https://*.googleapis.com https://formspree.io https://cdn.snipcart.com https://giscus.app; frame-src https://accounts.google.com https://giscus.app; form-action 'self' https://formspree.io;">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Predesigns Clothing Lookbook - Style inspiration and fashion stories from our latest collections. Urban elegance meets traditional fusion.">
+    <meta name="keywords"
+        content="fashion lookbook, style inspiration, streetwear lookbook, traditional wear, fashion stories, Predesigns fashion">
+    <meta name="author" content="Predesigns Clothing">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://predesignsclothing.rf.gd/lookbook.html">
+    <meta property="og:title" content="Lookbook - Predesigns Clothing | Style Inspiration & Fashion Stories">
+    <meta property="og:description"
+        content="Explore our latest fashion stories and style inspiration. From urban streetwear to traditional fusion.">
+    <meta property="og:image" content="images/lookbook-og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://predesignsclothing.rf.gd/lookbook.html">
+    <meta property="twitter:title" content="Lookbook - Predesigns Clothing | Style Inspiration">
+    <meta property="twitter:description" content="Explore our latest fashion stories and style inspiration.">
+    <meta property="twitter:image" content="images/lookbook-twitter-image.jpg">
+
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.snipcart.com" crossorigin>
+
+    <!-- Preload critical fonts -->
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+    <!-- Load non-critical CSS asynchronously -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.css" media="print"
+        onload="this.media='all'">
+
+    <!-- Main CSS -->
+    <link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="css/responsive.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="css/lookbook.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="css/lazy-load.css" media="print" onload="this.media='all'">
+
+    <title>Lookbook - Predesigns Clothing | Style Inspiration & Fashion Stories</title>
+
+    <!-- Fallback for browsers that don't support preload -->
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/responsive.css">
+        <link rel="stylesheet" href="css/lookbook.css">
+        <link rel="stylesheet" href="css/lazy-load.css">
+    </noscript>
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="spinner"></div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                            data-src="images/logo.jpg" alt="Predesigns Clothing Logo" class="lazy-loading"
+                            loading="lazy" width="150" height="50">
+                    </a>
+                </div>
+
+                <div class="nav-menu">
+                    <ul class="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="lookbook.html" class="active">Lookbook</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-actions">
+                    <div class="auth-container">
+                        <div class="auth-buttons">
+                            <button class="btn btn-secondary" onclick="openLoginModal()">
+                                <i class="fas fa-sign-in-alt"></i> Login
+                            </button>
+                            <button class="btn btn-primary" onclick="openRegisterModal()">
+                                <i class="fas fa-user-plus"></i> Sign Up
+                            </button>
+                        </div>
+                    </div>
+                    <div class="cart-container">
+                        <button class="snipcart-checkout cart-icon" aria-label="Open cart">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span class="snipcart-items-count cart-count">0</span>
+                        </button>
+                    </div>
+                    <div class="mobile-menu-toggle">
+                        <span></span><span></span><span></span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-content">
+            <ul class="mobile-nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="lookbook.html" class="active">Lookbook</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+
+            <div class="mobile-auth-buttons">
+                <button class="btn btn-secondary"
+                    onclick="if(window.uiManager) { uiManager.closeMobileMenu(); openLoginModal(); }">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </button>
+                <button class="btn btn-primary"
+                    onclick="if(window.uiManager) { uiManager.closeMobileMenu(); openRegisterModal(); }">
+                    <i class="fas fa-user-plus"></i> Sign Up
+                </button>
+            </div>
+
+            <div class="mobile-contact-info">
+                <p><i class="fas fa-phone"></i> WhatsApp: 069 431 3721</p>
+                <p><i class="fas fa-envelope"></i> purpleray23@gmail.com</p>
+                <div class="mobile-social-links">
+                    <a href="https://instagram.com/predesignsclothing" target="_blank"><i
+                            class="fab fa-instagram"></i></a>
+                    <!-- Additional social links hidden until real URLs are provided -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-menu-backdrop"></div>
+
+    <!-- Lookbook Hero Section -->
+    <section class="lookbook-hero">
+        <div class="container">
+            <h1>Style Inspiration & Fashion Stories</h1>
+            <p>Explore our curated collections and get inspired by our latest fashion narratives</p>
+        </div>
+    </section>
+
+    <!-- Lookbook Gallery -->
+    <section class="lookbook-gallery">
+        <div class="container">
+            <div class="lookbook-categories">
+                <button class="category-btn active" data-category="all">All Stories</button>
+                <button class="category-btn" data-category="urban">Urban Elegance</button>
+                <button class="category-btn" data-category="traditional">Traditional Fusion</button>
+                <button class="category-btn" data-category="evening">Evening Glamour</button>
+                <button class="category-btn" data-category="business">Business Chic</button>
+            </div>
+
+            <div class="lookbook-grid">
+                <!-- Urban Elegance Story -->
+                <div class="lookbook-story" data-category="urban">
+                    <div class="story-images">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                            data-src="images/products/brown 2 piece city.jpg" alt="Urban Elegance Look 1"
+                            class="lazy-loading" loading="lazy">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                            data-src="images/products/brown 2 piece city standing.jpg" alt="Urban Elegance Look 2"
+                            class="lazy-loading" loading="lazy">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                            data-src="images/products/brown piece.jpg" alt="Urban Elegance Look 3" class="lazy-loading"
+                            loading="lazy">
+                    </div>
+                    <div class="story-content">
+                        <h3>Urban Elegance</h3>
+                        <p>Where street style meets sophistication. Our urban collection brings together bold patterns,
+                            comfortable fits, and eye-catching details that make a statement.</p>
+                        <div class="story-details">
+                            <span class="date">Season: Spring/Summer 2026</span>
+                            <span class="collection">Collection: Urban Series</span>
+                        </div>
+                        <div class="story-products">
+                            <h4>Featured Items</h4>
+                            <div class="product-links">
+                                <a href="shop.html#streetwear" class="shop-link">Shop this Look</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Traditional Fusion Story -->
+                <div class="lookbook-story" data-category="traditional">
+                    <div class="story-images">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                            data-src="images/products/traditional couple.jpg" alt="Traditional Fusion Look 1"
+                            class="lazy-loading" loading="lazy">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                            data-src="images/products/bikini top clean.jpg" alt="Traditional Fusion Look 2"
+                            class="lazy-loading" loading="lazy">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                            data-src="images/products/bikini top.jpg" alt="Traditional Fusion Look 3"
+                            class="lazy-loading" loading="lazy">
+                    </div>
+                    <div class="story-content">
+                        <h3>Traditional Fusion</h3>
+                        <p>A beautiful blend of cultural heritage and modern design. Each piece tells a story while
+                            embracing contemporary style elements.</p>
+                        <div class="story-details">
+                            <span class="date">Season: Spring/Summer 2026</span>
+                            <span class="collection">Collection: Heritage</span>
+                        </div>
+                        <div class="story-products">
+                            <h4>Featured Items</h4>
+                            <div class="product-links">
+                                <a href="shop.html#traditional" class="shop-link">Shop this Look</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Evening Glamour Story -->
+                <div class="lookbook-story" data-category="evening">
+                    <div class="story-images">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                            data-src="images/products/blue ankara with lace 2.jpg" alt="Evening Glamour Look 1"
+                            class="lazy-loading" loading="lazy">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                            data-src="images/products/blue lace dress.jpg" alt="Evening Glamour Look 2"
+                            class="lazy-loading" loading="lazy">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                            data-src="images/products/evening-3.jpg" alt="Evening Glamour Look 3" class="lazy-loading"
+                            loading="lazy">
+                    </div>
+                    <div class="story-content">
+                        <h3>Evening Glamour</h3>
+                        <p>Elegance meets drama in our evening wear collection. Stunning silhouettes and luxurious
+                            fabrics create unforgettable moments.</p>
+                        <div class="story-details">
+                            <span class="date">Season: Spring/Summer 2026</span>
+                            <span class="collection">Collection: Night Life</span>
+                        </div>
+                        <div class="story-products">
+                            <h4>Featured Items</h4>
+                            <div class="product-links">
+                                <a href="shop.html#dresses" class="shop-link">Shop this Look</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Business Chic Story -->
+                <div class="lookbook-story" data-category="business">
+                    <div class="story-images">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                            data-src="images/products/thuli 2 piece.jpg" alt="Business Chic Look 1" class="lazy-loading"
+                            loading="lazy">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                            data-src="images/products/ThuliFrontView.jpg" alt="Business Chic Look 2"
+                            class="lazy-loading" loading="lazy">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                            data-src="images/products/Thuli.jpg" alt="Business Chic Look 3" class="lazy-loading"
+                            loading="lazy">
+                    </div>
+                    <div class="story-content">
+                        <h3>Business Chic</h3>
+                        <p>Professional attire with a modern twist. Our suits and formal wear combine classic tailoring
+                            with contemporary details.</p>
+                        <div class="story-details">
+                            <span class="date">Season: Spring/Summer 2026</span>
+                            <span class="collection">Collection: Executive</span>
+                        </div>
+                        <div class="story-products">
+                            <h4>Featured Items</h4>
+                            <div class="product-links">
+                                <a href="shop.html#suits" class="shop-link">Shop this Look</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                            data-src="images/footer-logo.png" alt="Predesigns Clothing Footer Logo"
+                            class="lazy-loading" loading="lazy" width="200" height="50">
+                    </div>
+                    <p>Quality tailor-made clothing from scratch with local love and taste. Est. 2019 by Josias Tlou.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://instagram.com/predesignsclothing" target="_blank"><i
+                                class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="index.html#collections">Collections</a></li>
+                        <li><a href="index.html#lookbook">Lookbook</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Shop Categories</h3>
+                    <ul>
+                        <li><a href="shop.html#streetwear">Streetwear</a></li>
+                        <li><a href="shop.html#traditional">Traditional Wear</a></li>
+                        <li><a href="shop.html#suits">Custom Suits</a></li>
+                        <li><a href="shop.html#dresses">Dresses & Gowns</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> Hammanskraal, Pretoria</li>
+                        <li><i class="fas fa-phone"></i> 069 431 3721</li>
+                        <li><i class="fas fa-envelope"></i> purpleray23@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <p>&copy; <span id="year"></span> Predesigns Clothing. All rights reserved.</p>
+                    <div class="footer-legal-links">
+                        <a href="privacy-policy.html">Privacy Policy</a>
+                        <a href="terms-of-service.html">Terms of Service</a>
+                        <a href="shipping-returns.html">Shipping & Returns</a>
+                        <a href="size-guide.html">Size Guide</a>
+                    </div>
+                </div>
+                <div class="trust-badges">
+                    <div class="trust-badge">
+                        <i class="fas fa-lock"></i>
+                        <span>Secure Checkout</span>
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-credit-card"></i>
+                        <span>Visa • Mastercard • PayPal</span>
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-shipping-fast"></i>
+                        <span>Fast Delivery</span>
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>30-Day Guarantee</span>
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-flag"></i>
+                        <span>Proudly South African</span>
+                    </div>
+                </div>
+                <div class="parent-company">
+                    <span>A</span>
+                    <a href="https://purpleraygroup.vercel.app" target="_blank" rel="noopener noreferrer">
+                        <img src="images/PRG LOGO.png" alt="Purple Ray Group" width="80">
+                    </a>
+                    <span>Brand</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+
+    <!-- Core Utilities & Managers -->
+    <script src="js/env.js"></script>
+    <script src="js/config.js" defer></script>
+    <script src="js/firebase-config.js" defer></script>
+    <script src="js/auth.js" defer></script>
+    <script src="js/utils.js" defer></script>
+    <script src="js/lazy-load.js" defer></script>
+    <script src="js/ui-manager.js" defer></script>
+    <script src="js/product-manager.js" defer></script>
+    <script src="js/form-manager.js" defer></script>
+    <script src="snipcart-config.js" defer></script>
+
+    <!-- Page Logic -->
+    <script src="js/main.js" defer></script>
+    <script src="js/lookbook.js" defer></script>
+
+    <!-- App Initializer -->
+    <script src="js/app-init.js" defer></script>
+
+    <!-- External Libraries -->
+    <script async src="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.js"></script>
+
+    <script>
+        // Update year
+        document.addEventListener('DOMContentLoaded', function () {
+            const yearEl = document.getElementById('year');
+            if (yearEl) yearEl.textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+
+</html>

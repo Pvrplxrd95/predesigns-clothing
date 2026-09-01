@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Updates - Predesigns Clothing</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .form-section {
+            margin: 30px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: #f9f9f9;
+        }
+
+        .form-section h3 {
+            color: #6A0DAD;
+            border-bottom: 2px solid #6A0DAD;
+            padding-bottom: 10px;
+        }
+
+        .form-container {
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 10px 0;
+        }
+
+        .form-group {
+            margin: 15px 0;
+        }
+
+        .form-group label {
+            display: block;
+            margin: 5px 0;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .btn {
+            background: #6A0DAD;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px 0;
+        }
+
+        .btn:hover {
+            background: #5a0ca3;
+        }
+
+        .note {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #ffc107;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Form Updates for Predesigns Clothing</h1>
+
+    <div class="note">
+        <strong>Note:</strong> This file contains updated form templates for integration into the main website files.
+        These forms should be copied into the appropriate locations in index.html, shop.html, and other pages.
+    </div>
+
+    <div class="form-section">
+        <h3>Updated Contact Form for index.html</h3>
+        <div class="form-container">
+            <form action="https://formspree.io/f/xdkpeweb" method="POST">
+                <div class="form-group">
+                    <input type="text" name="name" required>
+                    <label>Full Name *</label>
+                </div>
+
+                <div class="form-group">
+                    <input type="email" name="email" required>
+                    <label>Email Address *</label>
+                </div>
+
+                <div class="form-group">
+                    <input type="tel" name="phone" required>
+                    <label>Phone Number *</label>
+                </div>
+
+                <div class="form-group">
+                    <select name="service-type" required>
+                        <option value="" disabled selected>Select Service</option>
+                        <option value="streetwear">Luxury Streetwear</option>
+                        <option value="traditional">Traditional Wear</option>
+                        <option value="suits">Custom Suits</option>
+                        <option value="dresses">Dresses & Gowns</option>
+                        <option value="alterations">Alterations</option>
+                        <option value="consultation">Style Consultation</option>
+                    </select>
+                    <label>Service Type *</label>
+                </div>
+
+                <div class="form-group">
+                    <textarea name="message" rows="5" required></textarea>
+                    <label>Tell us about your project *</label>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit Request</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="form-section">
+        <h3>Updated Newsletter Form for index.html</h3>
+        <div class="form-container">
+            <form action="https://formspree.io/f/xanlepek" method="POST">
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn">Subscribe</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="form-section">
+        <h3>Updated Custom Order Form for index.html</h3>
+        <div class="form-container">
+            <form action="https://formspree.io/f/mqagpypo" method="POST">
+                <div class="form-group">
+                    <input type="text" name="name" required>
+                    <label>Full Name *</label>
+                </div>
+
+                <div class="form-group">
+                    <input type="tel" name="phone" required>
+                    <label>Phone Number (WhatsApp) *</label>
+                </div>
+
+                <div class="form-group">
+                    <input type="email" name="email">
+                    <label>Email Address</label>
+                </div>
+
+                <div class="form-group">
+                    <select name="order_type" required>
+                        <option value="">Select type...</option>
+                        <option value="streetwear">Luxury Streetwear</option>
+                        <option value="traditional">Traditional Wear</option>
+                        <option value="suit">Custom Suit</option>
+                        <option value="dress">Dress/Gown</option>
+                        <option value="other">Other (please specify)</option>
+                    </select>
+                    <label>Type of Clothing *</label>
+                </div>
+
+                <div class="form-group">
+                    <textarea name="description" rows="4" required></textarea>
+                    <label>Describe Your Vision *</label>
+                </div>
+
+                <div class="form-group">
+                    <label for="timeline">Desired Timeline</label>
+                    <select name="timeline">
+                        <option value="2-3 weeks">2-3 weeks</option>
+                        <option value="1 month">1 month</option>
+                        <option value="urgent">Urgent (within 1 week)</option>
+                        <option value="flexible">Flexible</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="budget">Budget Range (ZAR)</label>
+                    <select name="budget">
+                        <option value="">Select budget...</option>
+                        <option value="500-1000">R500 - R1,000</option>
+                        <option value="1000-2000">R1,000 - R2,000</option>
+                        <option value="2000-5000">R2,000 - R5,000</option>
+                        <option value="5000+">R5,000+</option>
+                    </select>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Submit Request</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="form-section">
+        <h3>Updated Newsletter Form for shop.html</h3>
+        <div class="form-container">
+            <form action="https://formspree.io/f/xanlepek" method="POST">
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn">Subscribe</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="form-section">
+        <h3>Updated Custom Order Form for shop.html</h3>
+        <div class="form-container">
+            <form action="https://formspree.io/f/mqagpypo" method="POST">
+                <div class="form-group">
+                    <input type="text" name="name" required>
+                    <label>Full Name *</label>
+                </div>
+
+                <div class="form-group">
+                    <input type="tel" name="phone" required>
+                    <label>Phone Number (WhatsApp) *</label>
+                </div>
+
+                <div class="form-group">
+                    <input type="email" name="email">
+                    <label>Email Address</label>
+                </div>
+
+                <div class="form-group">
+                    <select name="order_type" required>
+                        <option value="">Select type...</option>
+                        <option value="streetwear">Luxury Streetwear</option>
+                        <option value="traditional">Traditional Wear</option>
+                        <option value="suit">Custom Suit</option>
+                        <option value="dress">Dress/Gown</option>
+                        <option value="other">Other (please specify)</option>
+                    </select>
+                    <label>Type of Clothing *</label>
+                </div>
+
+                <div class="form-group">
+                    <textarea name="description" rows="4" required></textarea>
+                    <label>Describe Your Vision *</label>
+                </div>
+
+                <div class="form-group">
+                    <label>Desired Timeline</label>
+                    <select name="timeline">
+                        <option value="2-3 weeks">2-3 weeks</option>
+                        <option value="1 month">1 month</option>
+                        <option value="urgent">Urgent (within 1 week)</option>
+                        <option value="flexible">Flexible</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Budget Range (ZAR)</label>
+                    <select name="budget">
+                        <option value="">Select budget...</option>
+                        <option value="500-1000">R500 - R1,000</option>
+                        <option value="1000-2000">R1,000 - R2,000</option>
+                        <option value="2000-5000">R2,000 - R5,000</option>
+                        <option value="5000+">R5,000+</option>
+                    </select>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Submit Request</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="form-section">
+        <h3>Updated Consultation Form for shop.html</h3>
+        <div class="form-container">
+            <form action="https://formspree.io/f/mqagpypo" method="POST">
+                <div class="form-group">
+                    <input type="text" name="name" required>
+                    <label>Full Name *</label>
+                </div>
+
+                <div class="form-group">
+                    <input type="tel" name="phone" required>
+                    <label>Phone Number (WhatsApp) *</label>
+                </div>
+
+                <div class="form-group">
+                    <input type="email" name="email">
+                    <label>Email Address</label>
+                </div>
+
+                <div class="form-group">
+                    <label>Preferred Date *</label>
+                    <input type="date" name="date" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Preferred Time *</label>
+                    <select name="time" required>
+                        <option value="">Select time...</option>
+                        <option value="morning">Morning (9am - 12pm)</option>
+                        <option value="afternoon">Afternoon (12pm - 4pm)</option>
+                        <option value="evening">Evening (4pm - 6pm)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <select name="consultation_type">
+                        <option value="in-person">In-Person (Hammanskraal Studio)</option>
+                        <option value="video-call">Video Call</option>
+                        <option value="phone-call">Phone Call</option>
+                    </select>
+                    <label>Consultation Type</label>
+                </div>
+
+                <div class="form-group">
+                    <textarea name="details" rows="3"></textarea>
+                    <label>What would you like to discuss?</label>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Book Consultation</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="form-section">
+        <h3>Updated Blog Newsletter Form</h3>
+        <div class="form-container">
+            <form action="https://formspree.io/f/xanlepek" method="POST">
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="form-section">
+        <h3>Updated Blog Post Newsletter Form</h3>
+        <div class="form-container">
+            <form action="https://formspree.io/f/xanlepek" method="POST" class="sidebar-newsletter-form">
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="note">
+        <strong>Integration Instructions:</strong>
+        <ul>
+            <li>Copy the appropriate forms into their respective locations in the main website files</li>
+            <li>Replace existing forms with these updated versions</li>
+            <li>Ensure all form actions point to the correct Formspree endpoints</li>
+            <li>Test all forms after integration to ensure they work correctly</li>
+        </ul>
+    </div>
+</body>
+
+</html>

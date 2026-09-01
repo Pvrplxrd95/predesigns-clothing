@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.snipcart.com https://accounts.google.com https://apis.google.com https://www.gstatic.com https://giscus.app; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://cdn.snipcart.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://*.firebaseio.com https://*.googleapis.com https://formspree.io https://cdn.snipcart.com https://giscus.app; frame-src https://accounts.google.com https://giscus.app; form-action 'self' https://formspree.io;">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Predesigns Clothing Shipping & Returns - Learn about our delivery options, shipping costs, and return policy.">
+    <meta name="keywords"
+        content="shipping policy, returns policy, delivery options, Predesigns Clothing, order delivery, return process">
+    <meta name="author" content="Predesigns Clothing">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://predesignsclothing.rf.gd/shipping-returns.html">
+    <meta property="og:title" content="Shipping & Returns - Predesigns Clothing">
+    <meta property="og:description"
+        content="Learn about our delivery options, shipping costs, and return policy.">
+    <meta property="og:image" content="images/shipping-og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://predesignsclothing.rf.gd/shipping-returns.html">
+    <meta property="twitter:title" content="Shipping & Returns - Predesigns Clothing">
+    <meta property="twitter:description" content="Learn about our delivery & returns.">
+    <meta property="twitter:image" content="images/shipping-twitter-image.jpg">
+
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.snipcart.com" crossorigin>
+
+    <!-- Preload critical fonts -->
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+    <!-- Load non-critical CSS asynchronously -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.css" media="print"
+        onload="this.media='all'">
+
+    <!-- Main CSS -->
+    <link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="css/responsive.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="css/legal.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="css/lazy-load.css" media="print" onload="this.media='all'">
+
+    <title>Shipping & Returns - Predesigns Clothing | Delivery Info</title>
+
+    <!-- Fallback for browsers that don't support preload -->
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/responsive.css">
+        <link rel="stylesheet" href="css/legal.css">
+        <link rel="stylesheet" href="css/lazy-load.css">
+    </noscript>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                            data-src="images/logo.jpg" alt="Predesigns Clothing Logo" class="lazy-loading"
+                            loading="lazy" width="150" height="50">
+                    </a>
+                </div>
+
+                <div class="nav-menu">
+                    <ul class="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="lookbook.html">Lookbook</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-actions">
+                    <div class="auth-container">
+                        <div class="auth-buttons">
+                            <button class="btn btn-secondary" onclick="openLoginModal()">
+                                <i class="fas fa-sign-in-alt"></i> Login
+                            </button>
+                            <button class="btn btn-primary" onclick="openRegisterModal()">
+                                <i class="fas fa-user-plus"></i> Sign Up
+                            </button>
+                        </div>
+                    </div>
+                    <div class="cart-container">
+                        <button class="snipcart-checkout cart-icon" aria-label="Open cart">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span class="snipcart-items-count cart-count">0</span>
+                        </button>
+                    </div>
+                    <div class="mobile-menu-toggle">
+                        <span></span><span></span><span></span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-content">
+            <ul class="mobile-nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="index.html#lookbook">Lookbook</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+
+            <div class="mobile-auth-buttons">
+                <button class="btn btn-secondary"
+                    onclick="if(window.uiManager) { uiManager.closeMobileMenu(); openLoginModal(); }">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </button>
+                <button class="btn btn-primary"
+                    onclick="if(window.uiManager) { uiManager.closeMobileMenu(); openRegisterModal(); }">
+                    <i class="fas fa-user-plus"></i> Sign Up
+                </button>
+            </div>
+
+            <div class="mobile-contact-info">
+                <p><i class="fas fa-phone"></i> WhatsApp: 069 431 3721</p>
+                <p><i class="fas fa-envelope"></i> purpleray23@gmail.com</p>
+                <div class="mobile-social-links">
+                    <a href="https://instagram.com/predesignsclothing" target="_blank"><i
+                            class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-menu-backdrop"></div>
+
+    <section class="legal-hero">
+        <div class="container">
+            <div class="legal-hero-content">
+                <h1 class="legal-hero-title">Shipping & Returns</h1>
+                <p class="legal-hero-subtitle">Delivery & Return Information</p>
+                <p class="legal-hero-description">We're committed to getting your order to you quickly and hassle-free.
+                    Learn about our shipping options, delivery times, and return process.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="legal-content">
+        <div class="container">
+            <div class="legal-text">
+                <div class="last-updated">
+                    <p>Last Updated: March 15, 2024</p>
+                </div>
+
+                <h2>1. Shipping Policy</h2>
+                <h3>Delivery Areas</h3>
+                <p>We currently deliver to the following areas:</p>
+                <ul>
+                    <li><strong>Local Delivery:</strong> Hammanskraal and surrounding areas</li>
+                    <li><strong>National Delivery:</strong> Main cities and towns across South Africa</li>
+                </ul>
+
+                <h3>Shipping Costs</h3>
+                <p>Shipping costs are calculated at checkout based on your delivery location:</p>
+                <ul>
+                    <li><strong>Local Delivery:</strong> R60 (Hammanskraal and surrounding areas)</li>
+                    <li><strong>National Delivery:</strong> R120 (outside Hammanskraal area)</li>
+                </ul>
+                <p><em>Note: Shipping costs may vary for remote areas. You will see the exact cost at checkout before
+                        completing your purchase.</em></p>
+
+                <h3>Processing Time</h3>
+                <p>All items are made to order and require production time before shipping:</p>
+                <ul>
+                    <li><strong>Ready-to-Wear Items:</strong> 2-3 business days processing time</li>
+                    <li><strong>Custom Tailored Items:</strong> 2-4 weeks processing time (depending on complexity)</li>
+                    <li><strong>Express Processing:</strong> Available for an additional fee (contact us for details)
+                    </li>
+                </ul>
+
+                <h3>Delivery Time</h3>
+                <p>Once your order is processed, delivery times are as follows:</p>
+                <ul>
+                    <li><strong>Local Delivery:</strong> 1-2 business days after processing</li>
+                    <li><strong>National Delivery:</strong> 3-5 business days after processing</li>
+                </ul>
+                <p><em>Delivery times may be affected by public holidays, weather conditions, or other unforeseen
+                        circumstances.</em></p>
+
+                <h3>Order Tracking</h3>
+                <p>Once your order ships, you will receive a confirmation email with tracking information. You can track
+                    your package using the provided tracking number with our delivery partner.</p>
+
+                <h3>Delivery Instructions</h3>
+                <p>To ensure successful delivery:</p>
+                <ul>
+                    <li>Provide a complete and accurate delivery address</li>
+                    <li>Include a contact phone number for the delivery person</li>
+                    <li>Specify any special delivery instructions in the order notes</li>
+                    <li>Ensure someone is available to receive the package during business hours</li>
+                </ul>
+
+                <h2>2. Returns & Exchanges</h2>
+                <h3>Return Eligibility</h3>
+                <p>We want you to be completely satisfied with your purchase. You may return items that meet the
+                    following criteria:</p>
+                <ul>
+                    <li>Items must be in new, unworn condition with all original tags attached</li>
+                    <li>Items must be returned within 14 days of delivery</li>
+                    <li>Items must include all original packaging and documentation</li>
+                    <li>Custom tailored items cannot be returned unless there is a manufacturing defect</li>
+                </ul>
+
+                <h3>Non-Returnable Items</h3>
+                <p>The following items cannot be returned for hygiene and safety reasons:</p>
+                <ul>
+                    <li>Custom made or personalized items</li>
+                    <li>Items that show signs of wear or damage</li>
+                    <li>Items without original tags or packaging</li>
+                    <li>Items returned after 14 days from delivery</li>
+                </ul>
+
+                <h3>Return Process</h3>
+                <p>To initiate a return, please follow these steps:</p>
+                <ol>
+                    <li>Contact our customer service at purpleray23@gmail.com within 14 days of delivery</li>
+                    <li>Provide your order number and reason for the return</li>
+                    <li>We will provide you with return instructions and authorization</li>
+                    <li>Pack the item securely in its original packaging</li>
+                    <li>Ship the item back to us using the provided instructions</li>
+                </ol>
+
+                <h3>Return Shipping</h3>
+                <p>Return shipping costs are the responsibility of the customer unless the return is due to:</p>
+                <ul>
+                    <li>Wrong item shipped</li>
+                    <li>Defective or damaged item</li>
+                    <li>Our error in fulfillment</li>
+                </ul>
+                <p>We recommend using a trackable shipping method and purchasing shipping insurance for valuable items.
+                </p>
+
+                <h3>Refunds</h3>
+                <p>Once we receive your returned item, we will process your refund within 5-7 business days:</p>
+                <ul>
+                    <li>Refunds will be issued to the original payment method</li>
+                    <li>You will receive a confirmation email once the refund is processed</li>
+                    <li>Shipping costs are non-refundable except in cases of our error</li>
+                    <li>Custom items are not eligible for refunds unless defective</li>
+                </ul>
+
+                <h2>3. Exchanges</h2>
+                <h3>Exchange Policy</h3>
+                <p>We offer exchanges for items that meet our return criteria:</p>
+                <ul>
+                    <li>Exchanges are subject to availability of the new item</li>
+                    <li>You may need to pay any price difference for the new item</li>
+                    <li>Exchange shipping costs are the responsibility of the customer</li>
+                    <li>Custom items cannot be exchanged unless defective</li>
+                </ul>
+
+                <h3>How to Request an Exchange</h3>
+                <p>To request an exchange:</p>
+                <ol>
+                    <li>Contact customer service within 14 days of delivery</li>
+                    <li>Specify the item you wish to exchange and the new item you want</li>
+                    <li>We will confirm availability and provide exchange instructions</li>
+                    <li>Return the original item following our return process</li>
+                    <li>We will ship the new item once the original is received</li>
+                </ol>
+
+                <h2>4. Damaged or Defective Items</h2>
+                <h3>What to Do</h3>
+                <p>If you receive a damaged or defective item:</p>
+                <ul>
+                    <li>Inspect your order upon delivery</li>
+                    <li>Take photos of any damage or defects</li>
+                    <li>Contact us immediately at purpleray23@gmail.com</li>
+                    <li>Provide your order number and photos of the issue</li>
+                </ul>
+
+                <h3>Our Commitment</h3>
+                <p>We will resolve any quality issues promptly:</p>
+                <ul>
+                    <li>Free return shipping for defective items</li>
+                    <li>Full refund or replacement at your preference</li>
+                    <li>Priority handling for quality issues</li>
+                    <li>Investigation to prevent future occurrences</li>
+                </ul>
+
+                <h2>5. Custom Tailoring Specifics</h2>
+                <h3>Measurements & Fit</h3>
+                <p>For custom tailored items:</p>
+                <ul>
+                    <li>Accurate measurements are the customer's responsibility</li>
+                    <li>We are not liable for garments that don't fit due to incorrect measurements</li>
+                    <li>Minor fit adjustments may be available for an additional fee</li>
+                    <li>Custom items cannot be returned or exchanged unless defective</li>
+                </ul>
+
+                <h3>Production Issues</h3>
+                <p>If there are issues with custom garment production:</p>
+                <ul>
+                    <li>Contact us within 7 days of receiving the item</li>
+                    <li>We will assess the issue and provide solutions</li>
+                    <li>Repair, remake, or refund options available for defects</li>
+                    <li>Additional fittings may be required for adjustments</li>
+                </ul>
+
+                <h2>6. International Shipping</h2>
+                <p>Currently, we only ship within South Africa. For international inquiries, please contact us at
+                    purpleray23@gmail.com to discuss options and pricing.</p>
+
+                <h2>7. Contact Information</h2>
+                <p>If you have questions about shipping or returns, please contact us:</p>
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> Email: purpleray23@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> WhatsApp: 069 431 3721</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Address: Hammanskraal, Pretoria, South Africa</p>
+                </div>
+                <p><strong>Customer Service Hours:</strong> Monday - Friday: 9:00 AM - 5:00 PM (South African Time)</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                            data-src="images/footer-logo.png" alt="Predesigns Clothing Footer Logo"
+                            class="lazy-loading" loading="lazy" width="200" height="50">
+                    </div>
+                    <p>Quality tailor-made clothing from scratch with local love and taste. Est. 2019 by Josias Tlou.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://instagram.com/predesignsclothing" target="_blank"><i
+                                class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="index.html#collections">Collections</a></li>
+                        <li><a href="index.html#lookbook">Lookbook</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Shop Categories</h3>
+                    <ul>
+                        <li><a href="shop.html#streetwear">Streetwear</a></li>
+                        <li><a href="shop.html#traditional">Traditional Wear</a></li>
+                        <li><a href="shop.html#suits">Custom Suits</a></li>
+                        <li><a href="shop.html#dresses">Dresses & Gowns</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> Hammanskraal, Pretoria</li>
+                        <li><i class="fas fa-phone"></i> 069 431 3721</li>
+                        <li><i class="fas fa-envelope"></i> purpleray23@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <p>&copy; <span id="year"></span> Predesigns Clothing. All rights reserved.</p>
+                    <div class="footer-legal-links">
+                        <a href="privacy-policy.html">Privacy Policy</a>
+                        <a href="terms-of-service.html">Terms of Service</a>
+                        <a href="shipping-returns.html">Shipping & Returns</a>
+                        <a href="size-guide.html">Size Guide</a>
+                    </div>
+                </div>
+                <div class="trust-badges">
+                    <div class="trust-badge">
+                        <i class="fas fa-lock"></i>
+                        <span>Secure Checkout</span>
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-credit-card"></i>
+                        <span>Visa • Mastercard • PayPal</span>
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-shipping-fast"></i>
+                        <span>Fast Delivery</span>
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>30-Day Guarantee</span>
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-flag"></i>
+                        <span>Proudly South African</span>
+                    </div>
+                </div>
+                <div class="parent-company">
+                    <span>A</span>
+                    <a href="https://purpleraygroup.vercel.app" target="_blank" rel="noopener noreferrer">
+                        <img src="images/PRG LOGO.png" alt="Purple Ray Group" width="80">
+                    </a>
+                    <span>Brand</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+
+    <!-- Core Utilities & Managers -->
+    <script src="js/env.js"></script>
+    <script src="js/config.js" defer></script>
+    <script src="js/firebase-config.js" defer></script>
+    <script src="js/auth.js" defer></script>
+    <script src="js/utils.js" defer></script>
+    <script src="js/lazy-load.js" defer></script>
+    <script src="js/ui-manager.js" defer></script>
+    <script src="js/product-manager.js" defer></script>
+    <script src="js/form-manager.js" defer></script>
+    <script src="snipcart-config.js" defer></script>
+
+    <!-- Page Logic -->
+    <script src="js/main.js" defer></script>
+
+    <!-- App Initializer -->
+    <script src="js/app-init.js" defer></script>
+
+    <!-- External Libraries -->
+    <script async src="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.js"></script>
+
+    <script>
+        // Update year
+        document.addEventListener('DOMContentLoaded', function () {
+            const yearEl = document.getElementById('year');
+            if (yearEl) yearEl.textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+
+</html>

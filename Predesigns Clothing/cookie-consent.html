@@ -1,0 +1,70 @@
+<!-- Cookie Consent Banner -->
+<div class="cookie-consent-banner" id="cookieConsentBanner">
+    <div class="cookie-consent-content">
+        <div class="cookie-consent-text">
+            <h4>🍪 We use cookies</h4>
+            <p>Our website uses cookies to enhance your browsing experience, analyze site traffic, and personalize
+                content.
+                By continuing to use our site, you consent to our use of cookies in accordance with our
+                <a href="privacy-policy.html" target="_blank">Privacy Policy</a>.
+            </p>
+        </div>
+        <div class="cookie-consent-buttons">
+            <button class="btn btn-secondary" onclick="manageCookiePreferences()">Manage Preferences</button>
+            <button class="btn btn-primary" onclick="acceptAllCookies()">Accept All</button>
+        </div>
+    </div>
+</div>
+
+<!-- Cookie Preferences Modal -->
+<div class="cookie-modal" id="cookieModal">
+    <div class="cookie-modal-content">
+        <span class="cookie-modal-close" onclick="closeCookieModal()">&times;</span>
+        <h2>Cookie Preferences</h2>
+        <p>Customize which cookies you accept. <a href="privacy-policy.html" target="_blank">Learn more</a></p>
+
+        <div class="cookie-preference-group">
+            <div class="cookie-preference-header">
+                <label class="cookie-toggle">
+                    <input type="checkbox" id="essentialCookies" checked disabled>
+                    <span class="cookie-toggle-slider"></span>
+                </label>
+                <div class="cookie-preference-info">
+                    <h4>Essential Cookies</h4>
+                    <p>Required for the website to function properly. Cannot be disabled.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cookie-preference-group">
+            <div class="cookie-preference-header">
+                <label class="cookie-toggle">
+                    <input type="checkbox" id="analyticsCookies">
+                    <span class="cookie-toggle-slider"></span>
+                </label>
+                <div class="cookie-preference-info">
+                    <h4>Analytics Cookies</h4>
+                    <p>Help us understand how visitors interact with our site.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cookie-preference-group">
+            <div class="cookie-preference-header">
+                <label class="cookie-toggle">
+                    <input type="checkbox" id="marketingCookies">
+                    <span class="cookie-toggle-slider"></span>
+                </label>
+                <div class="cookie-preference-info">
+                    <h4>Marketing Cookies</h4>
+                    <p>Allow us to show you relevant content and offers.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cookie-modal-actions">
+            <button class="btn btn-secondary" onclick="saveCookiePreferences()">Save Preferences</button>
+            <button class="btn btn-primary" onclick="acceptAllCookies()">Accept All</button>
+        </div>
+    </div>
+</div>

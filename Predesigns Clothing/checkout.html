@@ -1,0 +1,418 @@
+!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Predesigns Clothing</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cart-modal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h2><a href="index.html">PREDESIGNS</a></h2>
+                </div>
+                <nav class="nav-menu">
+                    <ul class="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="lookbook.html">Lookbook</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <div class="cart-container">
+                        <a href="#" class="cart-icon" onclick="showCartContents()">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span class="cart-count" id="cart-count">0</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Checkout Page Content -->
+    <section class="checkout-page">
+        <div class="container">
+            <div class="checkout-header">
+                <h1><i class="fas fa-check-circle"></i> Checkout</h1>
+                <p>Complete your purchase by making a bank transfer</p>
+            </div>
+
+            <!-- Order Summary -->
+            <div class="order-summary">
+                <h2>Order Summary</h2>
+                <div id="order-items">
+                    <!-- Order items will be populated here -->
+                </div>
+                <div class="order-totals">
+                    <div class="total-item">
+                        <span>Subtotal:</span>
+                        <span id="subtotal-amount">R0.00</span>
+                    </div>
+                    <div class="total-item">
+                        <span>Delivery Fee:</span>
+                        <span id="delivery-fee-amount">R0.00</span>
+                    </div>
+                    <div class="total-item total-final">
+                        <span>Total:</span>
+                        <span id="total-amount">R0.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Delivery Options -->
+            <div class="delivery-options-section">
+                <h2><i class="fas fa-truck"></i> Delivery Options</h2>
+                <div class="delivery-options">
+                    <div class="delivery-option">
+                        <input type="radio" id="local-delivery-checkout" name="delivery-checkout" value="local"
+                            onchange="updateDeliveryAndRecalculate('local')">
+                        <label for="local-delivery-checkout">
+                            <div class="option-header">
+                                <span class="delivery-title">Local Delivery</span>
+                                <span class="delivery-price">R60</span>
+                            </div>
+                            <p>Within Hammanskraal area - 1-3 business days</p>
+                        </label>
+                    </div>
+                    <div class="delivery-option">
+                        <input type="radio" id="nationwide-delivery-checkout" name="delivery-checkout"
+                            value="nationwide" onchange="updateDeliveryAndRecalculate('nationwide')">
+                        <label for="nationwide-delivery-checkout">
+                            <div class="option-header">
+                                <span class="delivery-title">Nationwide Delivery</span>
+                                <span class="delivery-price">R100</span>
+                            </div>
+                            <p>Across South Africa - 3-7 business days</p>
+                        </label>
+                    </div>
+                    <div class="delivery-option">
+                        <input type="radio" id="global-delivery-checkout" name="delivery-checkout" value="global"
+                            onchange="updateDeliveryAndRecalculate('global')">
+                        <label for="global-delivery-checkout">
+                            <div class="option-header">
+                                <span class="delivery-title">Global Delivery</span>
+                                <span class="delivery-price">R260</span>
+                            </div>
+                            <p>International shipping - 7-14 business days</p>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Currency Options -->
+            <div class="currency-section">
+                <h2><i class="fas fa-globe"></i> Currency</h2>
+                <div class="currency-options">
+                    <div class="currency-option">
+                        <input type="radio" id="zar-currency-checkout" name="currency-checkout" value="zar"
+                            onchange="updateCurrencyAndRecalculate('zar')">
+                        <label for="zar-currency-checkout">
+                            <span class="currency-name">ZAR</span>
+                            <span class="currency-desc">South African Rand</span>
+                        </label>
+                    </div>
+                    <div class="currency-option">
+                        <input type="radio" id="usd-currency-checkout" name="currency-checkout" value="usd"
+                            onchange="updateCurrencyAndRecalculate('usd')">
+                        <label for="usd-currency-checkout">
+                            <span class="currency-name">USD</span>
+                            <span class="currency-desc">US Dollar</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Payment Information -->
+            <div class="payment-info">
+                <h2><i class="fas fa-university"></i> Bank Transfer Details</h2>
+                <div class="bank-details">
+                    <div class="bank-info">
+                        <h3>First National Bank (FNB)</h3>
+                        <div class="bank-detail">
+                            <label>Account Name:</label>
+                            <span>Predesigns Clothing</span>
+                        </div>
+                        <div class="bank-detail">
+                            <label>Account Number:</label>
+                            <span>62864629341</span>
+                        </div>
+                        <div class="bank-detail">
+                            <label>Branch Code:</label>
+                            <span>250655</span>
+                        </div>
+                        <div class="bank-detail">
+                            <label>Reference:</label>
+                            <span>Your Full Name</span>
+                        </div>
+                    </div>
+                    <div class="payment-steps">
+                        <h3>Payment Steps:</h3>
+                        <ol>
+                            <li>Make a bank transfer to the account details above</li>
+                            <li>Use your full name as the reference</li>
+                            <li>Send proof of payment to <a
+                                    href="mailto:purpleray23@gmail.com">purpleray23@gmail.com</a></li>
+                            <li>Wait for confirmation (within 24 hours)</li>
+                            <li>Your order will be processed and shipped</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Delivery Information -->
+            <div class="delivery-info">
+                <h2><i class="fas fa-truck"></i> Delivery Information</h2>
+                <div class="delivery-details">
+                    <div class="delivery-item">
+                        <h3>Delivery Areas</h3>
+                        <ul>
+                            <li><strong>Local:</strong> Hammanskraal area</li>
+                            <li><strong>Nationwide:</strong> All South African provinces</li>
+                            <li><strong>Global:</strong> International destinations</li>
+                        </ul>
+                    </div>
+                    <div class="delivery-item">
+                        <h3>Delivery Times</h3>
+                        <ul>
+                            <li><strong>Local:</strong> 1-3 business days</li>
+                            <li><strong>Nationwide:</strong> 3-7 business days</li>
+                            <li><strong>Global:</strong> 7-14 business days</li>
+                        </ul>
+                    </div>
+                    <div class="delivery-item">
+                        <h3>Tracking</h3>
+                        <p>You will receive tracking information via email once your order ships</p>
+                    </div>
+                    <div class="delivery-item">
+                        <h3>Returns</h3>
+                        <p>30-day return policy for unused items in original condition</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="contact-section">
+                <h2><i class="fas fa-envelope"></i> Need Help?</h2>
+                <div class="contact-options">
+                    <div class="contact-option">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>purpleray23@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-option">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <h3>WhatsApp</h3>
+                            <p><a href="https://wa.me/27694313721" target="_blank">069 431 3721</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-option">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Location</h3>
+                            <p>Hammanskraal, Pretoria, South Africa</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Continue Shopping Button -->
+            <div class="checkout-actions">
+                <a href="shop.html" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left"></i> Continue Shopping
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Predesigns</h3>
+                    <p>Quality tailor-made clothing from scratch with local love and taste. Est. 2019 by Josias Tlou in
+                        Hammanskraal, Pretoria.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="lookbook.html">Lookbook</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="https://wa.me/27694313721" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="mailto:purpleray23@gmail.com"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Predesigns Clothing. All rights reserved.</p>
+                    <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem;">
+                        Predesigns Clothing · Division of Purple Ray Group (Pty) Ltd<br>
+                        CIPC Reg No: 2026/693010/07 · SARS Tax Ref: 9462540239
+                    </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Dependencies -->
+    <script src="js/config.js" defer></script>
+    <script src="js/cart-utils.js" defer></script>
+    <script src="js/cart.js" defer></script>
+    <script src="js/payment.js" defer></script>
+
+    <!-- Shared script stack -->
+    <script src="js/config.js" defer></script>
+    <script src="js/utils.js" defer></script>
+    <script src="js/lazy-load.js" defer></script>
+    <script src="snipcart-config.js" defer></script>
+    <script src="js/payment.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/app-init.js" defer></script>
+
+    <script>
+        // Populate order summary on page load
+        document.addEventListener('DOMContentLoaded', function () {
+            updateOrderSummary();
+            loadSavedPreferences();
+        });
+
+        // Load saved delivery and currency preferences
+        function loadSavedPreferences() {
+            const savedDeliveryOption = localStorage.getItem('deliveryOption') || 'local';
+            const savedCurrency = localStorage.getItem('currency') || 'zar';
+
+            // Set delivery option
+            document.getElementById(`${savedDeliveryOption}-delivery-checkout`).checked = true;
+
+            // Set currency option
+            document.getElementById(`${savedCurrency}-currency-checkout`).checked = true;
+        }
+
+        // Update order summary function using CartStorage
+        function updateOrderSummary() {
+            // Use CartStorage if available, fallback to localStorage
+            let cart = [];
+            if (typeof CartStorage !== 'undefined') {
+                cart = CartStorage.getCart();
+            } else {
+                // Fallback to direct localStorage access
+                try {
+                    const storedCart = localStorage.getItem('predesigns-cart');
+                    cart = storedCart ? JSON.parse(storedCart) : [];
+                } catch (error) {
+                    console.error('Error loading cart from localStorage:', error);
+                    cart = [];
+                }
+            }
+
+            const orderItemsContainer = document.getElementById('order-items');
+            const subtotalAmount = document.getElementById('subtotal-amount');
+            const deliveryFeeAmount = document.getElementById('delivery-fee-amount');
+            const totalAmount = document.getElementById('total-amount');
+
+            // Clear previous items
+            orderItemsContainer.innerHTML = '';
+
+            // Get current preferences
+            const deliveryOption = localStorage.getItem('deliveryOption') || 'local';
+            const currency = localStorage.getItem('currency') || 'zar';
+
+            // Calculate totals
+            let subtotal = 0;
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                subtotal += itemTotal;
+
+                // Add item to order summary
+                const itemElement = document.createElement('div');
+                itemElement.className = 'order-item';
+
+                // Escape HTML to prevent XSS
+                const escape = (str) => {
+                    const div = document.createElement('div');
+                    div.textContent = str;
+                    return div.innerHTML;
+                };
+
+                itemElement.innerHTML = `
+                    <div class="item-details">
+                        <img src="${escape(item.image || '')}" alt="${escape(item.name)}" onerror="this.src='images/placeholder.jpg'">
+                        <div class="item-info">
+                            <h4>${escape(item.name)}</h4>
+                            <p>Quantity: ${item.quantity}</p>
+                            <p>Unit Price: R${item.price.toFixed(2)}</p>
+                        </div>
+                    </div>
+                    <div class="item-total">
+                        R${itemTotal.toFixed(2)}
+                    </div>
+                `;
+                orderItemsContainer.appendChild(itemElement);
+            });
+
+            // Update amounts with current preferences
+            const deliveryFee = calculateDeliveryFee(subtotal, deliveryOption);
+            const total = subtotal + deliveryFee;
+
+            // Convert to selected currency if needed
+            if (currency === 'usd') {
+                const exchangeRate = 18.5; // 1 USD = 18.5 ZAR
+                subtotalAmount.textContent = `$${(subtotal / exchangeRate).toFixed(2)}`;
+                deliveryFeeAmount.textContent = `$${(deliveryFee / exchangeRate).toFixed(2)}`;
+                totalAmount.textContent = `$${(total / exchangeRate).toFixed(2)}`;
+            } else {
+                subtotalAmount.textContent = `R${subtotal.toFixed(2)}`;
+                deliveryFeeAmount.textContent = `R${deliveryFee.toFixed(2)}`;
+                totalAmount.textContent = `R${total.toFixed(2)}`;
+            }
+        }
+
+        // Update delivery option and recalculate totals
+        function updateDeliveryAndRecalculate(option) {
+            localStorage.setItem('deliveryOption', option);
+            updateOrderSummary();
+        }
+
+        // Update currency and recalculate totals
+        function updateCurrencyAndRecalculate(currency) {
+            localStorage.setItem('currency', currency);
+            updateOrderSummary();
+        }
+
+        // Calculate delivery fee (same function as in main.js)
+        function calculateDeliveryFee(subtotal, deliveryOption) {
+            switch (deliveryOption) {
+                case 'local':
+                    return 60; // R60 for local delivery
+                case 'nationwide':
+                    return 100; // R100 for nationwide delivery
+                case 'global':
+                    return 260; // R260 for global delivery
+                default:
+                    return 60; // Default to local
+            }
+        }
+    </script>
+</body>
+
+</html>

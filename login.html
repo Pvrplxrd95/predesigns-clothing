@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.snipcart.com https://accounts.google.com https://apis.google.com https://www.gstatic.com https://giscus.app; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://cdn.snipcart.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://*.firebaseio.com https://*.googleapis.com https://formspree.io https://cdn.snipcart.com https://giscus.app; frame-src https://accounts.google.com https://giscus.app; form-action 'self' https://formspree.io;">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Predesigns Clothing</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .redirect-message {
+            text-align: center;
+            padding: 3rem 1rem;
+            margin: 2rem auto;
+            max-width: 600px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .redirect-message h2 {
+            color: #6A0DAD;
+            margin-bottom: 1rem;
+        }
+
+        .btn {
+            background: #6A0DAD;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            text-decoration: none;
+            display: inline-block;
+            margin: 1rem 0.5rem;
+        }
+
+        .btn:hover {
+            background: #5a0c9d;
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+        }
+
+        .btn-secondary:hover {
+            background: #5a6268;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.jpg" alt="Predesigns Clothing Logo"></a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="redirect-message">
+            <h2>Login to Your Account</h2>
+            <p>For a faster and more convenient experience, please use our modal login system directly from any page.
+            </p>
+
+            <div class="redirect-buttons">
+                <a href="index.html" class="btn">Go to Homepage</a>
+                <a href="index.html" class="btn btn-secondary">Use Modal Login</a>
+            </div>
+
+            <div style="margin-top: 2rem;">
+                <p>Or navigate to other pages:</p>
+                <a href="shop.html" class="btn btn-secondary">Shop</a>
+                <a href="blog.html" class="btn btn-secondary">Blog</a>
+                <a href="contact.html" class="btn btn-secondary">Contact</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year"></span> Predesigns Clothing. All rights reserved.</p>
+            <div class="trust-badges">
+                <div class="trust-badge">
+                    <i class="fas fa-lock"></i>
+                    <span>Secure Checkout</span>
+                </div>
+                <div class="trust-badge">
+                    <i class="fas fa-credit-card"></i>
+                    <span>Visa • Mastercard • PayPal</span>
+                </div>
+                <div class="trust-badge">
+                    <i class="fas fa-shipping-fast"></i>
+                    <span>Fast Delivery</span>
+                </div>
+                <div class="trust-badge">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>30-Day Guarantee</span>
+                </div>
+                <div class="trust-badge">
+                    <i class="fas fa-flag"></i>
+                    <span>Proudly South African</span>
+                </div>
+            </div>
+            <div class="parent-company">
+                <span>A</span>
+                <a href="https://purpleraygroup.vercel.app" target="_blank" rel="noopener noreferrer">
+                    <img src="images/PRG LOGO.png" alt="Purple Ray Group" width="80">
+                </a>
+                <span>Brand</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Auto-redirect to homepage after 3 seconds
+        setTimeout(() => {
+            window.location.href = 'index.html';
+        }, 3000);
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const yearEl = document.getElementById('year');
+            if (yearEl) yearEl.textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+
+</html>

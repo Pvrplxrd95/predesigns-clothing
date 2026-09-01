@@ -1,0 +1,114 @@
+/* Lazy Loading Styles */
+
+/* Base styles for lazy-loading images */
+img.lazy-loading {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    will-change: opacity;
+    background-color: #f5f5f5;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><rect fill="%23e0e0e0" width="40" height="40"/></svg>');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* When image is loaded */
+img.lazy-loaded {
+    opacity: 1;
+    background: none;
+}
+
+/* Error state */
+img.lazy-load-error {
+    background-color: #ffebee;
+    position: relative;
+}
+
+img.lazy-load-error::after {
+    content: '⚠';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: #d32f2f;
+}
+
+/* Responsive images */
+picture {
+    display: block;
+    line-height: 0;
+}
+
+/* Background image loading */
+.bg-lazy-load {
+    background-color: #f5f5f5;
+    background-image: none !important;
+    transition: background-image 0.3s ease-in-out;
+}
+
+.bg-lazy-load.lazy-loaded {
+    background-color: transparent;
+}
+
+/* Loading animation */
+@keyframes lazyLoading {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+.lazy-loading {
+    position: relative;
+    overflow: hidden;
+}
+
+.lazy-loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(90deg, #f5f5f5 0%, #e0e0e0 50%, #f5f5f5 100%);
+    animation: lazyLoading 1.5s infinite;
+    z-index: 1;
+}
+
+/* Hide the loading animation when image is loaded */
+.lazy-loaded::after {
+    display: none;
+}
+
+/* Gallery images: let the gallery CSS control opacity, not lazy-load */
+.image-gallery .secondary-image.lazy-loaded {
+    opacity: 0; /* Gallery hover state will set opacity: 1 */
+}
+
+.image-gallery img.lazy-loading {
+    position: absolute; /* Prevent .lazy-loading position: relative from breaking gallery layout */
+}
+
+/* Responsive images */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Aspect ratio containers for responsive images */
+.aspect-ratio-box {
+    position: relative;
+    width: 100%;
+    padding-top: 133.33%; /* 3:4 aspect ratio by default */
+    overflow: hidden;
+}
+
+.aspect-ratio-box img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

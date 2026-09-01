@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Contact Predesigns Clothing - Urban tailoring and custom fit streetwear from Hammanskraal. Get in touch for custom orders, consultations, and inquiries.">
+    <meta name="keywords"
+        content="contact Predesigns, custom clothing Hammanskraal, urban tailoring Pretoria, custom fit streetwear, made to measure clothing South Africa">
+    <meta name="author" content="Predesigns Clothing">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://predesigns-clothing.vercel.app/contact.html">
+    <meta property="og:title" content="Contact - Predesigns Clothing | Urban Tailoring & Custom Fit">
+    <meta property="og:description"
+        content="Get in touch with Predesigns Clothing for custom orders, consultations, and inquiries. Streetwear built for fit — factory price, tailor quality.">
+    <meta property="og:image" content="images/contact-og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://predesigns-clothing.vercel.app/contact.html">
+    <meta property="twitter:title" content="Contact - Predesigns Clothing | Urban Tailoring & Custom Fit">
+    <meta property="twitter:description"
+        content="Get in touch for custom orders and consultations.">
+    <meta property="twitter:image" content="images/contact-twitter-image.jpg">
+
+    <title>Contact - Predesigns Clothing | Urban Tailoring & Custom Fit</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .contact-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-item i {
+            font-size: 2rem;
+            color: #6A0DAD;
+            margin-bottom: 1rem;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .btn {
+            background: #6A0DAD;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 1rem;
+        }
+
+        .btn:hover {
+            background: #5a0c9d;
+        }
+
+        @media (max-width: 768px) {
+            .contact-info {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.jpg" alt="Predesigns Clothing Logo"></a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="contact-container">
+            <h1>Contact Us</h1>
+            <p>We'd love to hear from you! Get in touch with our team for custom orders, consultations, or any
+                questions.</p>
+
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Location</h3>
+                    <p>Hammanskraal, Pretoria</p>
+                    <p>Gauteng, South Africa</p>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <h3>Phone</h3>
+                    <p><a href="tel:+27694313721">069 431 3721</a></p>
+                    <p>WhatsApp Available</p>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p><a href="mailto:purpleray23@gmail.com">purpleray23@gmail.com</a></p>
+                    <p>Response within 24 hours</p>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <h3>Hours</h3>
+                    <p>Monday - Saturday</p>
+                    <p>9:00 AM - 6:00 PM</p>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h2>Send Us a Message</h2>
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number (WhatsApp) *</label>
+                        <input type="tel" id="phone" name="phone" placeholder="069 431 3721" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="service-type">Service Type *</label>
+                        <select id="service-type" name="service-type" required>
+                            <option value="">Select a service...</option>
+                            <option value="custom-order">Custom Clothing Order</option>
+                            <option value="consultation">Design Consultation</option>
+                            <option value="bulk-order">Bulk/Wholesale Order</option>
+                            <option value="collaboration">Collaboration</option>
+                            <option value="general">General Inquiry</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message"
+                            placeholder="Tell us about your project, needs, or questions..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="images/logo.jpg" alt="Predesigns Clothing">
+                    </div>
+                    <p>Quality tailor-made clothing from scratch with local love and taste. Est. 2019 by Josias Tlou.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://instagram.com/predesignsclothing" target="_blank"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Shop Categories</h3>
+                    <ul>
+                        <li><a href="shop.html#streetwear">Streetwear</a></li>
+                        <li><a href="shop.html#traditional">Traditional Wear</a></li>
+                        <li><a href="shop.html#suits">Custom Suits</a></li>
+                        <li><a href="shop.html#dresses">Dresses & Gowns</a></li>
+                        <li><a href="shop.html#sale">Sale Items</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> Hammanskraal, Pretoria</li>
+                        <li><i class="fas fa-phone"></i> 069 431 3721</li>
+                        <li><i class="fas fa-envelope"></i> purpleray23@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <p>&copy; 2025 Predesigns Clothing. All rights reserved.</p>
+                    <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem;">
+                        Predesigns Clothing · Division of Purple Ray Group (Pty) Ltd<br>
+                        CIPC Reg No: 2026/693010/07 · SARS Tax Ref: 9462540239
+                    </p>
+                    <div class="footer-legal-links">
+                        <a href="privacy-policy.html">Privacy Policy</a>
+                        <a href="terms-of-service.html">Terms of Service</a>
+                        <a href="shipping-returns.html">Shipping & Returns</a>
+                        <a href="size-guide.html">Size Guide</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+            const submitButton = this.querySelector('button[type="submit"]');
+            const originalText = submitButton.textContent;
+
+            // Disable button and show loading state
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending...';
+
+            // Simulate form submission
+            setTimeout(() => {
+                showMessage('Thank you for your message! We\'ll contact you within 24 hours.', 'success');
+                this.reset();
+
+                // Re-enable button
+                submitButton.disabled = false;
+                submitButton.textContent = originalText;
+            }, 2000);
+        });
+
+        // Message display function
+        function showMessage(message, type = 'info') {
+            // Remove any existing messages
+            const existingMessages = document.querySelectorAll('.message-toast');
+            existingMessages.forEach(msg => msg.remove());
+
+            // Create message element
+            const messageElement = document.createElement('div');
+            messageElement.className = `message-toast message-${type}`;
+            messageElement.innerHTML = `
+                <div class="message-content">
+                    ${type === 'success' ? '<i class="fas fa-check-circle"></i>' :
+                    type === 'error' ? '<i class="fas fa-exclamation-circle"></i>' :
+                        '<i class="fas fa-info-circle"></i>'}
+                    <span>${message}</span>
+                </div>
+                <button class="message-close">&times;</button>
+            `;
+
+            // Add to DOM
+            document.body.appendChild(messageElement);
+
+            // Auto-hide after 5 seconds
+            setTimeout(() => {
+                if (messageElement.parentNode) {
+                    messageElement.remove();
+                }
+            }, 5000);
+
+            // Close button functionality
+            const closeBtn = messageElement.querySelector('.message-close');
+            closeBtn.addEventListener('click', () => {
+                messageElement.remove();
+            });
+        }
+    </script>
+</body>
+
+</html>

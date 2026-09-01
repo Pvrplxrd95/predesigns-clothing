@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.snipcart.com https://accounts.google.com https://apis.google.com https://www.gstatic.com https://giscus.app; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://cdn.snipcart.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://*.firebaseio.com https://*.googleapis.com https://formspree.io https://cdn.snipcart.com https://giscus.app; frame-src https://accounts.google.com https://giscus.app; form-action 'self' https://formspree.io;">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Predesigns Clothing Size Guide - Find your perfect fit with our comprehensive sizing chart and measurement guide.">
+    <meta name="keywords"
+        content="size guide, clothing sizes, measurement guide, fit guide, Predesigns Clothing, size chart">
+    <meta name="author" content="Predesigns Clothing">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://predesignsclothing.rf.gd/size-guide.html">
+    <meta property="og:title" content="Size Guide - Predesigns Clothing">
+    <meta property="og:description"
+        content="Find your perfect fit with our comprehensive sizing chart and measurement guide.">
+    <meta property="og:image" content="images/size-guide-og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://predesignsclothing.rf.gd/size-guide.html">
+    <meta property="twitter:title" content="Size Guide - Predesigns Clothing">
+    <meta property="twitter:description" content="Find your perfect fit with our comprehensive sizing chart.">
+    <meta property="twitter:image" content="images/size-guide-twitter-image.jpg">
+
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.snipcart.com" crossorigin>
+
+    <!-- Preload critical fonts -->
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+    <!-- Load non-critical CSS asynchronously -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.css" media="print"
+        onload="this.media='all'">
+
+    <!-- Main CSS -->
+    <link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="css/responsive.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="css/legal.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="css/lazy-load.css" media="print" onload="this.media='all'">
+
+    <title>Size Guide - Predesigns Clothing | Find Your Perfect Fit</title>
+
+    <!-- Fallback for browsers that don't support preload -->
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/responsive.css">
+        <link rel="stylesheet" href="css/legal.css">
+        <link rel="stylesheet" href="css/lazy-load.css">
+    </noscript>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                            data-src="images/logo.jpg" alt="Predesigns Clothing Logo" class="lazy-loading"
+                            loading="lazy" width="150" height="50">
+                    </a>
+                </div>
+
+                <div class="nav-menu">
+                    <ul class="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="lookbook.html">Lookbook</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-actions">
+                    <div class="auth-container">
+                        <div class="auth-buttons">
+                            <button class="btn btn-secondary" onclick="openLoginModal()">
+                                <i class="fas fa-sign-in-alt"></i> Login
+                            </button>
+                            <button class="btn btn-primary" onclick="openRegisterModal()">
+                                <i class="fas fa-user-plus"></i> Sign Up
+                            </button>
+                        </div>
+                    </div>
+                    <div class="cart-container">
+                        <button class="snipcart-checkout cart-icon" aria-label="Open cart">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span class="snipcart-items-count cart-count">0</span>
+                        </button>
+                    </div>
+                    <div class="mobile-menu-toggle">
+                        <span></span><span></span><span></span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-content">
+            <ul class="mobile-nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="index.html#lookbook">Lookbook</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+
+            <div class="mobile-auth-buttons">
+                <button class="btn btn-secondary"
+                    onclick="if(window.uiManager) { uiManager.closeMobileMenu(); openLoginModal(); }">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </button>
+                <button class="btn btn-primary"
+                    onclick="if(window.uiManager) { uiManager.closeMobileMenu(); openRegisterModal(); }">
+                    <i class="fas fa-user-plus"></i> Sign Up
+                </button>
+            </div>
+
+            <div class="mobile-contact-info">
+                <p><i class="fas fa-phone"></i> WhatsApp: 069 431 3721</p>
+                <p><i class="fas fa-envelope"></i> purpleray23@gmail.com</p>
+                <div class="mobile-social-links">
+                    <a href="https://instagram.com/predesignsclothing" target="_blank"><i
+                            class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-menu-backdrop"></div>
+
+    <section class="legal-hero">
+        <div class="container">
+            <div class="legal-hero-content">
+                <h1 class="legal-hero-title">Size Guide</h1>
+                <p class="legal-hero-subtitle">Find Your Perfect Fit</p>
+                <p class="legal-hero-description">Use our comprehensive size guide to find the perfect fit for your
+                    Predesigns Clothing. Measure yourself accurately for the best results.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="legal-content">
+        <div class="container">
+            <div class="legal-text">
+                <div class="last-updated">
+                    <p>Last Updated: March 15, 2024</p>
+                </div>
+
+                <h2>How to Measure Yourself</h2>
+                <p>For the most accurate measurements, wear minimal clothing and use a soft measuring tape. If possible,
+                    have someone assist you with taking measurements.</p>
+
+                <div class="measurement-guide">
+                    <div class="measurement-item">
+                        <h3>Chest/Bust</h3>
+                        <p>Measure around the fullest part of your chest, keeping the tape parallel to the floor. Make
+                            sure the tape is not too tight or too loose.</p>
+                        <div class="measurement-tip">
+                            <i class="fas fa-lightbulb"></i>
+                            <p><strong>Tip:</strong> For women, measure over a bra that you would normally wear.</p>
+                        </div>
+                    </div>
+
+                    <div class="measurement-item">
+                        <h3>Waist</h3>
+                        <p>Measure around your natural waistline, which is the narrowest part of your torso, usually
+                            just above the belly button.</p>
+                        <div class="measurement-tip">
+                            <i class="fas fa-lightbulb"></i>
+                            <p><strong>Tip:</strong> Keep the tape snug but not tight. Don't suck in your stomach.</p>
+                        </div>
+                    </div>
+
+                    <div class="measurement-item">
+                        <h3>Hips</h3>
+                        <p>Measure around the fullest part of your hips and buttocks, keeping the tape parallel to the
+                            floor.</p>
+                        <div class="measurement-tip">
+                            <i class="fas fa-lightbulb"></i>
+                            <p><strong>Tip:</strong> Stand with your feet together for the most accurate measurement.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="measurement-item">
+                        <h3>Inseam</h3>
+                        <p>Measure from the top of your inner leg down to where you want the pants to end (ankle,
+                            mid-calf, etc.).</p>
+                        <div class="measurement-tip">
+                            <i class="fas fa-lightbulb"></i>
+                            <p><strong>Tip:</strong> You can also measure an existing pair of well-fitting pants from
+                                crotch to hem.</p>
+                        </div>
+                    </div>
+
+                    <div class="measurement-item">
+                        <h3>Shoulder Width</h3>
+                        <p>Measure from the edge of one shoulder to the edge of the other, across the back.</p>
+                        <div class="measurement-tip">
+                            <i class="fas fa-lightbulb"></i>
+                            <p><strong>Tip:</strong> Find the bony point at the edge of your shoulder for accurate
+                                measurement.</p>
+                        </div>
+                    </div>
+
+                    <div class="measurement-item">
+                        <h3>Sleeve Length</h3>
+                        <p>Measure from the edge of your shoulder (where the sleeve starts) down to your wrist bone.</p>
+                        <div class="measurement-tip">
+                            <i class="fas fa-lightbulb"></i>
+                            <p><strong>Tip:</strong> Bend your arm slightly for a more natural measurement.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>Men's Size Chart</h2>
+                <div class="size-chart">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Size</th>
+                                <th>Chest (cm)</th>
+                                <th>Waist (cm)</th>
+                                <th>Hips (cm)</th>
+                                <th>Recommended Height</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>XS</td>
+                                <td>86-91</td>
+                                <td>71-76</td>
+                                <td>86-91</td>
+                                <td>160-170cm</td>
+                            </tr>
+                            <tr>
+                                <td>S</td>
+                                <td>91-97</td>
+                                <td>76-81</td>
+                                <td>91-97</td>
+                                <td>165-175cm</td>
+                            </tr>
+                            <tr>
+                                <td>M</td>
+                                <td>97-104</td>
+                                <td>81-89</td>
+                                <td>97-104</td>
+                                <td>170-180cm</td>
+                            </tr>
+                            <tr>
+                                <td>L</td>
+                                <td>104-112</td>
+                                <td>89-97</td>
+                                <td>104-112</td>
+                                <td>175-185cm</td>
+                            </tr>
+                            <tr>
+                                <td>XL</td>
+                                <td>112-120</td>
+                                <td>97-107</td>
+                                <td>112-120</td>
+                                <td>180-190cm</td>
+                            </tr>
+                            <tr>
+                                <td>XXL</td>
+                                <td>120-128</td>
+                                <td>107-117</td>
+                                <td>120-128</td>
+                                <td>185-195cm</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2>Women's Size Chart</h2>
+                <div class="size-chart">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Size</th>
+                                <th>Chest/Bust (cm)</th>
+                                <th>Waist (cm)</th>
+                                <th>Hips (cm)</th>
+                                <th>Recommended Height</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>XS</td>
+                                <td>76-81</td>
+                                <td>61-66</td>
+                                <td>81-86</td>
+                                <td>155-165cm</td>
+                            </tr>
+                            <tr>
+                                <td>S</td>
+                                <td>81-86</td>
+                                <td>66-71</td>
+                                <td>86-91</td>
+                                <td>160-170cm</td>
+                            </tr>
+                            <tr>
+                                <td>M</td>
+                                <td>86-91</td>
+                                <td>71-76</td>
+                                <td>91-97</td>
+                                <td>165-175cm</td>
+                            </tr>
+                            <tr>
+                                <td>L</td>
+                                <td>91-97</td>
+                                <td>76-81</td>
+                                <td>97-104</td>
+                                <td>170-180cm</td>
+                            </tr>
+                            <tr>
+                                <td>XL</td>
+                                <td>97-104</td>
+                                <td>81-89</td>
+                                <td>104-112</td>
+                                <td>175-185cm</td>
+                            </tr>
+                            <tr>
+                                <td>XXL</td>
+                                <td>104-112</td>
+                                <td>89-97</td>
+                                <td>112-120</td>
+                                <td>180-190cm</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2>Pants Size Conversion</h2>
+                <div class="size-chart">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Waist (cm)</th>
+                                <th>Waist (inches)</th>
+                                <th>South African Size</th>
+                                <th>US Size</th>
+                                <th>UK Size</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>71</td>
+                                <td>28</td>
+                                <td>28</td>
+                                <td>28</td>
+                                <td>30</td>
+                            </tr>
+                            <tr>
+                                <td>74</td>
+                                <td>29</td>
+                                <td>29</td>
+                                <td>29</td>
+                                <td>31</td>
+                            </tr>
+                            <tr>
+                                <td>76</td>
+                                <td>30</td>
+                                <td>30</td>
+                                <td>30</td>
+                                <td>32</td>
+                            </tr>
+                            <tr>
+                                <td>79</td>
+                                <td>31</td>
+                                <td>31</td>
+                                <td>31</td>
+                                <td>33</td>
+                            </tr>
+                            <tr>
+                                <td>81</td>
+                                <td>32</td>
+                                <td>32</td>
+                                <td>32</td>
+                                <td>34</td>
+                            </tr>
+                            <tr>
+                                <td>84</td>
+                                <td>33</td>
+                                <td>33</td>
+                                <td>33</td>
+                                <td>35</td>
+                            </tr>
+                            <tr>
+                                <td>86</td>
+                                <td>34</td>
+                                <td>34</td>
+                                <td>34</td>
+                                <td>36</td>
+                            </tr>
+                            <tr>
+                                <td>89</td>
+                                <td>35</td>
+                                <td>35</td>
+                                <td>35</td>
+                                <td>37</td>
+                            </tr>
+                            <tr>
+                                <td>91</td>
+                                <td>36</td>
+                                <td>36</td>
+                                <td>36</td>
+                                <td>38</td>
+                            </tr>
+                            <tr>
+                                <td>94</td>
+                                <td>37</td>
+                                <td>37</td>
+                                <td>37</td>
+                                <td>39</td>
+                            </tr>
+                            <tr>
+                                <td>97</td>
+                                <td>38</td>
+                                <td>38</td>
+                                <td>38</td>
+                                <td>40</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2>Fitting Tips</h2>
+                <div class="fitting-tips">
+                    <div class="tip-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div class="tip-content">
+                            <h3>Streetwear Fit</h3>
+                            <p>Our streetwear collection is designed with a relaxed, comfortable fit. If you prefer a
+                                more fitted look, consider sizing down.</p>
+                        </div>
+                    </div>
+
+                    <div class="tip-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div class="tip-content">
+                            <h3>Custom Tailoring</h3>
+                            <p>For custom-made garments, provide your exact measurements. We'll create a pattern
+                                specifically for your body type.</p>
+                        </div>
+                    </div>
+
+                    <div class="tip-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div class="tip-content">
+                            <h3>Layering</h3>
+                            <p>Consider what you'll wear underneath when choosing sizes for jackets and outerwear.</p>
+                        </div>
+                    </div>
+
+                    <div class="tip-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div class="tip-content">
+                            <h3>Stretch Fabrics</h3>
+                            <p>Items with stretch content may fit more snugly. If between sizes, consider sizing down.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>Custom Tailoring Measurements</h2>
+                <p>For custom garments, we require more detailed measurements. When ordering custom clothing, we'll
+                    provide a comprehensive measurement guide and may require a fitting session.</p>
+                <p>Required measurements for custom items typically include:</p>
+                <ul>
+                    <li>Chest/Bust</li>
+                    <li>Waist</li>
+                    <li>Hips</li>
+                    <li>Shoulder width</li>
+                    <li>Sleeve length</li>
+                    <li>Chest to waist</li>
+                    <li>Waist to knee</li>
+                    <li>Outseam (waist to ankle)</li>
+                    <li>Neck circumference</li>
+                    <li>Bicep circumference</li>
+                    <li>Thigh circumference</li>
+                </ul>
+
+                <h2>Need Help?</h2>
+                <p>If you're unsure about your size or have questions about fit:</p>
+                <ul>
+                    <li>Check our product pages for specific garment measurements</li>
+                    <li>Contact our customer service at purpleray23@gmail.com</li>
+                    <li>Visit our store in Hammanskraal for in-person assistance</li>
+                    <li>WhatsApp us at 069 431 3721 for quick questions</li>
+                </ul>
+
+                <div class="measurement-reminder">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <p><strong>Important:</strong> All measurements are in centimeters. Custom-made garments require
+                        precise measurements for the best fit. When in doubt, choose the larger size or contact us for
+                        guidance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                            data-src="images/footer-logo.png" alt="Predesigns Clothing Footer Logo"
+                            class="lazy-loading" loading="lazy" width="200" height="50">
+                    </div>
+                    <p>Quality tailor-made clothing from scratch with local love and taste. Est. 2019 by Josias Tlou.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://instagram.com/predesignsclothing" target="_blank"><i
+                                class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="index.html#collections">Collections</a></li>
+                        <li><a href="index.html#lookbook">Lookbook</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Shop Categories</h3>
+                    <ul>
+                        <li><a href="shop.html#streetwear">Streetwear</a></li>
+                        <li><a href="shop.html#traditional">Traditional Wear</a></li>
+                        <li><a href="shop.html#suits">Custom Suits</a></li>
+                        <li><a href="shop.html#dresses">Dresses & Gowns</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> Hammanskraal, Pretoria</li>
+                        <li><i class="fas fa-phone"></i> 069 431 3721</li>
+                        <li><i class="fas fa-envelope"></i> purpleray23@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <p>&copy; <span id="year"></span> Predesigns Clothing. All rights reserved.</p>
+                    <div class="footer-legal-links">
+                        <a href="privacy-policy.html">Privacy Policy</a>
+                        <a href="terms-of-service.html">Terms of Service</a>
+                        <a href="shipping-returns.html">Shipping & Returns</a>
+                        <a href="size-guide.html">Size Guide</a>
+                    </div>
+                </div>
+                <div class="trust-badges">
+                    <div class="trust-badge">
+                        <i class="fas fa-lock"></i>
+                        <span>Secure Checkout</span>
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-credit-card"></i>
+                        <span>Visa • Mastercard • PayPal</span>
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-shipping-fast"></i>
+                        <span>Fast Delivery</span>
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>30-Day Guarantee</span>
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-flag"></i>
+                        <span>Proudly South African</span>
+                    </div>
+                </div>
+                <div class="parent-company">
+                    <span>A</span>
+                    <a href="https://purpleraygroup.vercel.app" target="_blank" rel="noopener noreferrer">
+                        <img src="images/PRG LOGO.png" alt="Purple Ray Group" width="80">
+                    </a>
+                    <span>Brand</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+
+    <!-- Core Utilities & Managers -->
+    <script src="js/env.js"></script>
+    <script src="js/config.js" defer></script>
+    <script src="js/firebase-config.js" defer></script>
+    <script src="js/auth.js" defer></script>
+    <script src="js/utils.js" defer></script>
+    <script src="js/lazy-load.js" defer></script>
+    <script src="js/ui-manager.js" defer></script>
+    <script src="js/product-manager.js" defer></script>
+    <script src="js/form-manager.js" defer></script>
+    <script src="snipcart-config.js" defer></script>
+
+    <!-- Page Logic -->
+    <script src="js/main.js" defer></script>
+
+    <!-- App Initializer -->
+    <script src="js/app-init.js" defer></script>
+
+    <!-- External Libraries -->
+    <script async src="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.js"></script>
+
+    <script>
+        // Update year
+        document.addEventListener('DOMContentLoaded', function () {
+            const yearEl = document.getElementById('year');
+            if (yearEl) yearEl.textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+
+</html>

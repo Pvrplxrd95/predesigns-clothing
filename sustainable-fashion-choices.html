@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.snipcart.com https://accounts.google.com https://apis.google.com https://www.gstatic.com https://giscus.app; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://cdn.snipcart.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://*.firebaseio.com https://*.googleapis.com https://formspree.io https://cdn.snipcart.com https://giscus.app; frame-src https://accounts.google.com https://giscus.app; form-action 'self' https://formspree.io;">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sustainable Streetwear: The Predesigns Guide | Predesigns Clothing</title>
+    <meta name="description"
+        content="How choosing quality over quantity benefits both your style and the planet. Discover the intersection of streetwear culture and sustainable fashion choices." />
+    <meta name="author" content="Predesigns Clothing" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Sustainable Streetwear: The Predesigns Guide" />
+    <meta property="og:description"
+        content="Upgrade your wardrobe with consciousness. Learn how fresh streetwear and sustainability go hand-in-hand at Predesigns." />
+    <meta property="og:image" content="images/Blue Female Cargo Skirt.jpg" />
+    <meta property="og:url" content="https://predesignsclothing.rf.gd/sustainable-fashion-choices.html" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+    <!-- Preload critical fonts -->
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+    <!-- Load non-critical CSS asynchronously -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        media="print" onload="this.media='all'">
+
+    <!-- Fallback for browsers that don't support preload -->
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap"
+            rel="stylesheet">
+    </noscript>
+
+    <!-- Main CSS -->
+    <link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="css/blog-post.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="css/responsive.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="css/lazy-load.css" media="print" onload="this.media='all'">
+
+    <!-- Fallback for browsers that don't support preload -->
+    <noscript>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/blog-post.css">
+        <link rel="stylesheet" href="css/responsive.css">
+        <link rel="stylesheet" href="css/lazy-load.css">
+    </noscript>
+</head>
+
+<body class="page-transition">
+    <!-- Progress Bar -->
+    <div class="reading-progress">
+        <div class="progress-bar" id="reading-progress-bar"></div>
+    </div>
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                            data-src="images/logo.jpg" alt="Predesigns Clothing Logo" loading="lazy" width="150"
+                            height="50">
+                    </a>
+                </div>
+                <div class="nav-menu">
+                    <ul class="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="index.html#lookbook">Lookbook</a></li>
+                        <li><a href="blog.html" class="active">Blog</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="nav-actions">
+                    <div class="auth-container">
+                        <div class="auth-buttons">
+                            <button class="btn btn-secondary" onclick="openLoginModal()">
+                                <i class="fas fa-sign-in-alt"></i> Login
+                            </button>
+                            <button class="btn btn-primary" onclick="openRegisterModal()">
+                                <i class="fas fa-user-plus"></i> Sign Up
+                            </button>
+                        </div>
+                    </div>
+                    <div class="cart-container">
+                        <a href="shop.html" class="cart-icon" onclick="handleCartClick(); return false;">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                    </div>
+                    <div class="mobile-menu-toggle">
+                        <span></span><span></span><span></span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-content">
+            <ul class="mobile-nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="index.html#lookbook">Lookbook</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+
+            <div class="mobile-auth-buttons">
+                <button class="btn btn-secondary"
+                    onclick="if(window.uiManager) { uiManager.closeMobileMenu(); openLoginModal(); }">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </button>
+                <button class="btn btn-primary"
+                    onclick="if(window.uiManager) { uiManager.closeMobileMenu(); openRegisterModal(); }">
+                    <i class="fas fa-user-plus"></i> Sign Up
+                </button>
+            </div>
+
+            <div class="mobile-contact-info">
+                <p><i class="fas fa-phone"></i> 069 431 3721</p>
+                <p><i class="fas fa-envelope"></i> purpleray23@gmail.com</p>
+                <div class="mobile-social-links">
+                    <a href="https://instagram.com/predesignsclothing" target="_blank"><i
+                            class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-menu-backdrop"></div>
+
+    <section class="blog-hero" style="background-image: url('images/Blue Female Cargo Skirt.jpg');">
+        <div class="container">
+            <h1 class="blog-title">Sustainable Streetwear: The Predesigns Guide</h1>
+            <p class="blog-subtitle">Fresh fits, small footprint. Why quality-driven fashion is the future of the
+                streets.</p>
+            <div class="blog-meta">
+                <span><i class="far fa-calendar"></i> <time datetime="2026-03-05">March 5, 2026</time></span>
+                <span><i class="far fa-user"></i> Predesigns Studio</span>
+            </div>
+        </div>
+    </section>
+
+    <main class="blog-post container">
+        <article>
+            <p>Streetwear has always been about more than just clothes—it’s about identity, community, and making a
+                statement. But as the fashion industry faces a sustainability crisis, the "statement" we make with our
+                wardrobe needs to evolve. At Predesigns, we believe fresh fits shouldn't come at the cost of the planet.
+            </p>
+
+            <p>Sustainable fashion isn't just about organic cotton; it's about a shift in mindset. It’s choosing pieces
+                that tell a story, last for years, and respect the hands that made them. Here’s how we’re defining the
+                new standard of sustainable streetwear.</p>
+
+            <h2>1. Quality Over Hype</h2>
+            <p>Fast fashion thrives on the "hype" of a single season, leading to mountains of discarded garments. True
+                streetwear is built on longevity. When you invest in a Predesigns piece, you’re getting heavy-duty
+                fabrics, reinforced stitching, and a fit that doesn't wash out. Choosing one high-quality hoodie that
+                lasts five years is far more sustainable than buying five cheap ones that end up in a landfill within
+                months.</p>
+
+            <h2>2. Local Love = Lower Footprint</h2>
+            <p>Most mass-produced clothing travels thousands of miles before it reaches your doorstep. Our garments are
+                handcrafted right here in <strong>Hammanskraal, Pretoria</strong>. By keeping production local, we
+                massively reduce shipping emissions and support our immediate community. It’s fresh fashion with a low
+                carbon footprint.</p>
+
+            <div class="blog-image-box">
+                <img src="images/Blue Female Cargo Skirt.jpg" alt="Predesigns Sustainable Fit" class="lazy-loading">
+                <p class="image-caption">The Blue Cargo Series: Built for durability and style.</p>
+            </div>
+
+            <h2>3. The Art of Versatility</h2>
+            <p>Sustainability is also about how much use you get out of a single item. We design our collections to be
+                modular. That custom cargo skirt or denim jacket is designed to be styled a dozen different ways—from
+                the club to the office to the street. A versatile wardrobe is a sustainable wardrobe.</p>
+
+            <h2>4. Made to Order (Zero Waste)</h2>
+            <p>One of the biggest issues in fashion is overproduction. Predesigns specializes in **Custom Tailoring**.
+                When we make something specifically for your measurements, there is no "deadstock" sitting in a
+                warehouse. Every piece we create has a home before the first cut is even made.</p>
+
+            <h2>5. Repair & Remix Culture</h2>
+            <p>The streetwear community has always been about customizing and DIY. Instead of throwing away a piece with
+                a small tear, we encourage our clients to bring it back for alterations. A repair is a badge of honor—it
+                shows your clothes have lived. We can remix legacy pieces into something new, giving the fabric a second
+                life.</p>
+
+            <blockquote class="blog-quote">
+                "Sustainability isn't a trend; it's the ultimate flex. Wearing something unique, local, and built to
+                last is the highest form of style authenticity."
+            </blockquote>
+
+            <h2>Final Word: The Slow Fashion Flex</h2>
+            <p>Upgrading your wardrobe doesn't have to mean contributing to the waste cycle. By choosing Predesigns,
+                you’re supporting slow fashion—clothing made with intention, local love, and a youthful spirit that
+                respects the future. Keep it fresh, keep it local, and keep it forever.</p>
+
+            <div class="blog-actions">
+                <a href="shop.html" class="btn btn-primary">Shop Sustainable Collections</a>
+                <div class="share-buttons">
+                    <span>Share:</span>
+                    <button class="share-btn twitter" onclick="sharePost('Sustainable Streetwear Guide', 'twitter')"><i
+                            class="fab fa-twitter"></i></button>
+                    <button class="share-btn facebook"
+                        onclick="sharePost('Sustainable Streetwear Guide', 'facebook')"><i
+                            class="fab fa-facebook-f"></i></button>
+                    <button class="share-btn whatsapp"
+                        onclick="window.open('https://api.whatsapp.com/send?text=' + encodeURIComponent(window.location.href))"><i
+                            class="fab fa-whatsapp"></i></button>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                            data-src="images/footer-logo.png" alt="Predesigns Clothing Footer Logo" class="lazy-loading"
+                            loading="lazy" width="200" height="50">
+                    </div>
+                    <p>Quality tailor-made clothing from scratch with local love and taste. Est. 2019 by Josias Tlou.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://instagram.com/predesignsclothing" target="_blank"><i
+                                class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="index.html#collections">Collections</a></li>
+                        <li><a href="index.html#lookbook">Lookbook</a></li>
+                        <li><a href="blog.html" class="active">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Shop Categories</h3>
+                    <ul>
+                        <li><a href="shop.html#streetwear">Streetwear</a></li>
+                        <li><a href="shop.html#traditional">Traditional Wear</a></li>
+                        <li><a href="shop.html#suits">Custom Suits</a></li>
+                        <li><a href="shop.html#dresses">Dresses & Gowns</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> Hammanskraal, Pretoria</li>
+                        <li><i class="fas fa-phone"></i> 069 431 3721</li>
+                        <li><i class="fas fa-envelope"></i> purpleray23@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <p>&copy; <span id="year"></span> Predesigns Clothing. All rights reserved.</p>
+                    <div class="footer-legal-links">
+                        <a href="privacy-policy.html">Privacy Policy</a>
+                        <a href="terms-of-service.html">Terms of Service</a>
+                        <a href="shipping-returns.html">Shipping & Returns</a>
+                        <a href="size-guide.html">Size Guide</a>
+                    </div>
+                </div>
+                <div class="trust-badges">
+                    <div class="trust-badge">
+                        <i class="fas fa-lock"></i>
+                        <span>Secure Checkout</span>
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-credit-card"></i>
+                        <span>Visa • Mastercard • PayPal</span>
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-shipping-fast"></i>
+                        <span>Fast Delivery</span>
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>30-Day Guarantee</span>
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-flag"></i>
+                        <span>Proudly South African</span>
+                    </div>
+                </div>
+                <div class="parent-company">
+                    <span>A</span>
+                    <a href="https://purpleraygroup.vercel.app" target="_blank" rel="noopener noreferrer">
+                        <img src="images/PRG LOGO.png" alt="Purple Ray Group" width="80">
+                    </a>
+                    <span>Brand</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+
+    <!-- Core Utilities & Managers -->
+    <script src="js/env.js"></script>
+    <script src="js/config.js" defer></script>
+    <script src="js/firebase-config.js" defer></script>
+    <script src="js/auth.js" defer></script>
+    <script src="js/utils.js" defer></script>
+    <script src="js/lazy-load.js" defer></script>
+    <script src="js/ui-manager.js" defer></script>
+    <script src="js/product-manager.js" defer></script>
+    <script src="js/form-manager.js" defer></script>
+
+    <!-- Page Logic -->
+    <script src="js/main.js" defer></script>
+    <script src="js/blog-post.js" defer></script>
+
+    <!-- App Initializer -->
+    <script src="js/app-init.js" defer></script>
+
+    <!-- External Libraries -->
+    <script async src="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const yearEl = document.getElementById('year');
+            if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+            // Handle Cart Clicks
+            window.handleCartClick = function () {
+                if (window.Snipcart) {
+                    window.Snipcart.api.theme.cart.open();
+                } else {
+                    window.location.href = 'shop.html';
+                }
+            };
+            
+            // Lazy load progress
+            document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+                if (!img.complete) img.classList.add('lazy-loading');
+            });
+
+            // Reading Progress Bar
+            const progressBar = document.getElementById('reading-progress-bar');
+            window.addEventListener('scroll', () => {
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+                if (progressBar) progressBar.style.width = scrolled + "%";
+            });
+        });
+    </script>
+</body>
+
+</html>
