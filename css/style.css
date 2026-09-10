@@ -832,7 +832,7 @@ ul, ol { margin-bottom: 1rem; padding-left: 1.5rem; }
 /* ============== FOOTER ============== */
 .footer {
     background: var(--prp-900);
-    color: var(--ink-100);
+    color: var(--gold-500);
     padding: 4rem 0 2rem;
 }
 .footer .container {
@@ -871,7 +871,7 @@ ul, ol { margin-bottom: 1rem; padding-left: 1.5rem; }
     margin-bottom 0.75rem;
 }
 .footer a {
-    color: var(--ink-100);
+    color: var(--gold-500);
     transition: color var(--t) var(--ease);
 }
 .footer a:hover {
