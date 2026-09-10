@@ -36,15 +36,16 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     --gold-400: #ffc94a;
     --gold-100: #fff8d6;
 
-    --ink-900: #0a0a0a;
-    --ink-800: #1a1a1a;
-    --ink-700: #2d2d2d;
-    --ink-500: #6b6b6b;
-    --ink-400: #9a9a9a;
-    --ink-300: #d0d0d0;
-    --ink-200: #e8e8e8;
-    --ink-100: #f3f3f3;
-    --ink-50:  #fafafa;
+        --ink-900: #000000;     /* black */
+    --ink-800: #111111;     /* near black */
+    --ink-700: #222222;     /* dark grey */
+    --ink-600: #333333;     /* grey */
+    --ink-500: #444444;     /* medium grey */
+    --ink-400: #555555;     /* light grey */
+    --ink-300: #666666;     /* lighter grey */
+    --ink-200: #777777;     /* very light grey */
+    --ink-100: #888888;     /* almost white */
+    --ink-50:  #999999;     /* off-white */
     --white:   #ffffff;
 
     /* Type */
@@ -384,7 +385,7 @@ ul, ol { margin-bottom: 1rem; padding-left: 1.5rem; }
     color: var(--prp-700);
 }
 .service-item p {
-    color: var(--ink-600);
+    color: var(--ink-900);
     line-height: 1.7;
     flex-grow: 1;
     margin-bottom: 1.5rem;
