@@ -738,7 +738,8 @@ section.tight { padding: 4rem 0; }
     gap: 1.5rem;
 }
 
-.service-item { background: linear-gradient(135deg, var(--prp-700), var(--prp-900));
+.service-item {
+    background: var(--white);
     padding: 2.5rem 2rem;
     border-radius: var(--radius-lg);
     text-align: left;
@@ -746,7 +747,7 @@ section.tight { padding: 4rem 0; }
     transition: all var(--t) var(--ease);
     position: relative;
     overflow: hidden;
- color: #fff;}
+}
 
 .service-item::before {
     content: '';
