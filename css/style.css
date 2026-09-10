@@ -176,10 +176,10 @@ h1, h2, h3, h4, h5, h6 {
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(26,26,26,0.85);
     backdrop-filter: saturate(180%) blur(16px);
     -webkit-backdrop-filter: saturate(180%) blur(16px);
-    border-bottom: 1px solid var(--ink-200);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
     z-index: 100;
     padding: 0.85rem 0;
     transition: all var(--t) var(--ease);
@@ -738,8 +738,7 @@ section.tight { padding: 4rem 0; }
     gap: 1.5rem;
 }
 
-.service-item {
-    background: var(--white);
+.service-item { background: linear-gradient(135deg, var(--prp-700), var(--prp-900));
     padding: 2.5rem 2rem;
     border-radius: var(--radius-lg);
     text-align: left;
@@ -747,7 +746,7 @@ section.tight { padding: 4rem 0; }
     transition: all var(--t) var(--ease);
     position: relative;
     overflow: hidden;
-}
+ color: #fff;}
 
 .service-item::before {
     content: '';
@@ -792,13 +791,13 @@ section.tight { padding: 4rem 0; }
 .service-item h3 {
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
-}
+ color: #fff;}
 .service-item p {
     color: var(--ink-500);
     font-size: 0.95rem;
     line-height: 1.6;
     margin: 0;
-}
+ color: #eee;}
 
 /* ============== NEWSLETTER ============== */
 .newsletter {
