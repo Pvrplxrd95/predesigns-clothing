@@ -24,10 +24,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 /* ============== DESIGN TOKENS ============== */
 :root {
     /* Brand palette */
-    --prp-900: #1a0633;     /* deep ink */
-    --prp-800: #2d0a5f;     /* dark purple */
-    --prp-700: #4B0082;     /* primary brand */
-    --prp-600: #6A0DAD;     /* signature */
+    --prp-900: #6d28d9;     /* deep ink */
+    --prp-800: #7c3aed;     /* dark purple */
+    --prp-700: #9333ea;     /* primary brand */
+    --prp-600: #7c3aed;     /* signature */
     --prp-500: #8B00FF;     /* electric */
     --prp-100: #f3edff;     /* tint */
     --prp-50:  #faf7ff;     /* canvas */
@@ -184,7 +184,7 @@ ul, ol { margin-bottom: 1rem; padding-left: 1.5rem; }
     color: var(--white);
     opacity: 0.8;
     transition: opacity var(--t) var(--ease);
-}
+  text-decoration: none;  }
 .nav-links a:hover {
     opacity: 1;
     color: var(--prp-500);
@@ -865,7 +865,7 @@ ul, ol { margin-bottom: 1rem; padding-left: 1.5rem; }
     list-style: none;
     padding: 0;
     margin: 0;
-}
+  list-style: none; padding: 0;
 .footer li {
     margin-bottom 0.75rem;
 }
