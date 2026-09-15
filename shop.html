@@ -70,13 +70,6 @@
 </head>
 
 <body>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            if (typeof initLazyLoading === 'function') {
-                initLazyLoading();
-            }
-        });
-    </script>
     <!-- Preloader -->
     <div class="preloader">
         <div class="loader">
@@ -2555,7 +2548,6 @@
     <script async src="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.js"></script>
 
     <script>
-        // Update year
         document.addEventListener('DOMContentLoaded', function () {
             const yearEl = document.getElementById('year');
             if (yearEl) yearEl.textContent = new Date().getFullYear();
