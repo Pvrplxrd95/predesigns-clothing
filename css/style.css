@@ -940,7 +940,7 @@ section.tight { padding: 4rem 0; }
     margin-bottom: 1.25rem;
 }
 
-.footer-col ul {
+.footer-column ul {
     list-style: none;
     display: flex;
     flex-direction: column;
