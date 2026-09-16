@@ -1261,13 +1261,95 @@ section.tight { padding: 4rem 0; }
     transform: translateY(-3px);
 }
 
-.footer-bottom a:hover { color: var(--gold-500); }
+/* ============== FOOTER BOTTOM & LEGAL ============== */
+.footer-bottom {
+    padding-top: 2.5rem;
+    margin-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+}
 
-.footer-prg-line {
+.footer-legal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    font-size: 0.85rem;
     color: rgba(255, 255, 255, 0.5);
-    font-size: 0.75rem;
-    line-height: 1.6;
-    margin-top: 0.5rem;
+}
+
+.footer-legal p {
+    margin: 0;
+}
+
+.footer-legal-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.footer-legal-links a {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.85rem;
+    transition: color var(--t-fast) var(--ease);
+}
+
+.footer-legal-links a:hover {
+    color: var(--gold-500);
+}
+
+/* Trust Badges */
+.trust-badges {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 1.25rem 1.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: var(--radius);
+}
+
+.trust-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+}
+
+.trust-badge i {
+    color: var(--gold-500);
+    font-size: 1rem;
+}
+
+/* Parent Company */
+.parent-company {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.parent-company img {
+    height: 24px;
+    width: auto;
+    opacity: 0.8;
+    transition: opacity var(--t-fast) var(--ease);
+}
+
+.parent-company a:hover img {
+    opacity: 1;
 }
 
 /* ============== RESPONSIVE ============== */
@@ -1294,6 +1376,9 @@ section.tight { padding: 4rem 0; }
     .services-grid { grid-template-columns: 1fr; }
     .about-features { grid-template-columns: 1fr; }
     .footer-content { grid-template-columns: 1fr; gap: 2rem; }
+    .footer-legal { flex-direction: column; text-align: center; gap: 0.75rem; }
+    .footer-legal-links { justify-content: center; gap: 1rem; }
+    .trust-badges { gap: 1rem; justify-content: center; }
     .contact-content { grid-template-columns: 1fr; gap: 2rem; }
     .newsletter-form { flex-direction: column; }
     .newsletter-form .btn { width: 100%; }
