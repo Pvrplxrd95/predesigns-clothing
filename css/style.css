@@ -798,7 +798,7 @@ section.tight { padding: 4rem 0; }
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
 }
 
@@ -1023,6 +1023,138 @@ section.tight { padding: 4rem 0; }
     padding: 14px 24px;
 }
 
+/* ============== CONTACT ============== */
+.contact {
+    background: var(--ink-50);
+    padding: 6rem 0;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--ink-200);
+    transition: all var(--t) var(--ease);
+}
+
+.contact-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.contact-item i {
+    width: 48px;
+    height: 48px;
+    background: var(--prp-100);
+    color: var(--prp-700);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+    transition: all var(--t) var(--ease);
+}
+
+.contact-item:hover i {
+    background: var(--prp-700);
+    color: var(--white);
+}
+
+.contact-item h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--ink-900);
+    margin-bottom: 0.25rem;
+}
+
+.contact-item p {
+    font-size: 0.92rem;
+    color: var(--ink-500);
+    margin: 0;
+    line-height: 1.5;
+}
+
+.contact-form {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--ink-200);
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.form-group {
+    position: relative;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1.5px solid var(--ink-200);
+    border-radius: var(--radius);
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    background: var(--white);
+    transition: all var(--t) var(--ease);
+    color: var(--ink-900);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--prp-600);
+    background: var(--prp-50);
+    box-shadow: 0 0 0 3px rgba(106, 13, 173, 0.08);
+}
+
+.form-group label {
+    position: absolute;
+    top: -8px;
+    left: 12px;
+    background: var(--white);
+    padding: 0 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--prp-700);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    pointer-events: none;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 140px;
+}
+
+.contact-form .btn {
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
 /* ============== FOOTER ============== */
 .footer {
     background: var(--ink-900);
@@ -1031,11 +1163,57 @@ section.tight { padding: 4rem 0; }
     border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.footer-grid {
+.footer-content {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr;
     gap: 3rem;
     margin-bottom: 3rem;
+}
+
+.footer-column h3 {
+    color: var(--white);
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 1.25rem;
+}
+
+.footer-column p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.92rem;
+    line-height: 1.7;
+}
+
+.footer-column ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.footer-column a {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.92rem;
+    transition: color var(--t-fast) var(--ease);
+}
+
+.footer-column a:hover {
+    color: var(--gold-500);
+}
+
+.footer-contact li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.92rem;
+}
+
+.footer-contact li i {
+    width: 20px;
+    color: var(--gold-500);
 }
 
 .footer-brand h3 {
@@ -1083,42 +1261,6 @@ section.tight { padding: 4rem 0; }
     transform: translateY(-3px);
 }
 
-.footer-col h4 {
-    color: var(--white);
-    font-family: var(--font-sans);
-    font-size: 0.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    margin-bottom: 1.25rem;
-}
-
-.footer-column ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.65rem;
-}
-
-.footer-col a {
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 0.92rem;
-    transition: color var(--t-fast) var(--ease);
-}
-.footer-col a:hover { color: var(--gold-500); }
-
-.footer-bottom {
-    padding-top: 1.5rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-    font-size: 0.82rem;
-    color: rgba(255, 255, 255, 0.4);
-}
-
 .footer-bottom a:hover { color: var(--gold-500); }
 
 .footer-prg-line {
@@ -1136,7 +1278,7 @@ section.tight { padding: 4rem 0; }
     .about-image { max-width: 480px; margin: 0 auto; }
     .collections-grid { grid-template-columns: repeat(2, 1fr); }
     .lookbook-grid { grid-template-columns: repeat(2, 1fr); }
-    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .footer-content { grid-template-columns: 1fr 1fr; }
     .blog-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
@@ -1151,7 +1293,8 @@ section.tight { padding: 4rem 0; }
     .lookbook-grid { grid-template-columns: 1fr 1fr; }
     .services-grid { grid-template-columns: 1fr; }
     .about-features { grid-template-columns: 1fr; }
-    .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .footer-content { grid-template-columns: 1fr; gap: 2rem; }
+    .contact-content { grid-template-columns: 1fr; gap: 2rem; }
     .newsletter-form { flex-direction: column; }
     .newsletter-form .btn { width: 100%; }
     .blog-grid { grid-template-columns: 1fr; }
