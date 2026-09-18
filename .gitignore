@@ -135,8 +135,7 @@ tests/
 __tests__/
 
 # Ignore any documentation files that aren't needed in repo
-docs/
-documentation/
+# documentation/
 
 # Ignore any temporary files created during development
 *.tmp
