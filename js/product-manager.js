@@ -12,6 +12,19 @@ class ProductManager {
         // Shared UI elements
         this.quickViewModal = document.getElementById('quick-view-modal');
         this.setupQuickViewBackdrop();
+        
+        // Ensure modal has accessibility attributes
+        if (this.quickViewModal) {
+            this.quickViewModal.setAttribute('role', 'dialog');
+            this.quickViewModal.setAttribute('aria-modal', 'true');
+            this.quickViewModal.setAttribute('aria-labelledby', 'modal-product-title');
+            
+            // Add accessible label to close button
+            const closeBtn = this.quickViewModal.querySelector('.modal-close');
+            if (closeBtn) {
+                closeBtn.setAttribute('aria-label', 'Close quick view');
+            }
+        }
     }
 
     /**
@@ -198,13 +211,24 @@ class ProductManager {
         }
 
         modal.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
+        
+        // Use focus manager for proper focus trapping
+        if (window.focusManager) {
+            window.focusManager.openDialog(modal, document.activeElement);
+        } else {
+            document.body.style.overflow = 'hidden';
+        }
     }
 
     closeQuickViewModal() {
         if (this.quickViewModal) {
+            // Use focus manager for proper focus restoration
+            if (window.focusManager) {
+                window.focusManager.closeDialog(this.quickViewModal);
+            } else {
+                document.body.style.overflow = '';
+            }
             this.quickViewModal.style.display = 'none';
-            document.body.style.overflow = '';
         }
     }
 

@@ -1,0 +1,20 @@
+@media (prefers-color-scheme: dark) {    body {
+        background: #000;
+        color: #fff;
+    
+    /* Footer layout - side by side row (grid) */
+    .footer {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+    }
+    .footer h4 {
+        margin-bottom: 1rem;
+    }
+    .footer ul {
+        list-style: none;
+        padding: 0;
+    }
+    .footer li {
+        margin-bottom: 0.5rem;
+    }}

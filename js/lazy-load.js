@@ -1,6 +1,6 @@
 /**
  * Lazy Loading and Image Optimization
- * Handles lazy loading of images and responsive image loading
+ * Handles lazy loading of images and responsive image loading with WebP support
  */
 
 // Immediate execution if possible to catch early images
@@ -10,6 +10,36 @@
         rootMargin: '500px 0px', // Load images well before they are in view
         threshold: 0.01
     };
+
+    /**
+     * Check if browser supports WebP
+     */
+    function supportsWebP() {
+        const elem = document.createElement('canvas');
+        if (elem.getContext && elem.getContext('2d')) {
+            return elem.toDataURL('image/webp').indexOf('data:image/webp') === 0;
+        }
+        return false;
+    }
+
+    const webpSupported = supportsWebP();
+
+    /**
+     * Get the best image source for the browser
+     * @param {HTMLElement} img - The image element
+     * @returns {string} The source URL to use
+     */
+    function getBestImageSrc(img) {
+        const dataSrc = img.getAttribute('data-src');
+        const dataWebp = img.getAttribute('data-webp');
+        
+        // If WebP is supported and data-webp is provided, use it
+        if (webpSupported && dataWebp) {
+            return dataWebp;
+        }
+        // Otherwise fall back to data-src
+        return dataSrc;
+    }
 
     /**
      * Main initialization function
@@ -50,7 +80,7 @@
     function loadImage(img) {
         // Handle standard images
         if (img.tagName === 'IMG') {
-            const src = img.getAttribute('data-src');
+            const src = getBestImageSrc(img);
             if (src) {
                 // Set up handlers BEFORE setting src to avoid race conditions
                 img.onload = function () {
@@ -58,6 +88,12 @@
                     img.classList.add('lazy-loaded');
                 };
                 img.onerror = function () {
+                    // If WebP fails, try the fallback
+                    if (webpSupported && img.getAttribute('data-webp') && img.src !== img.getAttribute('data-src')) {
+                        console.warn('WebP failed, falling back to original:', src);
+                        img.src = img.getAttribute('data-src');
+                        return;
+                    }
                     console.error('Error loading image:', src);
                     img.classList.remove('lazy-loading');
                     img.classList.add('lazy-load-error');
@@ -65,6 +101,7 @@
 
                 img.src = src;
                 img.removeAttribute('data-src');
+                img.removeAttribute('data-webp'); // Clean up
 
                 // Safety: if image was already cached, onload may not fire
                 if (img.complete && img.naturalWidth > 0) {
@@ -80,9 +117,12 @@
         // Handle background images
         else {
             const bgSrc = img.getAttribute('data-bg-src');
-            if (bgSrc) {
-                img.style.backgroundImage = `url(${bgSrc})`;
+            const bgWebp = img.getAttribute('data-bg-webp');
+            const useSrc = webpSupported && bgWebp ? bgWebp : bgSrc;
+            if (useSrc) {
+                img.style.backgroundImage = `url(${useSrc})`;
                 img.removeAttribute('data-bg-src');
+                img.removeAttribute('data-bg-webp');
             }
             img.classList.remove('lazy-loading');
             img.classList.add('lazy-loaded');

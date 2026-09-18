@@ -669,11 +669,11 @@ window.addEventListener('error', function (e) {
 // Custom Order Form Function (for main website)
 function openCustomOrderForm() {
     const customOrderHTML = `
-        <div class="custom-order-modal" id="custom-order-modal">
+        <div class="custom-order-modal" id="custom-order-modal" role="dialog" aria-modal="true" aria-labelledby="custom-order-title">
             <div class="modal-content">
-                <span class="modal-close" onclick="closeCustomOrderForm()">&times;</span>
+                <span class="modal-close" onclick="closeCustomOrderForm()" aria-label="Close custom order form">&times;</span>
                 <div class="modal-form-content">
-                    <h2>Custom Order Request</h2>
+                    <h2 id="custom-order-title">Custom Order Request</h2>
                     <p>Let us create something unique just for you! Please fill out this form with your requirements.</p>
                     
                     <form id="main-custom-order-form">
@@ -726,18 +726,24 @@ function openCustomOrderForm() {
     // Add event listener to the form
     document.getElementById('main-custom-order-form').addEventListener('submit', handleCustomOrderSubmit);
 
-    // Prevent body scroll
-    document.body.style.overflow = 'hidden';
+    // Use focus manager for proper focus trapping
+    const modal = document.getElementById('custom-order-modal');
+    if (window.focusManager && modal) {
+        window.focusManager.openDialog(modal, document.activeElement);
+    } else {
+        // Prevent body scroll
+        document.body.style.overflow = 'hidden';
+    }
 }
 
 // Book Consultation Form Function (for main website)
 function openConsultationForm() {
     const consultationHTML = `
-        <div class="custom-order-modal" id="consultation-modal">
+        <div class="custom-order-modal" id="consultation-modal" role="dialog" aria-modal="true" aria-labelledby="consultation-title">
             <div class="modal-content">
-                <span class="modal-close" onclick="closeConsultationForm()">&times;</span>
+                <span class="modal-close" onclick="closeConsultationForm()" aria-label="Close consultation form">&times;</span>
                 <div class="modal-form-content">
-                    <h2>Book Consultation</h2>
+                    <h2 id="consultation-title">Book Consultation</h2>
                     <p>Schedule a consultation with our designer to discuss your custom clothing needs.</p>
                     
                     <form id="main-consultation-form">
@@ -787,8 +793,14 @@ function openConsultationForm() {
     // Add event listener to the form
     document.getElementById('main-consultation-form').addEventListener('submit', handleConsultationSubmit);
 
-    // Prevent body scroll
-    document.body.style.overflow = 'hidden';
+    // Use focus manager for proper focus trapping
+    const modal = document.getElementById('consultation-modal');
+    if (window.focusManager && modal) {
+        window.focusManager.openDialog(modal, document.activeElement);
+    } else {
+        // Prevent body scroll
+        document.body.style.overflow = 'hidden';
+    }
 }
 
 // Handle custom order form submission
@@ -849,8 +861,13 @@ function handleConsultationSubmit(e) {
 function closeCustomOrderForm() {
     const modal = document.getElementById('custom-order-modal');
     if (modal) {
+        // Use focus manager for proper focus restoration
+        if (window.focusManager) {
+            window.focusManager.closeDialog(modal);
+        } else {
+            document.body.style.overflow = 'auto';
+        }
         modal.remove();
-        document.body.style.overflow = 'auto';
     }
 }
 
@@ -858,8 +875,13 @@ function closeCustomOrderForm() {
 function closeConsultationForm() {
     const modal = document.getElementById('consultation-modal');
     if (modal) {
+        // Use focus manager for proper focus restoration
+        if (window.focusManager) {
+            window.focusManager.closeDialog(modal);
+        } else {
+            document.body.style.overflow = 'auto';
+        }
         modal.remove();
-        document.body.style.overflow = 'auto';
     }
 }
 

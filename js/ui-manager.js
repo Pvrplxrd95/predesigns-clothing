@@ -59,6 +59,7 @@ class UIManager {
         if (!this.mobileMenuToggle || !this.mobileMenu) return;
 
         this.mobileMenuBackdrop = document.querySelector('.mobile-menu-backdrop');
+        this.mobileMenuClose = document.querySelector('.mobile-menu-close');
 
         // Toggle Menu
         this.mobileMenuToggle.addEventListener('click', (e) => {
@@ -77,6 +78,13 @@ class UIManager {
         // Close when clicking backdrop
         if (this.mobileMenuBackdrop) {
             this.mobileMenuBackdrop.addEventListener('click', () => {
+                this.closeMobileMenu();
+            });
+        }
+
+        // Close when clicking close button
+        if (this.mobileMenuClose) {
+            this.mobileMenuClose.addEventListener('click', () => {
                 this.closeMobileMenu();
             });
         }
@@ -100,15 +108,19 @@ class UIManager {
 
     openMobileMenu() {
         this.mobileMenuToggle?.classList.add('active');
+        this.mobileMenuToggle?.setAttribute('aria-expanded', 'true');
         this.mobileMenu?.classList.add('active');
         this.mobileMenuBackdrop?.classList.add('active');
+        this.mobileMenuClose?.setAttribute('aria-expanded', 'true');
         document.body.style.overflow = 'hidden';
     }
 
     closeMobileMenu() {
         this.mobileMenuToggle?.classList.remove('active');
+        this.mobileMenuToggle?.setAttribute('aria-expanded', 'false');
         this.mobileMenu?.classList.remove('active');
         this.mobileMenuBackdrop?.classList.remove('active');
+        this.mobileMenuClose?.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
     }
 }

@@ -83,7 +83,7 @@
                     <a href="index.html">
                         <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E"
                             data-src="images/logo.jpg" alt="Predesigns Clothing Logo" class="lazy-loading"
-                            loading="lazy" width="150" height="50">
+                            loading="lazy" width="150" height="50" data-webp="images/logo.webp">
                     </a>
                 </div>
 
@@ -115,7 +115,7 @@
                             <span class="snipcart-items-count cart-count">0</span>
                         </button>
                     </div>
-                    <div class="mobile-menu-toggle">
+                    <div class="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-menu-links" aria-label="Toggle menu">
                         <span></span><span></span><span></span>
                     </div>
                 </div>
@@ -125,7 +125,12 @@
 
     <!-- Mobile Menu -->
     <div class="mobile-menu">
-        <div class="mobile-menu-content">
+        <div class="mobile-menu-content" id="mobile-menu-links">
+            <button class="mobile-menu-close" aria-label="Close menu" aria-expanded="false" aria-controls="mobile-menu-links">
+                <i class="fas fa-times"></i>
+            </button>
+
+
             <ul class="mobile-nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="index.html#about">About</a></li>
@@ -184,13 +189,13 @@
                     <div class="story-images">
                         <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1' viewBox='0 0 1 1'%3E%3C/svg%3E"
                             data-src="images/products/brown 2 piece city.jpg" alt="Urban Elegance Look 1"
-                            class="lazy-loading" loading="lazy">
+                            class="lazy-loading" loading="lazy" data-webp="images/products/brown 2 piece city.webp">
                         <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1' viewBox='0 0 1 1'%3E%3C/svg%3E"
                             data-src="images/products/brown 2 piece city standing.jpg" alt="Urban Elegance Look 2"
-                            class="lazy-loading" loading="lazy">
+                            class="lazy-loading" loading="lazy" data-webp="images/products/brown 2 piece city standing.webp">
                         <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1' viewBox='0 0 1 1'%3E%3C/svg%3E"
                             data-src="images/products/brown piece.jpg" alt="Urban Elegance Look 3" class="lazy-loading"
-                            loading="lazy">
+                            loading="lazy" data-webp="images/products/brown piece.webp">
                     </div>
                     <div class="story-content">
                         <h3>Urban Elegance</h3>
@@ -214,13 +219,13 @@
                     <div class="story-images">
                         <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1' viewBox='0 0 1 1'%3E%3C/svg%3E"
                             data-src="images/products/traditional couple.jpg" alt="Traditional Fusion Look 1"
-                            class="lazy-loading" loading="lazy">
+                            class="lazy-loading" loading="lazy" data-webp="images/products/traditional couple.webp">
                         <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1' viewBox='0 0 1 1'%3E%3C/svg%3E"
                             data-src="images/products/bikini top clean.jpg" alt="Traditional Fusion Look 2"
-                            class="lazy-loading" loading="lazy">
+                            class="lazy-loading" loading="lazy" data-webp="images/products/bikini top clean.webp">
                         <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1' viewBox='0 0 1 1'%3E%3C/svg%3E"
                             data-src="images/products/bikini top.jpg" alt="Traditional Fusion Look 3"
-                            class="lazy-loading" loading="lazy">
+                            class="lazy-loading" loading="lazy" data-webp="images/products/bikini top.webp">
                     </div>
                     <div class="story-content">
                         <h3>Traditional Fusion</h3>
@@ -244,13 +249,13 @@
                     <div class="story-images">
                         <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1' viewBox='0 0 1 1'%3E%3C/svg%3E"
                             data-src="images/products/blue ankara with lace 2.jpg" alt="Evening Glamour Look 1"
-                            class="lazy-loading" loading="lazy">
+                            class="lazy-loading" loading="lazy" data-webp="images/products/blue ankara with lace 2.webp">
                         <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1' viewBox='0 0 1 1'%3E%3C/svg%3E"
                             data-src="images/products/blue lace dress.jpg" alt="Evening Glamour Look 2"
-                            class="lazy-loading" loading="lazy">
+                            class="lazy-loading" loading="lazy" data-webp="images/products/blue lace dress.webp">
                         <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1' viewBox='0 0 1 1'%3E%3C/svg%3E"
-                            data-src="images/products/evening-3.jpg" alt="Evening Glamour Look 3" class="lazy-loading"
-                            loading="lazy">
+                            data-src="images/products/blue lace dress.jpg" alt="Evening Glamour Look 3" class="lazy-loading"
+                            loading="lazy" data-webp="images/products/blue lace dress.webp">
                     </div>
                     <div class="story-content">
                         <h3>Evening Glamour</h3>
@@ -274,13 +279,13 @@
                     <div class="story-images">
                         <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1' viewBox='0 0 1 1'%3E%3C/svg%3E"
                             data-src="images/products/thuli 2 piece.jpg" alt="Business Chic Look 1" class="lazy-loading"
-                            loading="lazy">
+                            loading="lazy" data-webp="images/products/thuli 2 piece.webp">
                         <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1' viewBox='0 0 1 1'%3E%3C/svg%3E"
                             data-src="images/products/ThuliFrontView.jpg" alt="Business Chic Look 2"
-                            class="lazy-loading" loading="lazy">
+                            class="lazy-loading" loading="lazy" data-webp="images/products/ThuliFrontView.webp">
                         <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1' viewBox='0 0 1 1'%3E%3C/svg%3E"
                             data-src="images/products/Thuli.jpg" alt="Business Chic Look 3" class="lazy-loading"
-                            loading="lazy">
+                            loading="lazy" data-webp="images/products/Thuli.webp">
                     </div>
                     <div class="story-content">
                         <h3>Business Chic</h3>
@@ -309,7 +314,7 @@
                     <div class="footer-logo">
                         <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E"
                             data-src="images/footer-logo.png" alt="Predesigns Clothing Footer Logo"
-                            class="lazy-loading" loading="lazy" width="200" height="50">
+                            class="lazy-loading" loading="lazy" width="200" height="50" data-webp="images/footer-logo.webp">
                     </div>
                     <p>Quality tailor-made clothing from scratch with local love and taste. Est. 2019 by Josias Tlou.
                     </p>
@@ -367,9 +372,9 @@
                         <span>Secure Checkout</span>
                     </div>
                     <div class="trust-badge">
-                        <i class="fas fa-credit-card"></i>
-                        <span>Visa • Mastercard • PayPal</span>
-                    </div>
+                    <i class="fas fa-lock"></i>
+                    <span>Secure Payments</span>
+                </div>
                     <div class="trust-badge">
                         <i class="fas fa-shipping-fast"></i>
                         <span>Fast Delivery</span>
@@ -386,7 +391,7 @@
                 <div class="parent-company">
                     <span>A</span>
                     <a href="https://purpleraygroup.co.za" target="_blank" rel="noopener noreferrer">
-                        <img src="images/PRG LOGO.png" alt="Purple Ray Group" width="80">
+                        <img src="images/PRG LOGO.png" alt="Purple Ray Group" width="80" data-webp="images/PRG LOGO.webp">
                     </a>
                     <span>Brand</span>
                 </div>
@@ -406,12 +411,14 @@
 
     <!-- Core Utilities & Managers -->
     <script src="js/env.js"></script>
+    <script src="js/config.public.js" defer></script>
     <script src="js/config.js" defer></script>
     <script src="js/firebase-config.js" defer></script>
     <script src="js/auth.js" defer></script>
     <script src="js/utils.js" defer></script>
     <script src="js/lazy-load.js" defer></script>
     <script src="js/ui-manager.js" defer></script>
+    <script src="js/focus-manager.js" defer></script>
     <script src="js/product-manager.js" defer></script>
     <script src="js/form-manager.js" defer></script>
     <script src="snipcart-config.js" defer></script>

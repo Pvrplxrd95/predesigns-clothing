@@ -127,10 +127,19 @@ class AuthManager {
 
         const modal = document.createElement('div');
         modal.className = 'auth-modal';
+        modal.setAttribute('role', 'dialog');
+        modal.setAttribute('aria-modal', 'true');
+        modal.setAttribute('aria-labelledby', 'auth-modal-title');
         modal.innerHTML = this.getAuthModalHTML(activeTab);
 
         document.body.appendChild(modal);
-        document.body.style.overflow = 'hidden';
+        
+        // Use focus manager for proper focus trapping
+        if (window.focusManager) {
+            window.focusManager.openDialog(modal, document.activeElement);
+        } else {
+            document.body.style.overflow = 'hidden';
+        }
 
         // Set up form event listeners
         this.setupFormListeners();
@@ -156,15 +165,15 @@ class AuthManager {
     getAuthModalHTML(activeTab) {
         return `
             <div class="modal-content">
-                <span class="modal-close" onclick="authManager.closeAuthModal()">&times;</span>
+                <span class="modal-close" onclick="authManager.closeAuthModal()" aria-label="Close authentication dialog">&times;</span>
                 <div class="auth-tabs">
                     <button class="tab-btn ${activeTab === 'login' ? 'active' : ''}" 
-                            data-action="switch-to-login">Sign In</button>
+                            data-action="switch-to-login" role="tab" aria-selected="${activeTab === 'login'}">Sign In</button>
                     <button class="tab-btn ${activeTab === 'register' ? 'active' : ''}" 
-                            data-action="switch-to-register">Sign Up</button>
+                            data-action="switch-to-register" role="tab" aria-selected="${activeTab === 'register'}">Sign Up</button>
                 </div>
                 
-                <div id="auth-content">
+                <div id="auth-content" role="tabpanel">
                     ${activeTab === 'login' ? this.getLoginFormHTML() : this.getRegisterFormHTML()}
                 </div>
             </div>
@@ -175,12 +184,14 @@ class AuthManager {
     getLoginFormHTML() {
         return `
             <form id="auth-login-form" class="auth-form">
-                <h3>Sign In to Your Account</h3>
+                <h3 id="auth-modal-title">Sign In to Your Account</h3>
                 <div class="form-group">
-                    <input type="email" name="email" placeholder="Email Address" required>
+                    <label for="auth-login-email">Email Address</label>
+                    <input type="email" id="auth-login-email" name="email" placeholder="Email Address" required>
                 </div>
                 <div class="form-group">
-                    <input type="password" name="password" placeholder="Password" required>
+                    <label for="auth-login-password">Password</label>
+                    <input type="password" id="auth-login-password" name="password" placeholder="Password" required>
                 </div>
                 <button type="submit" class="btn btn-primary">Sign In</button>
                 
@@ -200,18 +211,22 @@ class AuthManager {
     getRegisterFormHTML() {
         return `
             <form id="auth-register-form" class="auth-form">
-                <h3>Create New Account</h3>
+                <h3 id="auth-modal-title">Create New Account</h3>
                 <div class="form-group">
-                    <input type="text" name="fullname" placeholder="Full Name" required>
+                    <label for="auth-register-fullname">Full Name</label>
+                    <input type="text" id="auth-register-fullname" name="fullname" placeholder="Full Name" required>
                 </div>
                 <div class="form-group">
-                    <input type="email" name="email" placeholder="Email Address" required>
+                    <label for="auth-register-email">Email Address</label>
+                    <input type="email" id="auth-register-email" name="email" placeholder="Email Address" required>
                 </div>
                 <div class="form-group">
-                    <input type="password" name="password" placeholder="Password" required>
+                    <label for="auth-register-password">Password</label>
+                    <input type="password" id="auth-register-password" name="password" placeholder="Password" required>
                 </div>
                 <div class="form-group">
-                    <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+                    <label for="auth-register-confirm">Confirm Password</label>
+                    <input type="password" id="auth-register-confirm" name="confirm_password" placeholder="Confirm Password" required>
                 </div>
                 <button type="submit" class="btn btn-primary">Sign Up</button>
                 
@@ -293,10 +308,13 @@ class AuthManager {
         tabs.forEach(tab => {
             if (activeTab === 'login' && tab.textContent.trim() === 'Sign In') {
                 tab.classList.add('active');
+                tab.setAttribute('aria-selected', 'true');
             } else if (activeTab === 'register' && tab.textContent.trim() === 'Sign Up') {
                 tab.classList.add('active');
+                tab.setAttribute('aria-selected', 'true');
             } else {
                 tab.classList.remove('active');
+                tab.setAttribute('aria-selected', 'false');
             }
         });
     }
@@ -601,8 +619,13 @@ class AuthManager {
     closeAuthModal() {
         const modal = document.querySelector('.auth-modal');
         if (modal) {
+            // Use focus manager for proper focus restoration
+            if (window.focusManager) {
+                window.focusManager.closeDialog(modal);
+            } else {
+                document.body.style.overflow = 'auto';
+            }
             modal.remove();
-            document.body.style.overflow = 'auto';
         }
     }
 }

@@ -85,7 +85,7 @@
                     <a href="index.html">
                         <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E"
                             data-src="images/logo.jpg" alt="Predesigns Clothing Logo" class="lazy-loading"
-                            loading="lazy" width="150" height="50">
+                            loading="lazy" width="150" height="50" data-webp="images/logo.webp">
                     </a>
                 </div>
 
@@ -117,7 +117,7 @@
                             <span class="snipcart-items-count cart-count">0</span>
                         </button>
                     </div>
-                    <div class="mobile-menu-toggle">
+                    <div class="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-menu-links" aria-label="Toggle menu">
                         <span></span><span></span><span></span>
                     </div>
                 </div>
@@ -127,7 +127,12 @@
 
     <!-- Mobile Menu -->
     <div class="mobile-menu">
-        <div class="mobile-menu-content">
+        <div class="mobile-menu-content" id="mobile-menu-links">
+            <button class="mobile-menu-close" aria-label="Close menu" aria-expanded="false" aria-controls="mobile-menu-links">
+                <i class="fas fa-times"></i>
+            </button>
+
+
             <ul class="mobile-nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="index.html#about">About</a></li>
@@ -315,7 +320,7 @@
                         <div class="image-gallery">
                             <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f5f5f5'/%3E%3Ctext x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='16' fill='%23999'%3ELoading...%3C/text%3E%3C/svg%3E"
                                 data-src="images/irene-ankara-1761591220952.png" alt="Custom Traditional Dress"
-                                class="main-image lazy-loading">
+                                class="main-image lazy-loading" data-webp="images/irene-ankara-1761591220952.webp">
                             <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f5f5f5'/%3E%3Ctext x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='16' fill='%23999'%3ELoading...%3C/text%3E%3C/svg%3E"
                                 data-src="images/Irene Ankara.jpg" alt="Custom Traditional Dress Side View"
                                 class="secondary-image lazy-loading">
@@ -377,7 +382,7 @@
                                 class="main-image lazy-loading">
                             <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f5f5f5'/%3E%3Ctext x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='16' fill='%23999'%3ELoading...%3C/text%3E%3C/svg%3E"
                                 data-src="images/Thuli.jpg" alt="Premium Custom Suit Front View"
-                                class="secondary-image lazy-loading">
+                                class="secondary-image lazy-loading" data-webp="images/Thuli.webp">
                         </div>
                         <div class="image-indicators">
                             <span class="indicator active"></span>
@@ -436,7 +441,7 @@
                                 data-src="images/Ndebele.jpg" alt="Luxury Evening Gown" class="main-image lazy-loading">
                             <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f5f5f5'/%3E%3Ctext x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='16' fill='%23999'%3ELoading...%3C/text%3E%3C/svg%3E"
                                 data-src="images/ndebele-1761591474049.png" alt="Luxury Evening Gown Side View"
-                                class="secondary-image lazy-loading">
+                                class="secondary-image lazy-loading" data-webp="images/ndebele-1761591474049.webp">
                         </div>
                         <div class="image-indicators">
                             <span class="indicator active"></span>
@@ -722,7 +727,7 @@
                             <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f5f5f5'/%3E%3Ctext x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='16' fill='%23999'%3ELoading...%3C/text%3E%3C/svg%3E"
                                 data-src="images/blacklime cargo jean.png"
                                 alt="Neon Edge Long Sleeve Tee & Reflective Cargo Trousers (Black/Lime) - Alternate View"
-                                class="secondary-image lazy-loading">
+                                class="secondary-image lazy-loading" data-webp="images/blacklime cargo jean.webp">
                         </div>
                         <div class="image-indicators">
                             <span class="indicator active"></span>
@@ -771,15 +776,15 @@
                     </div>
                 </div>
 
-                <!-- Product 12: Yellow Jumpsuit -->
-                <div class="product-card" data-category="streetwear" data-price="8440" data-availability="in-stock"
+                <!-- Product 10: Yellow Jumpsuit -->
+                <div class="product-card" data-category="streetwear" data-price="840" data-availability="in-stock"
                     data-material="Premium cotton blend with satin finish" data-care="Machine wash cold, hang dry"
                     data-fit="Regular fit" data-origin="Handcrafted in Hammanskraal, Pretoria">
                     <div class="product-image">
                         <div class="image-gallery">
                             <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f5f5f5'/%3E%3Ctext x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='16' fill='%23999'%3ELoading...%3C/text%3E%3C/svg%3E"
                                 data-src="images/yellow jumpsuit.png" alt="Yellow Jumpsuit" class="main-image lazy-loading"
-                               >
+                                data-webp="images/yellow jumpsuit.webp">
                             <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f5f5f5'/%3E%3Ctext x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='16' fill='%23999'%3ELoading...%3C/text%3E%3C/svg%3E"
                                 data-src="images/yellow jumpsuit clean.jpg" alt="Yellow Jumpsuit Back View"
                                 class="secondary-image lazy-loading">
@@ -832,7 +837,7 @@
                 </div>
 
                 <!-- Product 13: Brown 2-Piece Set -->
-                <div class="product-card" data-category="luxury-streetwear" data-price="540"
+                <div class="product-card" data-category="streetwear" data-price="540"
                     data-availability="in-stock" data-material="Premium cotton blend with nylon finish"
                     data-care="Machine wash cold, hang dry" data-fit="Regular fit">
                     <div class="product-image">
@@ -897,7 +902,7 @@
                         <div class="image-gallery">
                             <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f5f5f5'/%3E%3Ctext x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='16' fill='%23999'%3ELoading...%3C/text%3E%3C/svg%3E"
                                 data-src="images/orange 2 piece.png" alt="Orange 2-Piece Set" class="main-image lazy-loading"
-                               >
+                                data-webp="images/orange 2 piece.webp">
                             <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f5f5f5'/%3E%3Ctext x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='16' fill='%23999'%3ELoading...%3C/text%3E%3C/svg%3E"
                                 data-src="images/orange 2 piece city.jpg" alt="Orange 2-Piece Set Back View"
                                 class="secondary-image lazy-loading">
@@ -957,7 +962,7 @@
                                 class="main-image lazy-loading">
                             <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f5f5f5'/%3E%3Ctext x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='16' fill='%23999'%3ELoading...%3C/text%3E%3C/svg%3E"
                                 data-src="images/ninja vest.jpg" alt="Ninja Streetwear Top Back View"
-                                class="secondary-image lazy-loading">
+                                class="secondary-image lazy-loading" data-webp="images/ninja vest.webp">
                         </div>
                         <div class="image-indicators">
                             <span class="indicator active"></span>
@@ -1069,10 +1074,10 @@
                         <div class="image-gallery">
                             <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f5f5f5'/%3E%3Ctext x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='16' fill='%23999'%3ELoading...%3C/text%3E%3C/svg%3E"
                                 data-src="images/femme cargo.png" alt="Green Cargo Pants" class="main-image lazy-loading"
-                               >
+                                data-webp="images/femme cargo.webp">
                             <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f5f5f5'/%3E%3Ctext x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='16' fill='%23999'%3ELoading...%3C/text%3E%3C/svg%3E"
                                 data-src="images/femme cargo 2.png" alt="Green Cargo Pants Back View"
-                                class="secondary-image lazy-loading">
+                                class="secondary-image lazy-loading" data-webp="images/femme cargo 2.webp">
                         </div>
                         <div class="image-indicators">
                             <span class="indicator active"></span>
@@ -1130,7 +1135,7 @@
                                 class="main-image lazy-loading">
                             <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f5f5f5'/%3E%3Ctext x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='16' fill='%23999'%3ELoading...%3C/text%3E%3C/svg%3E"
                                 data-src="images/crop top & blue cargo.png" alt="Crop Top & Cargo Pants Back View"
-                                class="secondary-image lazy-loading">
+                                class="secondary-image lazy-loading" data-webp="images/crop top & blue cargo.webp">
                         </div>
                         <div class="image-indicators">
                             <span class="indicator active"></span>
@@ -1243,7 +1248,7 @@
                             <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f5f5f5'/%3E%3Ctext x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='16' fill='%23999'%3ELoading...%3C/text%3E%3C/svg%3E"
                                 data-src="images/blue-short-ankara-1761591653497.png"
                                 alt="Heritage Elegance Collar Dress (Navy Blue Pattern + Sheer Sleeves)"
-                                class="secondary-image lazy-loading">
+                                class="secondary-image lazy-loading" data-webp="images/blue-short-ankara-1761591653497.webp">
                         </div>
                         <div class="image-indicators">
                             <span class="indicator active"></span>
@@ -1300,7 +1305,7 @@
                                 alt="White 2 Piece Crop Top with Skirt" class="main-image lazy-loading">
                             <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f5f5f5'/%3E%3Ctext x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='16' fill='%23999'%3ELoading...%3C/text%3E%3C/svg%3E"
                                 data-src="images/white 2 piece.png" alt="White 2 Piece Crop Top with Skirt Back View"
-                                class="secondary-image lazy-loading">
+                                class="secondary-image lazy-loading" data-webp="images/white 2 piece.webp">
                         </div>
                         <div class="image-indicators">
                             <span class="indicator active"></span>
@@ -1357,7 +1362,7 @@
                                 class="main-image lazy-loading">
                             <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f5f5f5'/%3E%3Ctext x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='16' fill='%23999'%3ELoading...%3C/text%3E%3C/svg%3E"
                                 data-src="images/red tracksuit.jpg" alt="Red 2 Piece Tracksuit Back View"
-                                class="secondary-image lazy-loading">
+                                class="secondary-image lazy-loading" data-webp="images/red tracksuit.webp">
                         </div>
                         <div class="image-indicators">
                             <span class="indicator active"></span>
@@ -1470,7 +1475,7 @@
                             <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f5f5f5'/%3E%3Ctext x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='16' fill='%23999'%3ELoading...%3C/text%3E%3C/svg%3E"
                                 data-src="images/green jumpsuit and silk shirt.png"
                                 alt="Tactical Overalls – Emerald Green (White Contrast Trim) Back View"
-                                class="secondary-image lazy-loading">
+                                class="secondary-image lazy-loading" data-webp="images/green jumpsuit and silk shirt.webp">
                         </div>
                         <div class="image-indicators">
                             <span class="indicator active"></span>
@@ -1526,7 +1531,7 @@
                                 alt="Blue Female 2 Piece Cargo Skirt and Tech Vest" class="main-image lazy-loading">
                             <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f5f5f5'/%3E%3Ctext x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='16' fill='%23999'%3ELoading...%3C/text%3E%3C/svg%3E"
                                 data-src="images/Blue 2 Pieces.png"
-                                alt="Blue Female 2 Piece Cargo Skirt and Tech Vest Back View" class="secondary-image lazy-loading">
+                                alt="Blue Female 2 Piece Cargo Skirt and Tech Vest Back View" class="secondary-image lazy-loading" data-webp="images/Blue 2 Pieces.webp">
                         </div>
                         <div class="image-indicators">
                             <span class="indicator active"></span>
@@ -1580,7 +1585,7 @@
                         <div class="image-gallery">
                             <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f5f5f5'/%3E%3Ctext x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='16' fill='%23999'%3ELoading...%3C/text%3E%3C/svg%3E"
                                 data-src="images/bikini top and skirt traditional.png"
-                                alt="Bikini Top and Skirt Traditional" class="main-image lazy-loading">
+                                alt="Bikini Top and Skirt Traditional" class="main-image lazy-loading" data-webp="images/bikini top and skirt traditional.webp">
                             <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f5f5f5'/%3E%3Ctext x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='16' fill='%23999'%3ELoading...%3C/text%3E%3C/svg%3E"
                                 data-src="images/traditional couple.jpg" alt="Bikini Top and Skirt Traditional Back View"
                                 class="secondary-image lazy-loading">
@@ -1639,7 +1644,7 @@
                                 alt="Green Lime Cargo Pants with Denim Jacket" class="main-image lazy-loading">
                             <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f5f5f5'/%3E%3Ctext x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='16' fill='%23999'%3ELoading...%3C/text%3E%3C/svg%3E"
                                 data-src="images/black and lime cargo with Denim mixed Jacket.png"
-                                alt="Green Lime Cargo Pants with Denim Jacket Back View" class="secondary-image lazy-loading">
+                                alt="Green Lime Cargo Pants with Denim Jacket Back View" class="secondary-image lazy-loading" data-webp="images/black and lime cargo with Denim mixed Jacket.webp">
                         </div>
                         <div class="image-indicators">
                             <span class="indicator active"></span>
@@ -1754,7 +1759,7 @@
                                 data-src="images/blue male 2 piece.jpg" alt="Blue Male 2 Piece Set" class="main-image lazy-loading">
                             <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f5f5f5'/%3E%3Ctext x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='16' fill='%23999'%3ELoading...%3C/text%3E%3C/svg%3E"
                                 data-src="images/Blue 2 Pieces.png" alt="Blue Male 2 Piece Set Back View"
-                                class="secondary-image lazy-loading">
+                                class="secondary-image lazy-loading" data-webp="images/Blue 2 Pieces.webp">
                         </div>
                         <div class="image-indicators">
                             <span class="indicator active"></span>
@@ -2382,7 +2387,7 @@
                     <div class="footer-logo">
                         <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E"
                             data-src="images/footer-logo.png" alt="Predesigns Clothing Footer Logo"
-                            class="lazy-loading" loading="lazy" width="200" height="50">
+                            class="lazy-loading" loading="lazy" width="200" height="50" data-webp="images/footer-logo.webp">
                     </div>
                     <p>Quality tailor-made clothing from scratch with local love and taste. Est. 2019 by Josias Tlou.
                     </p>
@@ -2440,9 +2445,9 @@
                         <span>Secure Checkout</span>
                     </div>
                     <div class="trust-badge">
-                        <i class="fas fa-credit-card"></i>
-                        <span>Visa • Mastercard • PayPal</span>
-                    </div>
+                    <i class="fas fa-lock"></i>
+                    <span>Secure Payments</span>
+                </div>
                     <div class="trust-badge">
                         <i class="fas fa-shipping-fast"></i>
                         <span>Fast Delivery</span>
@@ -2459,7 +2464,7 @@
                 <div class="parent-company">
                     <span>A</span>
                     <a href="https://purpleraygroup.co.za" target="_blank" rel="noopener noreferrer">
-                        <img src="images/PRG LOGO.png" alt="Purple Ray Group" width="80">
+                        <img src="images/PRG LOGO.png" alt="Purple Ray Group" width="80" data-webp="images/PRG LOGO.webp">
                     </a>
                     <span>Brand</span>
                 </div>
@@ -2528,12 +2533,14 @@
 
     <!-- Core Utilities & Managers -->
     <script src="js/env.js"></script>
+    <script src="js/config.public.js" defer></script>
     <script src="js/config.js" defer></script>
     <script src="js/firebase-config.js" defer></script>
     <script src="js/auth.js" defer></script>
     <script src="js/utils.js" defer></script>
     <script src="js/lazy-load.js" defer></script>
     <script src="js/ui-manager.js" defer></script>
+    <script src="js/focus-manager.js" defer></script>
     <script src="js/product-manager.js" defer></script>
     <script src="js/form-manager.js" defer></script>
     <script src="snipcart-config.js" defer></script>

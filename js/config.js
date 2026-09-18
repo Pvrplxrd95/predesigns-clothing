@@ -1,11 +1,15 @@
 /**
  * Configuration Module for Predesigns Clothing
- * 
+ *
  * This module manages both application constants and environment-based configuration.
- * Environment variables should be set in .env file or injected at build time.
- * 
+ * Priority order for config values:
+ *   1. window.__PUBLIC_CONFIG__ (committed public config - js/config.public.js)
+ *   2. window.__ENV__ (local override - js/env.js, gitignored)
+ *   3. Safe defaults
+ *
  * IMPORTANT: Never expose sensitive API keys in production code or version control.
- * Always use environment variables and ensure .env is in .gitignore
+ * Only browser-public configuration belongs in __PUBLIC_CONFIG__.
+ * Private secrets must NEVER reach the client.
  */
 
 // ============================================
@@ -14,76 +18,66 @@
 
 class EnvironmentConfig {
     constructor() {
-        // Initialize with safe defaults
+        // Initialize with safe defaults, reading from public config first
+        const publicConfig = (typeof window !== 'undefined' && window.__PUBLIC_CONFIG__) || {};
+        const localEnv = (typeof window !== 'undefined' && window.__ENV__) || {};
+
         this.snipcart = {
-            apiKey: this.getEnv('SNIPCART_API_KEY', 'pk_test_'),
-            environment: this.getEnv('SNIPCART_ENVIRONMENT', 'test'),
-            isConfigured: !this.getEnv('SNIPCART_API_KEY', '').startsWith('pk_test_') &&
-                this.getEnv('SNIPCART_API_KEY', '') !== ''
+            apiKey: this.getConfig('SNIPCART_API_KEY', publicConfig, localEnv, 'pk_test_YOUR_TEST_KEY_HERE'),
+            environment: this.getConfig('SNIPCART_ENVIRONMENT', publicConfig, localEnv, 'test'),
+            isConfigured: !this.getConfig('SNIPCART_API_KEY', publicConfig, localEnv, '').startsWith('pk_test_') &&
+                this.getConfig('SNIPCART_API_KEY', publicConfig, localEnv, '') !== ''
         };
 
         this.yoco = {
-            publicKey: this.getEnv('YOCO_PUBLIC_KEY', ''),
-            environment: this.getEnv('YOCO_ENVIRONMENT', 'test'),
-            isConfigured: !!this.getEnv('YOCO_PUBLIC_KEY', '')
-        };
-
-        this.mailerlite = {
-            apiKey: this.getEnv('MAILERLITE_API_KEY', ''),
-            groupId: this.getEnv('MAILERLITE_GROUP_ID', ''),
-            isConfigured: !!this.getEnv('MAILERLITE_API_KEY', '')
+            publicKey: this.getConfig('YOCO_PUBLIC_KEY', publicConfig, localEnv, ''),
+            environment: this.getConfig('YOCO_ENVIRONMENT', publicConfig, localEnv, 'test'),
+            isConfigured: !!this.getConfig('YOCO_PUBLIC_KEY', publicConfig, localEnv, '')
         };
 
         this.giscus = {
-            repo: this.getEnv('GISCUS_REPO', ''),
-            repoId: this.getEnv('GISCUS_REPO_ID', ''),
-            categoryId: this.getEnv('GISCUS_CATEGORY_ID', ''),
-            isConfigured: !!this.getEnv('GISCUS_REPO', '')
+            repo: this.getConfig('GISCUS_REPO', publicConfig, localEnv, ''),
+            repoId: this.getConfig('GISCUS_REPO_ID', publicConfig, localEnv, ''),
+            categoryId: this.getConfig('GISCUS_CATEGORY_ID', publicConfig, localEnv, ''),
+            isConfigured: !!this.getConfig('GISCUS_REPO', publicConfig, localEnv, '')
         };
 
         this.firebase = {
-            apiKey: this.getEnv('FIREBASE_API_KEY', ''),
-            authDomain: this.getEnv('FIREBASE_AUTH_DOMAIN', ''),
-            projectId: this.getEnv('FIREBASE_PROJECT_ID', ''),
-            storageBucket: this.getEnv('FIREBASE_STORAGE_BUCKET', ''),
-            messagingSenderId: this.getEnv('FIREBASE_MESSAGING_SENDER_ID', ''),
-            appId: this.getEnv('FIREBASE_APP_ID', ''),
-            measurementId: this.getEnv('FIREBASE_MEASUREMENT_ID', ''),
-            googleClientId: this.getEnv('GOOGLE_CLIENT_ID', ''),
-            isConfigured: !!this.getEnv('FIREBASE_API_KEY', '')
+            apiKey: this.getConfig('FIREBASE_API_KEY', publicConfig, localEnv, ''),
+            authDomain: this.getConfig('FIREBASE_AUTH_DOMAIN', publicConfig, localEnv, ''),
+            projectId: this.getConfig('FIREBASE_PROJECT_ID', publicConfig, localEnv, ''),
+            storageBucket: this.getConfig('FIREBASE_STORAGE_BUCKET', publicConfig, localEnv, ''),
+            messagingSenderId: this.getConfig('FIREBASE_MESSAGING_SENDER_ID', publicConfig, localEnv, ''),
+            appId: this.getConfig('FIREBASE_APP_ID', publicConfig, localEnv, ''),
+            measurementId: this.getConfig('FIREBASE_MEASUREMENT_ID', publicConfig, localEnv, ''),
+            googleClientId: this.getConfig('GOOGLE_CLIENT_ID', publicConfig, localEnv, ''),
+            isConfigured: !!this.getConfig('FIREBASE_API_KEY', publicConfig, localEnv, '')
         };
 
         this.app = {
-            environment: this.getEnv('NODE_ENV', 'development'),
-            url: this.getEnv('APP_URL', window.location.origin),
-            debugMode: this.getEnv('DEBUG_MODE', 'false') === 'true'
+            environment: this.getConfig('NODE_ENV', publicConfig, localEnv, 'development'),
+            url: this.getConfig('APP_URL', publicConfig, localEnv, window.location.origin),
+            debugMode: this.getConfig('DEBUG_MODE', publicConfig, localEnv, 'false') === 'true'
         };
 
         this.validateConfig();
     }
 
     /**
-     * Safely get an environment variable from multiple sources
+     * Get config value with priority: publicConfig > localEnv > defaultValue
      */
-    getEnv(key, defaultValue = '') {
-        // Try window.__ENV__ (Vite/build tools)
-        if (typeof window !== 'undefined' && window.__ENV__ && window.__ENV__[key]) {
-            return window.__ENV__[key];
+    getConfig(key, publicConfig, localEnv, defaultValue = '') {
+        // 1. Committed public config (highest priority for production)
+        if (publicConfig && publicConfig[key] !== undefined && publicConfig[key] !== '') {
+            return publicConfig[key];
         }
 
-        // Try process.env (Node.js build step)
-        if (typeof process !== 'undefined' && process.env && process.env[key]) {
-            return process.env[key];
+        // 2. Local override (for development)
+        if (localEnv && localEnv[key] !== undefined && localEnv[key] !== '') {
+            return localEnv[key];
         }
 
-        // Try localStorage (for manually set values in development)
-        if (typeof localStorage !== 'undefined') {
-            const storedValue = localStorage.getItem(`ENV_${key}`);
-            if (storedValue) {
-                return storedValue;
-            }
-        }
-
+        // 3. Default
         return defaultValue;
     }
 

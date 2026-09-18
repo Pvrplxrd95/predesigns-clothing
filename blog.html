@@ -82,7 +82,7 @@
                     <a href="index.html">
                         <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E"
                             data-src="images/logo.jpg" alt="Predesigns Clothing Logo" loading="lazy" width="150"
-                            height="50">
+                            height="50" data-webp="images/logo.webp">
                     </a>
                 </div>
 
@@ -109,12 +109,12 @@
                         </div>
                     </div>
                     <div class="cart-container">
-                        <a href="shop.html" class="cart-icon" onclick="handleCartClick(); return false;">
+                        <button class="snipcart-checkout cart-icon" aria-label="Open cart">
                             <i class="fas fa-shopping-bag"></i>
-                            <span class="cart-count">0</span>
-                        </a>
+                            <span class="snipcart-items-count cart-count">0</span>
+                        </button>
                     </div>
-                    <div class="mobile-menu-toggle">
+                    <div class="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-menu-links" aria-label="Toggle menu">
                         <span></span><span></span><span></span>
                     </div>
                 </div>
@@ -124,7 +124,12 @@
 
     <!-- Mobile Menu -->
     <div class="mobile-menu">
-        <div class="mobile-menu-content">
+        <div class="mobile-menu-content" id="mobile-menu-links">
+            <button class="mobile-menu-close" aria-label="Close menu" aria-expanded="false" aria-controls="mobile-menu-links">
+                <i class="fas fa-times"></i>
+            </button>
+
+
             <ul class="mobile-nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="index.html#about">About</a></li>
@@ -189,7 +194,7 @@
                     <div class="blog-image">
                         <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E"
                             data-src="images/orange%202%20piece%20city.jpg"
-                            alt="The Evolution of African Streetwear Blog" loading="lazy">
+                            alt="The Evolution of African Streetwear Blog" loading="lazy" data-webp="images/orange 2 piece city.webp">
                         <div class="blog-overlay">
                             <span class="blog-category">Fashion</span>
                         </div>
@@ -213,7 +218,7 @@
                     <div class="blog-image">
                         <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E"
                             data-src="images/Red%202%20Piece%20Tracksuit.jpg" alt="The Art of Perfect Fit Blog"
-                            loading="lazy">
+                            loading="lazy" data-webp="images/Red 2 Piece Tracksuit.webp">
                         <div class="blog-overlay">
                             <span class="blog-category">Tailoring</span>
                         </div>
@@ -237,7 +242,7 @@
                     <div class="blog-image">
                         <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E"
                             data-src="images/Blue Female Cargo Skirt.jpg" alt="Sustainable Fashion Choices Blog"
-                            loading="lazy">
+                            loading="lazy" data-webp="images/Blue Female Cargo Skirt.webp">
                         <div class="blog-overlay">
                             <span class="blog-category">Lifestyle</span>
                         </div>
@@ -287,7 +292,7 @@
                     <div class="footer-logo">
                         <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E"
                             data-src="images/footer-logo.png" alt="Predesigns Clothing Footer Logo"
-                            class="lazy-loading" loading="lazy" width="200" height="50">
+                            class="lazy-loading" loading="lazy" width="200" height="50" data-webp="images/footer-logo.webp">
                     </div>
                     <p>Quality tailor-made clothing from scratch with local love and taste. Est. 2019 by Josias Tlou.
                     </p>
@@ -346,9 +351,9 @@
                         <span>Secure Checkout</span>
                     </div>
                     <div class="trust-badge">
-                        <i class="fas fa-credit-card"></i>
-                        <span>Visa • Mastercard • PayPal</span>
-                    </div>
+                    <i class="fas fa-lock"></i>
+                    <span>Secure Payments</span>
+                </div>
                     <div class="trust-badge">
                         <i class="fas fa-shipping-fast"></i>
                         <span>Fast Delivery</span>
@@ -365,7 +370,7 @@
                 <div class="parent-company">
                     <span>A</span>
                     <a href="https://purpleraygroup.co.za" target="_blank" rel="noopener noreferrer">
-                        <img src="images/PRG LOGO.png" alt="Purple Ray Group" width="80">
+                        <img src="images/PRG LOGO.png" alt="Purple Ray Group" width="80" data-webp="images/PRG LOGO.webp">
                     </a>
                     <span>Brand</span>
                 </div>
@@ -385,12 +390,14 @@
 
     <!-- Core Utilities & Managers -->
     <script src="js/env.js"></script>
+    <script src="js/config.public.js" defer></script>
     <script src="js/config.js" defer></script>
     <script src="js/firebase-config.js" defer></script>
     <script src="js/auth.js" defer></script>
     <script src="js/utils.js" defer></script>
     <script src="js/lazy-load.js" defer></script>
     <script src="js/ui-manager.js" defer></script>
+    <script src="js/focus-manager.js" defer></script>
     <script src="js/product-manager.js" defer></script>
     <script src="js/form-manager.js" defer></script>
 
@@ -408,15 +415,6 @@
         document.addEventListener('DOMContentLoaded', function () {
             const yearEl = document.getElementById('year');
             if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-            // Handle Cart Clicks
-            window.handleCartClick = function () {
-                if (window.Snipcart) {
-                    window.Snipcart.api.theme.cart.open();
-                } else {
-                    window.location.href = 'shop.html';
-                }
-            };
         });
     </script>
 </body>
