@@ -232,9 +232,117 @@
                         </ol>
                     </div>
                 </div>
-            </div>
+                            </div>
 
-            <!-- Delivery Information -->
+                            <!-- Customer Details & Order Submission -->
+                            <div class="customer-details-section">
+                                <h2><i class="fas fa-user"></i> Customer Details & Place Order</h2>
+                                <p class="section-note">Fill in your details below to generate your order reference and receive bank transfer instructions.</p>
+                
+                                <form id="order-form" class="order-form" novalidate>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="customer-fullname">Full Name *</label>
+                                            <input type="text" id="customer-fullname" name="fullname" required autocomplete="name" placeholder="As it appears on your bank account">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="customer-email">Email Address *</label>
+                                            <input type="email" id="customer-email" name="email" required autocomplete="email" placeholder="Order confirmation will be sent here">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="customer-phone">Phone / WhatsApp *</label>
+                                            <input type="tel" id="customer-phone" name="phone" required autocomplete="tel" placeholder="For delivery coordination">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="customer-suburb">Suburb / Area *</label>
+                                            <input type="text" id="customer-suburb" name="suburb" required autocomplete="address-level2" placeholder="e.g. Hammanskraal, Pretoria North, Sandton">
+                                            <small class="form-hint">Used to verify local delivery eligibility (R60) vs standard SA delivery (R120)</small>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="customer-address">Full Delivery Address *</label>
+                                        <textarea id="customer-address" name="address" rows="3" required autocomplete="street-address" placeholder="Street address, complex/unit number, city, province, postal code"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="customer-notes">Order Notes (Optional)</label>
+                                        <textarea id="customer-notes" name="notes" rows="2" placeholder="Special delivery instructions, size preferences, etc."></textarea>
+                                    </div>
+                    
+                                    <div class="order-summary-preview" id="order-preview">
+                                        <h3>Order Summary</h3>
+                                        <div id="preview-items"></div>
+                                        <div class="preview-totals">
+                                            <div class="preview-total-item">
+                                                <span>Subtotal:</span>
+                                                <span id="preview-subtotal">R0.00</span>
+                                            </div>
+                                            <div class="preview-total-item">
+                                                <span>Delivery:</span>
+                                                <span id="preview-delivery">R0.00</span>
+                                            </div>
+                                            <div class="preview-total-item preview-total-final">
+                                                <span>Total:</span>
+                                                <span id="preview-total">R0.00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                    
+                                    <div class="form-actions">
+                                        <button type="submit" class="btn btn-primary btn-lg" id="submit-order-btn">
+                                            <i class="fas fa-paper-plane"></i> Place Order & Get Bank Details
+                                        </button>
+                                    </div>
+                                </form>
+                
+                                <!-- Order Confirmation (shown after submission) -->
+                                <div id="order-confirmation" class="order-confirmation hidden">
+                                    <div class="confirmation-icon"><i class="fas fa-check-circle"></i></div>
+                                    <h3>Order Submitted Successfully</h3>
+                                    <div class="confirmation-details">
+                                        <p><strong>Order Reference:</strong> <span id="order-reference">—</span></div>
+                                        <p><strong>Total:</strong> <span id="confirmation-total">—</span></p>
+                                        <p><strong>Delivery:</strong> <span id="confirmation-delivery">—</span></p>
+                                    </div>
+                                    <div class="bank-details-confirmation">
+                                        <h4>Bank Transfer Details</h4>
+                                        <div class="bank-detail-row">
+                                            <span class="bank-label">Account:</span>
+                                            <span class="bank-value">Predesigns Clothing</span>
+                                        </div>
+                                        <div class="bank-detail-row">
+                                            <span class="bank-label">Bank:</span>
+                                            <span class="bank-value">First National Bank (FNB)</span>
+                                        </div>
+                                        <div class="bank-detail-row">
+                                            <span class="bank-label">Account No:</span>
+                                            <span class="bank-value">62864629341</span>
+                                        </div>
+                                        <div class="bank-detail-row">
+                                            <span class="bank-label">Branch Code:</span>
+                                            <span class="bank-value">250655</span>
+                                        </div>
+                                        <div class="bank-detail-row">
+                                            <span class="bank-label">Reference:</span>
+                                            <span class="bank-value" id="bank-reference">Your Full Name + Order Ref</span>
+                                        </div>
+                                    </div>
+                                    <div class="next-steps">
+                                        <h4>Next Steps</h4>
+                                        <ol>
+                                            <li>Make the bank transfer using the details above</li>
+                                            <li>Use <strong>your full name + order reference</strong> as the payment reference</li>
+                                            <li>Send proof of payment to <a href="mailto:purpleraygroup@proton.me">purpleraygroup@proton.me</a></li>
+                                            <li>Include your order reference in the email subject</li>
+                                            <li>We'll confirm within 24 hours and process your order</li>
+                                        </ol>
+                                    </div>
+                                    <button type="button" class="btn btn-secondary" onclick="resetOrderForm()">Start New Order</button>
+                                </div>
+                            </div>
+
+                            <!-- Delivery Information -->
                         <div class="delivery-info">
                             <h2><i class="fas fa-truck"></i> Delivery Information</h2>
                             <div class="delivery-details">
@@ -560,15 +668,244 @@ Please confirm your delivery address is within Hammanskraal. We will verify elig
         }
 
         // Calculate delivery fee (same function as in main.js)
-                function calculateDeliveryFee(subtotal, deliveryOption) {
-                    switch (deliveryOption) {
-                        case 'local':
-                            return 60; // R60 for local delivery
-                        case 'nationwide':
-                            return 120; // R120 for standard South African delivery
-                        default:
-                            return 60; // Default to local
+                        function calculateDeliveryFee(subtotal, deliveryOption) {
+                            switch (deliveryOption) {
+                                case 'local':
+                                    return 60; // R60 for local delivery
+                                case 'nationwide':
+                                    return 120; // R120 for standard South African delivery
+                                default:
+                                    return 60; // Default to local
+                            }
+                        }
+
+                // ===== ORDER FORM HANDLING =====
+                document.addEventListener('DOMContentLoaded', function () {
+                    const orderForm = document.getElementById('order-form');
+                    const orderConfirmation = document.getElementById('order-confirmation');
+                    const previewItems = document.getElementById('preview-items');
+                    const previewSubtotal = document.getElementById('preview-subtotal');
+                    const previewDelivery = document.getElementById('preview-delivery');
+                    const previewTotal = document.getElementById('preview-total');
+
+                    // Update order preview in real-time
+                    function updateOrderPreview() {
+                        let cart = [];
+                        if (typeof CartStorage !== 'undefined') {
+                            cart = CartStorage.getCart();
+                        } else {
+                            try {
+                                const storedCart = localStorage.getItem('predesigns-cart');
+                                cart = storedCart ? JSON.parse(storedCart) : [];
+                            } catch (e) {
+                                cart = [];
+                            }
+                        }
+
+                        const deliveryOption = localStorage.getItem('deliveryOption') || 'local';
+                        const currency = localStorage.getItem('currency') || 'zar';
+
+                        let subtotal = 0;
+                        previewItems.innerHTML = '';
+
+                        cart.forEach(item => {
+                            const itemTotal = item.price * item.quantity;
+                            subtotal += itemTotal;
+
+                            const itemEl = document.createElement('div');
+                            itemEl.className = 'preview-item';
+                            const escape = (str) => {
+                                const div = document.createElement('div');
+                                div.textContent = str;
+                                return div.innerHTML;
+                            };
+                            itemEl.innerHTML = `
+                                <span class="preview-item-name">${escape(item.name)} × ${item.quantity}</span>
+                                <span class="preview-item-total">R${itemTotal.toFixed(2)}</span>
+                            `;
+                            previewItems.appendChild(itemEl);
+                        });
+
+                        const deliveryFee = calculateDeliveryFee(subtotal, deliveryOption);
+                        const total = subtotal + deliveryFee;
+
+                        previewSubtotal.textContent = `R${subtotal.toFixed(2)}`;
+                        previewDelivery.textContent = `R${deliveryFee.toFixed(2)}`;
+                        previewTotal.textContent = `R${total.toFixed(2)}`;
                     }
+
+                    // Generate order reference: PRG-YYYYMMDD-XXXX
+                    function generateOrderReference() {
+                        const date = new Date();
+                        const dateStr = date.toISOString().slice(0, 10).replace(/-/g, '');
+                        const random = Math.random().toString(36).substring(2, 6).toUpperCase();
+                        return `PRG-${dateStr}-${random}`;
+                    }
+
+                    // Handle form submission
+                    orderForm.addEventListener('submit', async function (e) {
+                        e.preventDefault();
+
+                        // Validate required fields
+                        const requiredFields = ['customer-fullname', 'customer-email', 'customer-phone', 'customer-suburb', 'customer-address'];
+                        let valid = true;
+                        requiredFields.forEach(id => {
+                            const field = document.getElementById(id);
+                            if (!field.value.trim()) {
+                                field.classList.add('error');
+                                valid = false;
+                            } else {
+                                field.classList.remove('error');
+                            }
+                        });
+
+                        if (!valid) {
+                            showFormMessage('Please fill in all required fields.', 'error');
+                            return;
+                        }
+
+                        // Email validation
+                        const email = document.getElementById('customer-email').value;
+                        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                            document.getElementById('customer-email').classList.add('error');
+                            showFormMessage('Please enter a valid email address.', 'error');
+                            return;
+                        }
+
+                        // Phone validation
+                        const phone = document.getElementById('customer-phone').value;
+                        if (!/^(\+27|0)[6-8][0-9]{7,8}$/.test(phone.replace(/\s/g, ''))) {
+                            document.getElementById('customer-phone').classList.add('error');
+                            showFormMessage('Please enter a valid South African phone number.', 'error');
+                            return;
+                        }
+
+                        // Generate order reference
+                        const orderRef = generateOrderReference();
+
+                        // Collect form data
+                        const formData = {
+                            orderReference: orderRef,
+                            timestamp: new Date().toISOString(),
+                            customer: {
+                                fullname: document.getElementById('customer-fullname').value.trim(),
+                                email: document.getElementById('customer-email').value.trim(),
+                                phone: document.getElementById('customer-phone').value.trim(),
+                                suburb: document.getElementById('customer-suburb').value.trim(),
+                                address: document.getElementById('customer-address').value.trim(),
+                                notes: document.getElementById('customer-notes').value.trim()
+                            },
+                            delivery: {
+                                option: localStorage.getItem('deliveryOption') || 'local',
+                                fee: calculateDeliveryFee(
+                                    getCartSubtotal(),
+                                    localStorage.getItem('deliveryOption') || 'local'
+                                )
+                            },
+                            items: getCartItems(),
+                            subtotal: getCartSubtotal(),
+                            total: getCartSubtotal() + calculateDeliveryFee(getCartSubtotal(), localStorage.getItem('deliveryOption') || 'local'),
+                            currency: localStorage.getItem('currency') || 'zar',
+                            paymentMethod: 'bank-transfer',
+                            status: 'pending-payment'
+                        };
+
+                        // Submit to Formspree
+                        const submitBtn = document.getElementById('submit-order-btn');
+                        const originalBtnText = submitBtn.innerHTML;
+                        submitBtn.disabled = true;
+                        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+
+                        try {
+                            const response = await fetch('https://formspree.io/f/xdkpeweb', {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify(formData)
+                            });
+
+                            if (!response.ok) throw new Error('Form submission failed');
+
+                            // Store order locally for reference
+                            const localOrders = JSON.parse(localStorage.getItem('predesigns-orders') || '[]');
+                            localOrders.push(formData);
+                            localStorage.setItem('predesigns-orders', JSON.stringify(localOrders));
+
+                            // Clear cart after successful order
+                            if (typeof CartStorage !== 'undefined') {
+                                CartStorage.clearCart();
+                            } else {
+                                localStorage.removeItem('predesigns-cart');
+                            }
+                            updateCartCount();
+
+                            // Show confirmation
+                            orderForm.classList.add('hidden');
+                            orderConfirmation.classList.remove('hidden');
+                            document.getElementById('order-reference').textContent = formData.orderReference;
+                            document.getElementById('confirmation-total').textContent = `R${formData.total.toFixed(2)}`;
+                            document.getElementById('confirmation-delivery').textContent = formData.delivery.option === 'local' ? 'Local R60' : 'Standard SA R120';
+                            document.getElementById('bank-reference').textContent = `${formData.customer.fullname} - ${formData.orderReference}`;
+
+                            // Update preview one last time
+                            updateOrderPreview();
+
+                            // Scroll to confirmation
+                            orderConfirmation.scrollIntoView({ behavior: 'smooth' });
+
+                        } catch (error) {
+                            console.error('Order submission error:', error);
+                            submitBtn.disabled = false;
+                            submitBtn.innerHTML = originalBtnText;
+                            showFormMessage('Failed to submit order. Please try again or contact us directly.', 'error');
+                        }
+                    });
+
+                    function getCartItems() {
+                        if (typeof CartStorage !== 'undefined') {
+                            return CartStorage.getCart();
+                        }
+                        try {
+                            const stored = localStorage.getItem('predesigns-cart');
+                            return stored ? JSON.parse(stored) : [];
+                        } catch { return []; }
+                    }
+
+                    function getCartSubtotal() {
+                        const items = getCartItems();
+                        return items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+                    }
+
+                    function showFormMessage(message, type) {
+                        // Remove existing messages
+                        document.querySelectorAll('.form-message').forEach(el => el.remove());
+                        const msg = document.createElement('div');
+                        msg.className = `form-message message-${type}`;
+                        msg.textContent = message;
+                        orderForm.insertBefore(msg, orderForm.firstChild);
+                        setTimeout(() => msg.remove(), 5000);
+                    }
+
+                    // Initial preview update
+                    updateOrderPreview();
+
+                    // Update preview when delivery option changes
+                    document.querySelectorAll('input[name="delivery-checkout"]').forEach(radio => {
+                        radio.addEventListener('change', updateOrderPreview);
+                    });
+
+                    // Remove error class on input
+                    document.querySelectorAll('#order-form input, #order-form textarea').forEach(field => {
+                        field.addEventListener('input', () => field.classList.remove('error'));
+                    });
+                });
+
+                function resetOrderForm() {
+                    document.getElementById('order-form').reset();
+                    document.getElementById('order-form').classList.remove('hidden');
+                    document.getElementById('order-confirmation').classList.add('hidden');
+                    document.querySelectorAll('.error').forEach(el => el.classList.remove('error'));
+                    document.querySelectorAll('.form-message').forEach(el => el.remove());
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
                 }
     </script>
 </body>
