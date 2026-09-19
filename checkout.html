@@ -74,7 +74,7 @@
                 </div>
 
                 <div class="nav-actions">
-                    <div class="auth-container">
+                    <div class="auth-container hidden">
                         <div class="auth-buttons">
                             <button class="btn btn-secondary" onclick="openLoginModal()">
                                 <i class="fas fa-sign-in-alt"></i> Login
@@ -90,6 +90,10 @@
                             <span class="snipcart-items-count cart-count">0</span>
                         </button>
                     </div>
+                    <a href="#bank-transfer-details" class="bank-transfer-btn">
+                        <i class="fas fa-university"></i>
+                        <span>Bank Transfer</span>
+                    </a>
                     <div class="mobile-menu-toggle">
                         <span></span><span></span><span></span>
                     </div>
@@ -198,7 +202,7 @@
                         </div>
 
             <!-- Payment Information -->
-            <div class="payment-info">
+            <div class="payment-info" id="bank-transfer-details">
                 <h2><i class="fas fa-university"></i> Bank Transfer Details</h2>
                 <div class="bank-details">
                     <div class="bank-info">
@@ -907,6 +911,9 @@ Please confirm your delivery address is within Hammanskraal. We will verify elig
                                                     customerPII.address = '';
                                                     customerPII.suburb = '';
 
+                                                    // Reset customer form fields after successful submission
+                                                    orderForm.reset();
+
                                                     // Scroll to confirmation
                                                     orderConfirmation.scrollIntoView({ behavior: 'smooth' });
 
@@ -954,11 +961,6 @@ Please confirm your delivery address is within Hammanskraal. We will verify elig
                     // Remove error class on input
                     document.querySelectorAll('#order-form input, #order-form textarea').forEach(field => {
                         field.addEventListener('input', () => field.classList.remove('error'));
-                    });
-
-                    // Clear sensitive session data when leaving the page
-                    window.addEventListener('beforeunload', function () {
-                        sessionStorage.removeItem('orderConfirmation');
                     });
                 });
 

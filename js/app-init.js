@@ -42,6 +42,9 @@ class ApplicationInitializer {
             window.uiManager.initPreloader();
             window.uiManager.initNavigation();
             window.uiManager.initMobileMenu();
+            // Auth controls hidden by default in HTML; JS removes display:none only when ENABLE_AUTH=true
+            window.uiManager.initAuthVisibility();
+            window.uiManager.initHeaderResponsiveness();
         }
 
         if (window.formManager) {

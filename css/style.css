@@ -711,7 +711,7 @@ section.tight { padding: 4rem 0; }
 .lookbook-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(10, 6, 51, 0.9) 0%, transparent 60%);
+    background: linear-gradient(to top, rgba(10, 6, 51, 0.95) 0%, rgba(10, 6, 51, 0.6) 50%, transparent 100%);
     padding: 1.25rem;
     display: flex;
     align-items: flex-end;
@@ -825,6 +825,10 @@ section.tight { padding: 4rem 0; }
 
 /* ============== SERVICES ============== */
 .services { background: var(--prp-50); }
+
+.services .section-header .section-subtitle {
+    color: var(--ink-600);
+}
 
 .services-grid {
     display: grid;
@@ -1444,6 +1448,48 @@ section.tight { padding: 4rem 0; }
 }
 
 /* Bank transfer checkout button */
+.bank-transfer-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 10px 20px;
+    background: var(--prp-700);
+    color: var(--white);
+    border-radius: var(--radius-pill);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    white-space: nowrap;
+    min-height: 44px;
+    transition: all var(--t) var(--ease);
+}
+
+.bank-transfer-btn:hover {
+    background: var(--prp-900);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-prp);
+}
+
+.bank-transfer-btn:focus {
+    outline: 2px solid var(--prp-500);
+    outline-offset: 2px;
+}
+
+.bank-transfer-btn i {
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    .bank-transfer-btn span {
+        display: none;
+    }
+    .bank-transfer-btn {
+        padding: 10px 14px;
+        min-height: 44px;
+    }
+}
+
 .cart-label {
     display: none;
     font-size: 0.75rem;

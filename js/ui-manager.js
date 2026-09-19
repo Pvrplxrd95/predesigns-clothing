@@ -1,6 +1,6 @@
 /**
  * UI Manager Module
- * Handles general UI behaviors like preloader, navigation, and mobile menu.
+ * Handles general UI behaviors like preloader, navigation, mobile menu, and auth visibility.
  */
 
 class UIManager {
@@ -49,9 +49,6 @@ class UIManager {
         });
     }
 
-    /**
-     * Initialize mobile menu behavior
-     */
     /**
      * Initialize mobile menu behavior
      */
@@ -122,6 +119,72 @@ class UIManager {
         this.mobileMenuBackdrop?.classList.remove('active');
         this.mobileMenuClose?.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
+    }
+
+    /**
+     * Hide or show authentication controls based on feature flag
+     */
+    initAuthVisibility() {
+        const enableAuth = window.__FEATURE_FLAGS__?.ENABLE_AUTH ?? false;
+        const authContainers = document.querySelectorAll('.auth-container, .mobile-auth-buttons');
+        
+        authContainers.forEach(container => {
+            if (!enableAuth) {
+                // Hide auth controls and remove their space
+                container.style.display = 'none';
+                // Also hide any direct auth buttons without container
+                container.querySelectorAll('button').forEach(btn => {
+                    btn.setAttribute('disabled', 'disabled');
+                    btn.setAttribute('aria-hidden', 'true');
+                    btn.setAttribute('tabindex', '-1');
+                });
+            } else {
+                container.style.display = '';
+                container.querySelectorAll('button').forEach(btn => {
+                    btn.removeAttribute('disabled');
+                    btn.removeAttribute('aria-hidden');
+                    btn.removeAttribute('tabindex');
+                });
+            }
+        });
+    }
+
+    /**
+     * Ensure consistent header behavior across viewports
+     */
+    initHeaderResponsiveness() {
+        const header = document.querySelector('.header');
+        if (!header) return;
+
+        // Prevent header overflow at all widths
+        const navbar = header.querySelector('.navbar');
+        if (navbar) {
+            navbar.style.overflow = 'visible';
+        }
+
+        // Collapse to mobile menu when desktop nav no longer fits
+        const checkOverflow = () => {
+            const navMenu = header.querySelector('.nav-menu');
+            const navActions = header.querySelector('.nav-actions');
+            if (!navMenu || !navActions) return;
+
+            const headerWidth = header.offsetWidth;
+            const logoWidth = header.querySelector('.logo')?.offsetWidth || 0;
+            const actionsWidth = navActions.offsetWidth;
+            const availableWidth = headerWidth - logoWidth - actionsWidth - 48; // 48px padding
+
+            if (availableWidth < 300) {
+                // Not enough room for desktop nav - ensure mobile menu is shown
+                navMenu.classList.add('hidden');
+            } else {
+                navMenu.classList.remove('hidden');
+            }
+        };
+
+        // Check on load and resize
+        window.addEventListener('resize', checkOverflow);
+        // Initial check after a short delay for layout to settle
+        setTimeout(checkOverflow, 100);
     }
 }
 
