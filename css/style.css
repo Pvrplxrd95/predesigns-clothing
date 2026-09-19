@@ -890,12 +890,35 @@ section.tight { padding: 4rem 0; }
 .service-item h3 {
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
+    color: var(--ink-900);
 }
 .service-item p {
     color: var(--ink-500);
     font-size: 0.95rem;
     line-height: 1.6;
     margin: 0;
+}
+.service-item .service-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0 0;
+}
+.service-item .service-list li {
+    color: var(--ink-700);
+    font-size: 0.9rem;
+    line-height: 1.8;
+    padding-left: 1.25rem;
+    position: relative;
+}
+.service-item .service-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.7em;
+    width: 6px;
+    height: 6px;
+    background: var(--prp-600);
+    border-radius: 50%;
 }
 
 /* ============== BLOG ============== */
