@@ -63,6 +63,36 @@ class EnvironmentConfig {
         this.validateConfig();
     }
 
+    /** Feature flags from config.public.js */
+    get featureFlags() {
+        return (typeof window !== 'undefined' && window.__FEATURE_FLAGS__) || {
+            ENABLE_CARD_PAYMENTS: false,
+            ENABLE_AUTH: false,
+            ENABLE_COMMENTS: false,
+            ENABLE_YOCO: false
+        };
+    }
+
+    /** Check if card payments are enabled */
+    get enableCardPayments() {
+        return this.featureFlags.ENABLE_CARD_PAYMENTS === true;
+    }
+
+    /** Check if auth is enabled */
+    get enableAuth() {
+        return this.featureFlags.ENABLE_AUTH === true;
+    }
+
+    /** Check if comments are enabled */
+    get enableComments() {
+        return this.featureFlags.ENABLE_COMMENTS === true;
+    }
+
+    /** Check if Yoco is enabled */
+    get enableYoco() {
+        return this.featureFlags.ENABLE_YOCO === true;
+    }
+
     /**
      * Get config value with priority: publicConfig > localEnv > defaultValue
      */
@@ -270,8 +300,7 @@ const CONFIG = {
     // Delivery Configuration
     DELIVERY_FEES: {
         local: 60,      // R60 for Hammanskraal area
-        nationwide: 100, // R100 for South Africa
-        global: 260      // R260 for international
+        nationwide: 120 // R120 for South Africa
     },
 
     // Currency Configuration

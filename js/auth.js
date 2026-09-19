@@ -9,6 +9,14 @@ class AuthManager {
     }
 
     init() {
+        // Check if auth is enabled via feature flag
+        if (!ENV.enableAuth) {
+            console.log('ℹ️ Authentication disabled. Auth controls will redirect to checkout.');
+            // Still set up global functions but they'll redirect
+            this.setupAuthModalsDisabled();
+            return;
+        }
+
         // Monitor Firebase auth state
         this.monitorAuthState();
 
@@ -23,6 +31,28 @@ class AuthManager {
 
         // Set up session timeout monitoring (now handled by Firebase persistence)
         // this.setupSessionTimeout();
+    }
+
+    // Set up auth modals when auth is disabled - redirect to checkout
+    setupAuthModalsDisabled() {
+        // Add event listeners for auth buttons - redirect to checkout
+        document.addEventListener('click', (e) => {
+            if (e.target.matches('[data-action="open-login"]') ||
+                e.target.closest('[data-action="open-login"]')) {
+                e.preventDefault();
+                window.location.href = 'checkout.html';
+            }
+
+            if (e.target.matches('[data-action="open-register"]') ||
+                e.target.closest('[data-action="open-register"]')) {
+                e.preventDefault();
+                window.location.href = 'checkout.html';
+            }
+        });
+
+        // Also disable the global functions
+        window.openLoginModal = () => window.location.href = 'checkout.html';
+        window.openRegisterModal = () => window.location.href = 'checkout.html';
     }
 
     // Monitor Firebase auth state

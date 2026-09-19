@@ -8,6 +8,18 @@
  * For local development overrides, create js/env.js (gitignored) which takes precedence.
  */
 
+// Feature flags - control optional integrations
+window.__FEATURE_FLAGS__ = {
+    // Card payments via Snipcart (requires live key + payment processor config)
+    ENABLE_CARD_PAYMENTS: false,
+    // Firebase Authentication + Google Sign-In
+    ENABLE_AUTH: false,
+    // Giscus comments on blog
+    ENABLE_COMMENTS: false,
+    // Yoco payment gateway
+    ENABLE_YOCO: false
+};
+
 // Public configuration - safe to expose in browser
 window.__PUBLIC_CONFIG__ = {
     // Snipcart E-Commerce (public API key per Snipcart docs)
@@ -43,3 +55,4 @@ window.__PUBLIC_CONFIG__ = {
 
 // Export for immediate use
 console.log('Public configuration loaded');
+console.log('Feature flags:', window.__FEATURE_FLAGS__);

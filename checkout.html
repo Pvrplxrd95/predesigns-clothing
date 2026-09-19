@@ -107,28 +107,28 @@
             </div>
 
             <!-- Trust Badges - Checkout -->
-            <div class="trust-badges trust-badges--checkout">
-                <div class="trust-badge fade-in-up" data-delay="0s">
-                    <i class="fas fa-lock"></i>
-                    <span>Secure Checkout</span>
-                </div>
-                <div class="trust-badge fade-in-up" data-delay="0.1s">
-                    <i class="fas fa-lock"></i>
-                    <span>Secure Payments</span>
-                </div>
-                <div class="trust-badge fade-in-up" data-delay="0.2s">
-                    <i class="fas fa-shipping-fast"></i>
-                    <span>Fast Delivery</span>
-                </div>
-                <div class="trust-badge fade-in-up" data-delay="0.3s">
-                    <i class="fas fa-shield-alt"></i>
-                    <span>30-Day Guarantee</span>
-                </div>
-                <div class="trust-badge fade-in-up" data-delay="0.4s">
-                    <i class="fas fa-flag"></i>
-                    <span>Proudly South African</span>
-                </div>
-            </div>
+                        <div class="trust-badges trust-badges--checkout">
+                            <div class="trust-badge fade-in-up" data-delay="0s">
+                                <i class="fas fa-lock"></i>
+                                <span>Secure Order Process</span>
+                            </div>
+                            <div class="trust-badge fade-in-up" data-delay="0.1s">
+                                <i class="fas fa-university"></i>
+                                <span>Bank Transfer Available</span>
+                            </div>
+                            <div class="trust-badge fade-in-up" data-delay="0.2s">
+                                <i class="fas fa-shipping-fast"></i>
+                                <span>South Africa Delivery</span>
+                            </div>
+                            <div class="trust-badge fade-in-up" data-delay="0.3s">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>30-Day Guarantee</span>
+                            </div>
+                            <div class="trust-badge fade-in-up" data-delay="0.4s">
+                                <i class="fas fa-flag"></i>
+                                <span>Proudly South African</span>
+                            </div>
+                        </div>
 
             <!-- Order Summary -->
             <div class="order-summary">
@@ -153,67 +153,48 @@
             </div>
 
             <!-- Delivery Options -->
-            <div class="delivery-options-section">
-                <h2><i class="fas fa-truck"></i> Delivery Options</h2>
-                <div class="delivery-options">
-                    <div class="delivery-option">
-                        <input type="radio" id="local-delivery-checkout" name="delivery-checkout" value="local"
-                            onchange="updateDeliveryAndRecalculate('local')">
-                        <label for="local-delivery-checkout">
-                            <div class="option-header">
-                                <span class="delivery-title">Local Delivery</span>
-                                <span class="delivery-price">R60</span>
+                        <div class="delivery-options-section">
+                            <h2><i class="fas fa-truck"></i> Delivery Options</h2>
+                            <div class="delivery-options">
+                                <div class="delivery-option">
+                                    <input type="radio" id="local-delivery-checkout" name="delivery-checkout" value="local"
+                                        onchange="updateDeliveryAndRecalculate('local')">
+                                    <label for="local-delivery-checkout">
+                                        <div class="option-header">
+                                            <span class="delivery-title">Local Delivery</span>
+                                            <span class="delivery-price">R60</span>
+                                        </div>
+                                        <p>Within Hammanskraal area - 1-3 business days</p>
+                                    </label>
+                                </div>
+                                <div class="delivery-option">
+                                    <input type="radio" id="nationwide-delivery-checkout" name="delivery-checkout"
+                                        value="nationwide" onchange="updateDeliveryAndRecalculate('nationwide')">
+                                    <label for="nationwide-delivery-checkout">
+                                        <div class="option-header">
+                                            <span class="delivery-title">Standard South African Delivery</span>
+                                            <span class="delivery-price">R120</span>
+                                        </div>
+                                        <p>Anywhere in South Africa - 3-7 business days</p>
+                                    </label>
+                                </div>
                             </div>
-                            <p>Within Hammanskraal area - 1-3 business days</p>
-                        </label>
-                    </div>
-                    <div class="delivery-option">
-                        <input type="radio" id="nationwide-delivery-checkout" name="delivery-checkout"
-                            value="nationwide" onchange="updateDeliveryAndRecalculate('nationwide')">
-                        <label for="nationwide-delivery-checkout">
-                            <div class="option-header">
-                                <span class="delivery-title">Nationwide Delivery</span>
-                                <span class="delivery-price">R100</span>
-                            </div>
-                            <p>Across South Africa - 3-7 business days</p>
-                        </label>
-                    </div>
-                    <div class="delivery-option">
-                        <input type="radio" id="global-delivery-checkout" name="delivery-checkout" value="global"
-                            onchange="updateDeliveryAndRecalculate('global')">
-                        <label for="global-delivery-checkout">
-                            <div class="option-header">
-                                <span class="delivery-title">Global Delivery</span>
-                                <span class="delivery-price">R260</span>
-                            </div>
-                            <p>International shipping - 7-14 business days</p>
-                        </label>
-                    </div>
-                </div>
-            </div>
+                        </div>
 
             <!-- Currency Options -->
-            <div class="currency-section">
-                <h2><i class="fas fa-globe"></i> Currency</h2>
-                <div class="currency-options">
-                    <div class="currency-option">
-                        <input type="radio" id="zar-currency-checkout" name="currency-checkout" value="zar"
-                            onchange="updateCurrencyAndRecalculate('zar')">
-                        <label for="zar-currency-checkout">
-                            <span class="currency-name">ZAR</span>
-                            <span class="currency-desc">South African Rand</span>
-                        </label>
-                    </div>
-                    <div class="currency-option">
-                        <input type="radio" id="usd-currency-checkout" name="currency-checkout" value="usd"
-                            onchange="updateCurrencyAndRecalculate('usd')">
-                        <label for="usd-currency-checkout">
-                            <span class="currency-name">USD</span>
-                            <span class="currency-desc">US Dollar</span>
-                        </label>
-                    </div>
-                </div>
-            </div>
+                        <div class="currency-section">
+                            <h2><i class="fas fa-globe"></i> Currency</h2>
+                            <div class="currency-options">
+                                <div class="currency-option">
+                                    <input type="radio" id="zar-currency-checkout" name="currency-checkout" value="zar"
+                                        onchange="updateCurrencyAndRecalculate('zar')" checked>
+                                    <label for="zar-currency-checkout">
+                                        <span class="currency-name">ZAR</span>
+                                        <span class="currency-desc">South African Rand</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
 
             <!-- Payment Information -->
             <div class="payment-info">
@@ -253,35 +234,33 @@
             </div>
 
             <!-- Delivery Information -->
-            <div class="delivery-info">
-                <h2><i class="fas fa-truck"></i> Delivery Information</h2>
-                <div class="delivery-details">
-                    <div class="delivery-item">
-                        <h3>Delivery Areas</h3>
-                        <ul>
-                            <li><strong>Local:</strong> Hammanskraal area</li>
-                            <li><strong>Nationwide:</strong> All South African provinces</li>
-                            <li><strong>Global:</strong> International destinations</li>
-                        </ul>
-                    </div>
-                    <div class="delivery-item">
-                        <h3>Delivery Times</h3>
-                        <ul>
-                            <li><strong>Local:</strong> 1-3 business days</li>
-                            <li><strong>Nationwide:</strong> 3-7 business days</li>
-                            <li><strong>Global:</strong> 7-14 business days</li>
-                        </ul>
-                    </div>
-                    <div class="delivery-item">
-                        <h3>Tracking</h3>
-                        <p>You will receive tracking information via email once your order ships</p>
-                    </div>
-                    <div class="delivery-item">
-                        <h3>Returns</h3>
-                        <p>30-day return policy for unused items in original condition</p>
-                    </div>
-                </div>
-            </div>
+                        <div class="delivery-info">
+                            <h2><i class="fas fa-truck"></i> Delivery Information</h2>
+                            <div class="delivery-details">
+                                <div class="delivery-item">
+                                    <h3>Delivery Areas</h3>
+                                    <ul>
+                                        <li><strong>Local:</strong> Hammanskraal area</li>
+                                        <li><strong>Standard South African Delivery:</strong> Anywhere in South Africa</li>
+                                    </ul>
+                                </div>
+                                <div class="delivery-item">
+                                    <h3>Delivery Times</h3>
+                                    <ul>
+                                        <li><strong>Local:</strong> 1-3 business days</li>
+                                        <li><strong>Standard South African Delivery:</strong> 3-7 business days</li>
+                                    </ul>
+                                </div>
+                                <div class="delivery-item">
+                                    <h3>Tracking</h3>
+                                    <p>You will receive tracking information via email once your order ships</p>
+                                </div>
+                                <div class="delivery-item">
+                                    <h3>Returns</h3>
+                                    <p>30-day return policy for unused items in original condition</p>
+                                </div>
+                            </div>
+                        </div>
 
             <!-- Contact Information -->
             <div class="contact-section">
@@ -381,28 +360,28 @@
                     </div>
                 </div>
                 <div class="trust-badges">
-                    <div class="trust-badge">
-                        <i class="fas fa-lock"></i>
-                        <span>Secure Checkout</span>
-                    </div>
-                    <div class="trust-badge">
-                    <i class="fas fa-lock"></i>
-                    <span>Secure Payments</span>
-                </div>
-                    <div class="trust-badge">
-                        <i class="fas fa-shipping-fast"></i>
-                        <span>Fast Delivery</span>
-                    </div>
-                    <div class="trust-badge">
-                        <i class="fas fa-shield-alt"></i>
-                        <span>30-Day Guarantee</span>
-                    </div>
-                    <div class="trust-badge">
-                        <i class="fas fa-flag"></i>
-                        <span>Proudly South African</span>
-                    </div>
-                </div>
-                <div class="parent-company">
+                                    <div class="trust-badge">
+                                        <i class="fas fa-lock"></i>
+                                        <span>Secure Checkout</span>
+                                    </div>
+                                    <div class="trust-badge">
+                                        <i class="fas fa-university"></i>
+                                        <span>Bank Transfer Available</span>
+                                    </div>
+                                    <div class="trust-badge">
+                                        <i class="fas fa-shipping-fast"></i>
+                                        <span>South Africa Delivery</span>
+                                    </div>
+                                    <div class="trust-badge">
+                                        <i class="fas fa-shield-alt"></i>
+                                        <span>30-Day Guarantee</span>
+                                    </div>
+                                    <div class="trust-badge">
+                                        <i class="fas fa-flag"></i>
+                                        <span>Proudly South African</span>
+                                    </div>
+                                </div>
+                                <div class="parent-company">
                     <span>A</span>
                     <a href="https://purpleraygroup.co.za" target="_blank" rel="noopener noreferrer">
                         <img src="images/PRG LOGO.png" alt="Purple Ray Group" width="80" data-webp="images/PRG LOGO.webp">
@@ -462,16 +441,20 @@
         });
 
         // Load saved delivery and currency preferences
-        function loadSavedPreferences() {
-            const savedDeliveryOption = localStorage.getItem('deliveryOption') || 'local';
-            const savedCurrency = localStorage.getItem('currency') || 'zar';
+                function loadSavedPreferences() {
+                    const savedDeliveryOption = localStorage.getItem('deliveryOption') || 'local';
+                    const savedCurrency = localStorage.getItem('currency') || 'zar';
 
-            // Set delivery option
-            document.getElementById(`${savedDeliveryOption}-delivery-checkout`).checked = true;
+                    // Fallback for deprecated 'global' option
+                    const validDeliveryOptions = ['local', 'nationwide'];
+                    const deliveryOption = validDeliveryOptions.includes(savedDeliveryOption) ? savedDeliveryOption : 'local';
 
-            // Set currency option
-            document.getElementById(`${savedCurrency}-currency-checkout`).checked = true;
-        }
+                    // Set delivery option
+                    document.getElementById(`${deliveryOption}-delivery-checkout`).checked = true;
+
+                    // Set currency option
+                    document.getElementById(`${savedCurrency}-currency-checkout`).checked = true;
+                }
 
         // Update order summary function using CartStorage
         function updateOrderSummary() {
@@ -565,18 +548,16 @@
         }
 
         // Calculate delivery fee (same function as in main.js)
-        function calculateDeliveryFee(subtotal, deliveryOption) {
-            switch (deliveryOption) {
-                case 'local':
-                    return 60; // R60 for local delivery
-                case 'nationwide':
-                    return 100; // R100 for nationwide delivery
-                case 'global':
-                    return 260; // R260 for global delivery
-                default:
-                    return 60; // Default to local
-            }
-        }
+                function calculateDeliveryFee(subtotal, deliveryOption) {
+                    switch (deliveryOption) {
+                        case 'local':
+                            return 60; // R60 for local delivery
+                        case 'nationwide':
+                            return 120; // R120 for standard South African delivery
+                        default:
+                            return 60; // Default to local
+                    }
+                }
     </script>
 </body>
 
