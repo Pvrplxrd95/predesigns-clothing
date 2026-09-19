@@ -33,26 +33,37 @@ class AuthManager {
         // this.setupSessionTimeout();
     }
 
-    // Set up auth modals when auth is disabled - redirect to checkout
+    // Set up auth when disabled - hide auth buttons and show notice
     setupAuthModalsDisabled() {
-        // Add event listeners for auth buttons - redirect to checkout
-        document.addEventListener('click', (e) => {
-            if (e.target.matches('[data-action="open-login"]') ||
-                e.target.closest('[data-action="open-login"]')) {
-                e.preventDefault();
-                window.location.href = 'checkout.html';
-            }
-
-            if (e.target.matches('[data-action="open-register"]') ||
-                e.target.closest('[data-action="open-register"]')) {
-                e.preventDefault();
-                window.location.href = 'checkout.html';
-            }
+        // Hide login/register buttons in header and mobile menu
+        const authButtons = document.querySelectorAll('[data-action="open-login"], [data-action="open-register"]');
+        authButtons.forEach(btn => {
+            btn.style.display = 'none';
         });
 
-        // Also disable the global functions
-        window.openLoginModal = () => window.location.href = 'checkout.html';
-        window.openRegisterModal = () => window.location.href = 'checkout.html';
+        // Disable the global functions with a notice
+        window.openLoginModal = () => this.showAuthUnavailableNotice();
+        window.openRegisterModal = () => this.showAuthUnavailableNotice();
+
+        // Update any visible auth containers to show notice
+        const authContainers = document.querySelectorAll('[data-auth-container]');
+        authContainers.forEach(container => {
+            if (!container.querySelector('.auth-unavailable-notice')) {
+                const notice = document.createElement('div');
+                notice.className = 'auth-unavailable-notice';
+                notice.innerHTML = '<i class="fas fa-info-circle"></i> Account features are currently unavailable. Please proceed to checkout as a guest.';
+                notice.style.cssText = 'padding: 0.75rem 1rem; background: #fff3cd; border: 1px solid #ffc107; border-radius: 4px; color: #856404; font-size: 0.875rem; text-align: center;';
+                container.insertBefore(notice, container.firstChild);
+            }
+        });
+    }
+
+    showAuthUnavailableNotice() {
+        if (typeof this.showMessage === 'function') {
+            this.showMessage('Account features are currently unavailable. You can complete your order as a guest at checkout.', 'info');
+        } else {
+            alert('Account features are currently unavailable. You can complete your order as a guest at checkout.');
+        }
     }
 
     // Monitor Firebase auth state

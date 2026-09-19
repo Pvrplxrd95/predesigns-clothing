@@ -351,7 +351,7 @@ function initContactLinks() {
     whatsappLinks.forEach(link => {
         link.addEventListener('click', function (e) {
             e.preventDefault();
-            const whatsappUrl = `https://wa.me/27694313721?text=Hello%20Predesigns%20Clothing!%20I%27m%20interested%20in%20your%20services.`;
+            const whatsappUrl = `https://wa.me/+27696569157?text=Hello%20Predesigns%20Clothing!%20I%27m%20interested%20in%20your%20services.`;
             window.open(whatsappUrl, '_blank');
         });
     });
@@ -361,7 +361,7 @@ function initContactLinks() {
     emailLinks.forEach(link => {
         link.addEventListener('click', function (e) {
             e.preventDefault();
-            const email = 'purpleray23@gmail.com';
+            const email = 'purpleraygroup@proton.me';
             const subject = 'Predesigns Clothing Inquiry';
             const mailtoUrl = `mailto:${email}?subject=${encodeURIComponent(subject)}`;
             window.location.href = mailtoUrl;
@@ -684,7 +684,7 @@ function openCustomOrderForm() {
                         
                         <div class="form-group">
                             <label for="customer-phone">Phone Number (WhatsApp) *</label>
-                            <input type="tel" id="customer-phone" name="phone" placeholder="069 431 3721" required>
+                            <input type="tel" id="customer-phone" name="phone" placeholder="069 656 9157" required>
                         </div>
                         
                         <div class="form-group">
@@ -754,7 +754,7 @@ function openConsultationForm() {
                         
                         <div class="form-group">
                             <label for="consultation-phone">Phone Number (WhatsApp) *</label>
-                            <input type="tel" id="consultation-phone" name="phone" placeholder="069 431 3721" required>
+                            <input type="tel" id="consultation-phone" name="phone" placeholder="069 656 9157" required>
                         </div>
                         
                         <div class="form-group">

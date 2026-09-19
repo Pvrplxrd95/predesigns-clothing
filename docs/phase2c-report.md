@@ -343,7 +343,7 @@ All product images have explicit `width` and `height` attributes or aspect-ratio
 | Component | Status |
 |-----------|--------|
 | Account Details | READY (FNB, shown on checkout.html) |
-| Proof of Payment | READY (purpleray23@gmail.com) |
+| Proof of Payment | READY (purpleraygroup@proton.me) |
 | Confirmation | READY ("within 24 hours") |
 | Tracking | READY (email once shipped) |
 

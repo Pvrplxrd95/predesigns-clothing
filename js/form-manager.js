@@ -159,7 +159,7 @@ class FormManager {
 
                     <div class="form-group">
                         <label>Phone Number (WhatsApp) *</label>
-                        <input type="tel" name="phone" required placeholder="e.g. 069 431 3721">
+                        <input type="tel" name="phone" required placeholder="e.g. 069 656 9157">
                     </div>
 
                     <div class="form-group">

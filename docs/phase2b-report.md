@@ -338,7 +338,7 @@ Add `data-product-id` to all 35 products. Use slugified product names:
 | Component | Status |
 |-----------|--------|
 | Account Details | READY | FNB account shown on checkout |
-| Proof of Payment | READY | Email to purpleray23@gmail.com |
+| Proof of Payment | READY | Email to purpleraygroup@proton.me |
 | Confirmation | READY | "Within 24 hours" stated |
 | Tracking | READY | Email once shipped |
 

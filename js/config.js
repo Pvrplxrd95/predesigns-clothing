@@ -262,8 +262,8 @@ const CONFIG = {
         LOCATION: 'Hammanskraal, Pretoria, South Africa',
         CURRENCY: 'ZAR',
         CURRENCY_SYMBOL: 'R',
-        SUPPORT_EMAIL: 'purpleray23@gmail.com',
-        WHATSAPP_NUMBER: '+27694313721'
+        SUPPORT_EMAIL: 'purpleraygroup@proton.me',
+        WHATSAPP_NUMBER: '+27696569157'
     },
 
     // Business hours (South Africa Standard Time)
@@ -276,8 +276,8 @@ const CONFIG = {
 
     // Contact information
     CONTACT: {
-        EMAIL: 'purpleray23@gmail.com',
-        WHATSAPP: '+27694313721',
+        EMAIL: 'purpleraygroup@proton.me',
+        WHATSAPP: '+27696569157',
         FACEBOOK: 'https://facebook.com/predesignsclothing',
         INSTAGRAM: 'https://instagram.com/predesignsclothing'
     },
@@ -294,7 +294,7 @@ const CONFIG = {
         SESSION_TIMEOUT: 24 * 60 * 60 * 1000, // 24 hours
         TAX_RATE: 0.15, // 15% VAT
         FREE_SHIPPING_THRESHOLD: 1000,
-        SHIPPING_COST: 100
+        SHIPPING_COST: 120
     },
 
     // Delivery Configuration

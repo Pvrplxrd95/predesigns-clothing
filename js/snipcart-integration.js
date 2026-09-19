@@ -169,31 +169,57 @@ function updateCartCount() {
 
 // Disable Snipcart checkout when card payments are not enabled
 function disableSnipcartCheckout() {
-    // Remove Snipcart checkout button functionality
+    // Keep cart functionality active (add-to-cart, cart sidebar, cart count)
+    // Replace Snipcart checkout buttons with bank transfer checkout action
     const checkoutButtons = document.querySelectorAll('.snipcart-checkout');
     checkoutButtons.forEach(btn => {
-        // Replace with bank transfer redirect
+        // Replace with bank transfer checkout action
         btn.removeAttribute('class');
         btn.className = 'btn btn-primary cart-icon';
+        btn.setAttribute('data-bank-transfer-checkout', 'true');
+        // Update button content to clearly indicate bank transfer
+        btn.innerHTML = '<i class="fas fa-university"></i><span class="cart-label">Bank Transfer Checkout</span>';
         btn.removeEventListener('click', handleCartClick);
         btn.addEventListener('click', (e) => {
             e.preventDefault();
             window.location.href = 'checkout.html';
         });
         // Update aria-label
-        btn.setAttribute('aria-label', 'View order summary');
+        btn.setAttribute('aria-label', 'Continue to Bank Transfer Checkout');
     });
 
-    // Override Snipcart's default checkout behavior
+    // Override Snipcart's default checkout behavior - prevent checkout screen
     if (window.Snipcart) {
         const originalShow = window.Snipcart.api.modal.show;
         window.Snipcart.api.modal.show = function(...args) {
-            // Allow cart view but intercept checkout
+            // Allow cart view (modal.open === 'cart') but block checkout (modal.open === 'checkout')
+            if (args[0] === 'checkout' || (args[0] && args[0].mode === 'checkout')) {
+                console.log('ℹ️ Card checkout blocked. Redirecting to bank transfer checkout.');
+                window.location.href = 'checkout.html';
+                return;
+            }
+            // Allow cart view
             return originalShow.apply(this, args);
         };
     }
 
-    console.log('ℹ️ Card checkout disabled. Bank transfer is the active payment method.');
+    // Also intercept direct checkout URL attempts
+    if (window.Snipcart && window.Snipcart.store) {
+        const state = window.Snipcart.store.getState();
+        if (state.cart.items.count > 0) {
+            // Subscribe to cart changes to prevent checkout navigation
+            window.Snipcart.store.subscribe(() => {
+                const newState = window.Snipcart.store.getState();
+                if (newState.cart.checkoutStarted) {
+                    console.log('ℹ️ Checkout attempt blocked. Redirecting to bank transfer.');
+                    window.Snipcart.api.modal.hide();
+                    window.location.href = 'checkout.html';
+                }
+            });
+        }
+    }
+
+    console.log('ℹ️ Card checkout disabled. Bank transfer is the active payment method. Cart functionality remains active.');
 }
 
 // Legacy add-to-cart toast removed in favor of global showMessage helper

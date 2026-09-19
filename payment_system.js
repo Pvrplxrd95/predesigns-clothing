@@ -60,7 +60,7 @@ function proceedToPayment() {
                         <p><strong>Reference:</strong> ${orderNumber}</p>
                     </div>
                     <div class="payment-instructions">
-                        <p><em>✅ After payment, send proof to purpleray23@gmail.com</em></p>
+                        <p><em>✅ After payment, send proof to purpleraygroup@proton.me</em></p>
                         <p><em>✅ We'll confirm and start working on your order</em></p>
                     </div>
                 </div>
@@ -247,15 +247,15 @@ function showBankTransferDetails(orderData) {
                 <ol>
                     <li><strong>Make Payment:</strong> Transfer R${orderData.total_amount.toLocaleString()} to the bank details above</li>
                     <li><strong>Use Reference:</strong> Make sure to use "${orderData.order_number}" as the payment reference</li>
-                    <li><strong>Send Proof:</strong> Email proof of payment to <a href="mailto:purpleray23@gmail.com">purpleray23@gmail.com</a></li>
+                    <li><strong>Send Proof:</strong> Email proof of payment to <a href="mailto:purpleraygroup@proton.me">purpleraygroup@proton.me</a></li>
                     <li><strong>Confirmation:</strong> We'll confirm receipt and start working on your order</li>
                 </ol>
             </div>
             
             <div class="contact-info">
                 <h3>📞 Need Help?</h3>
-                <p>WhatsApp: <a href="https://wa.me/27694313721">069 431 3721</a></p>
-                <p>Email: <a href="mailto:purpleray23@gmail.com">purpleray23@gmail.com</a></p>
+                <p>WhatsApp: <a href="https://wa.me/+27696569157">069 656 9157</a></p>
+                <p>Email: <a href="mailto:purpleraygroup@proton.me">purpleraygroup@proton.me</a></p>
                 <p>We respond within 24 hours</p>
             </div>
             

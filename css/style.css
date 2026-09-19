@@ -1415,3 +1415,64 @@ section.tight { padding: 4rem 0; }
     .blog-grid { grid-template-columns: 1fr; }
     section { padding: 4rem 0; }
 }
+
+
+/* Delivery confirmation notice */
+.delivery-suburb-note {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: normal;
+    color: #888;
+    margin-top: 2px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.delivery-confirmation {
+    font-size: 0.75rem;
+    color: #d97706;
+    background: #fffbeb;
+    border: 1px solid #fcd34d;
+    border-radius: 4px;
+    padding: 0.5rem 0.75rem;
+    margin-top: 0.5rem;
+    line-height: 1.4;
+}
+
+.delivery-confirmation strong {
+    color: #b45309;
+}
+
+/* Bank transfer checkout button */
+.cart-label {
+    display: none;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-left: 0.5rem;
+}
+
+@media (min-width: 768px) {
+    .cart-label {
+        display: inline;
+    }
+}
+
+.cart-icon .fas.fa-university {
+    font-size: 1.1rem;
+}
+
+/* Auth unavailable notice */
+.auth-unavailable-notice {
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Delivery option highlighting for local */
+.delivery-option input[value="local"]:checked + label .delivery-suburb-note {
+    color: #d97706;
+    font-weight: 600;
+}
