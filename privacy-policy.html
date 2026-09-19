@@ -17,12 +17,13 @@
   a{color:var(--glow)}
   .meta{color:var(--muted);font-size:.85rem}
   footer{padding:32px;text-align:center;color:var(--muted);font-size:.8rem}
+  .note{background:#1a1030;border-left:3px solid var(--glow);padding:1rem;margin:1rem 0;border-radius:4px}
 </style>
 </head>
 <body>
 <header>
   <h1>Privacy Policy</h1>
-  <p class="meta">Purple Ray Group (Pty) Ltd · Effective 1 July 2026 · Information Officer: Josias Tlou (Interim) · inforeg@purpleraygroup.co.za</p>
+  <p class="meta">Purple Ray Group (Pty) Ltd · Effective 19 September 2026 · Information Officer: Josias Tlou (Interim) · inforeg@purpleraygroup.co.za</p>
 </header>
 <div class="wrap">
 <p>This Privacy Policy applies to all products, services, websites, mobile applications, and platforms operated by Purple Ray Group and its divisions, including but not limited to: Predesigns Clothing, AlibiSafe, SafeGuardSA, Sales Tracker Bot, Trade Pulse, AlibiSafe, MindOS, Pro Driver, Revenue Radar, Purple Ray Media and Events, and Xentara Life.</p>
@@ -40,28 +41,60 @@
 <tr><td>Profile</td><td>Photos, bio, social handles</td><td>Personalisation, marketing</td></tr>
 <tr><td>Business</td><td>Company name, reg number, VAT</td><td>B2B, reseller, licensing</td></tr>
 <tr><td>Device/Usage</td><td>IP, browser, pages, features used</td><td>Security, fraud prevention, analytics</td></tr>
+<tr><td>Order</td><td>Name, email, phone, suburb, address, items, totals, delivery tier</td><td>Order fulfilment, delivery coordination, payment matching</td></tr>
 </table>
+
+<div class="note">
+<strong>Order Information — Predesigns Clothing:</strong> When you place a bank-transfer order, we collect your full name, email, phone, suburb, full delivery address, order notes, items purchased, quantities, prices, delivery option (Local R60 / Standard SA R120 / Collection), and order total. This information is submitted to Formspree (our form processor) and emailed to <a href="mailto:purpleraygroup@proton.me">purpleraygroup@proton.me</a> for order fulfilment. We store only the order reference, timestamp, item IDs/names, quantities, totals, delivery tier, and status in your browser's localStorage for order history. Your name, email, phone, and address are <strong>not</strong> retained in localStorage after order confirmation.
+</div>
 
 <h2>3. How We Use Information</h2>
 <p>To provide and improve our services; process transactions; send service and (with consent) marketing communications; ensure security and legal compliance; and for AlibiSafe/SafeGuardSA, to verify evidence integrity and route verified safety reports to authorities where lawful.</p>
+
+<p><strong>Order Fulfilment:</strong> Your order information is used solely to process your bank-transfer purchase, coordinate delivery, match proof-of-payment to your order, and communicate order status. We do not use order data for marketing without your consent.</p>
 
 <h2>4. Special Personal Information</h2>
 <p>We process biometric, health, or criminal-behaviour data (e.g., safety evidence) only with your explicit consent and strict security (encryption, hashed chains). You may withdraw consent at any time, subject to legal retention obligations.</p>
 
 <h2>5. Sharing & Operators</h2>
-<p>We share data only with vetted operators (cloud hosting, payment gateways, analytics) under POPIA-compliant agreements, and with authorities where legally required. We do not sell your personal information.</p>
+<p>We share data only with vetted operators under POPIA-compliant agreements, and with authorities where legally required. We do not sell your personal information.</p>
+
+<p><strong>Order Processing Operators:</strong></p>
+<ul>
+<li><strong>Formspree, Inc.</strong> — receives and forwards order submissions to <code>purpleraygroup@proton.me</code>. Formspree's privacy policy applies to their processing.</li>
+<li><strong>Proton AG (Proton Mail)</strong> — receives and stores order emails at <code>purpleraygroup@proton.me</code>. Proton's privacy policy applies.</li>
+<li><strong>Vercel, Inc.</strong> — hosts the website; see Vercel's privacy policy.</li>
+</ul>
 
 <h2>6. International Transfers</h2>
-<p>Where data is processed outside South Africa (e.g., cloud regions), we rely on GDPR-equivalent safeguards.</p>
+<p>Where data is processed outside South Africa (e.g., Formspree US servers, Proton Swiss servers, Vercel global CDN), we rely on GDPR-equivalent safeguards and the operators' standard contractual clauses.</p>
 
 <h2>7. Data Retention</h2>
 <p>We retain personal information only as long as necessary for the purpose collected or as required by law, then delete or anonymise it.</p>
 
+<p><strong>Order Data Retention:</strong></p>
+<ul>
+<li><strong>localStorage (browser):</strong> Order reference, timestamp, items, quantities, totals, delivery tier, status — retained until you clear browser data.</li>
+<li><strong>sessionStorage (browser):</strong> Confirmation screen data (order reference, bank details, delivery tier) — cleared automatically when you close the browser tab.</li>
+<li><strong>Formspree / Proton Mail:</strong> Full order submission including PII — retained per Formspree and Proton retention policies (typically 30–90 days for form submissions, longer for email).</li>
+<li><strong>Business records:</strong> Order details kept for 5 years for SARS/tax compliance per South African law.</li>
+</ul>
+
 <h2>8. Your Rights (POPIA / GDPR)</h2>
-<p>You may request access, correction, deletion, or portability of your data, and object to processing. Contact the Information Officer at inforeg@purpleraygroup.co.za. You may also lodge a complaint with the Information Regulator (South Africa).</p>
+<p>You may request access, correction, deletion, or portability of your data, and object to processing. Contact the Information Officer at <a href="mailto:inforeg@purpleraygroup.co.za">inforeg@purpleraygroup.co.za</a>. You may also lodge a complaint with the Information Regulator (South Africa).</p>
+
+<p><strong>For Predesigns Clothing Orders:</strong></p>
+<ul>
+<li><strong>Access:</strong> Request a copy of your order data held by us, Formspree, or Proton Mail.</li>
+<li><strong>Correction:</strong> Update your contact or delivery details for pending orders.</li>
+<li><strong>Deletion:</strong> Request deletion of your localStorage order history (cleared client-side) and request Formspree/Proton to delete submitted data where legally permissible.</li>
+<li><strong>Portability:</strong> Receive your order history in JSON format.</li>
+</ul>
 
 <h2>9. Security</h2>
 <p>We use encryption in transit and at rest, access controls, and integrity hashing. No method is 100% secure; we continually harden our systems.</p>
+
+<p><strong>Order Form Protections:</strong> The order form includes a honeypot field to deter automated spam submissions. Submissions with the honeypot filled are silently rejected by Formspree.</p>
 
 <h2>10. Children</h2>
 <p>Services are for users 18+. We do not knowingly collect data from children without parental consent.</p>
@@ -70,8 +103,9 @@
 <p>We may update this Policy; material changes are notified at least 14 days in advance via email or in-app notice.</p>
 
 <h2>12. Contact</h2>
-<p>Information Officer: Josias Tlou (Interim) · inforeg@purpleraygroup.co.za · 113 B Suurman, Gauteng, South Africa.</p>
+<p>Information Officer: Josias Tlou (Interim) · <a href="mailto:inforeg@purpleraygroup.co.za">inforeg@purpleraygroup.co.za</a> · 113 B Suurman, Gauteng, South Africa.</p>
+<p>Order enquiries: <a href="mailto:purpleraygroup@proton.me">purpleraygroup@proton.me</a> · WhatsApp: +27 69 656 9157</p>
 </div>
-<footer>© Purple Ray Group (Pty) Ltd — Universal Privacy Policy v1.0</footer>
+<footer>© Purple Ray Group (Pty) Ltd — Universal Privacy Policy v1.1</footer>
 </body>
 </html>
